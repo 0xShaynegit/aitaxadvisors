@@ -1,0 +1,20 @@
+/* ============================================================
+   PAGES CSS — AI Tax Advisors
+   Overrides global.css colors for pages/ directory
+   Uses purple instead of blue
+   ============================================================ */
+
+:root {
+  /* Override global palette colors for pages */
+  --global-palette1: #3d2456;    /* Purple (from original design) */
+  --global-palette2: #4a2f66;    /* Purple-mid */
+  --global-palette3: #1a0f33;    /* Navy-dark */
+  --global-palette4: #5a3d7a;    /* Purple-light */
+  --global-palette-highlight: #7d5c9f;
+  --global-palette-highlight-alt: #9b7dbc;
+  --global-palette-highlight-alt2: #b89dd9;
+  --global-palette-btn-bg: #3d2456;
+  --global-palette-btn-bg-hover: #4a2f66;
+  --global-palette-btn: #ffffff;
+  --global-palette-btn-hover: #ffffff;
+}

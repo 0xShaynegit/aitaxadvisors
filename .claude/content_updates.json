@@ -1,0 +1,4 @@
+{
+  "notes": "This file contains the new content sections for each article. Each entry contains the old marker and new content block.",
+  "strategy": "For each file, find the <section id='content'> block and replace everything from the opening tag to the closing </section> tag (line 2242 for file 01)"
+}
