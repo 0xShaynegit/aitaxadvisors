@@ -36,7 +36,8 @@
   color: var(--white);
   margin-bottom: 2rem;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translate3d(0, 16px, 0);
+  will-change: transform, opacity;
   line-height: 1.1;
 }
 
@@ -51,7 +52,8 @@
   color: var(--muted);
   margin-bottom: 1.75rem;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translate3d(0, 16px, 0);
+  will-change: transform, opacity;
 }
 
 .hero-eyebrow-dot {
@@ -71,7 +73,8 @@
   margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
   opacity: 0;
-  transform: translateY(24px);
+  transform: translate3d(0, 24px, 0);
+  will-change: transform, opacity;
 }
 
 .hero-h1 em {
@@ -87,7 +90,8 @@
   margin-bottom: 2.5rem;
   max-width: 460px;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translate3d(0, 16px, 0);
+  will-change: transform, opacity;
 }
 
 .hero-actions {
@@ -97,7 +101,8 @@
   flex-wrap: wrap;
   margin-bottom: 3rem;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translate3d(0, 12px, 0);
+  will-change: transform, opacity;
 }
 
 
@@ -107,7 +112,8 @@
   gap: 1.5rem;
   flex-wrap: wrap;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translate3d(0, 10px, 0);
+  will-change: transform, opacity;
 }
 
 .proof-pill {
@@ -136,6 +142,7 @@
   justify-content: center;
   padding: 5rem 3rem 5rem 1rem;
   opacity: 0;
+  will-change: opacity;
   grid-column: 3;
 }
 
@@ -159,11 +166,13 @@
 
 .hero-photo {
   width: 100%;
+  max-width: 380px;
   border-radius: 4px;
   display: block;
   position: relative;
   z-index: 1;
   box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  object-fit: cover;
 }
 
 .hero-photo-badge {
@@ -282,7 +291,7 @@
 
 .trust-badge-sub {
   font-size: 0.62rem;
-  color: var(--muted);
+  color: rgba(229, 228, 226, 0.75);
   letter-spacing: 0.08em;
 }
 
@@ -628,11 +637,11 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -723,17 +732,8 @@
   position: relative;
   transition: all 0.3s ease;
   overflow: hidden;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+  will-change: transform, opacity;
 }
-
-/* Stagger animations: 100ms per item for sequential visual flow */
-.deadline-item:nth-child(1) { animation-delay: 0s; }
-.deadline-item:nth-child(2) { animation-delay: 0.1s; }
-.deadline-item:nth-child(3) { animation-delay: 0.2s; }
-.deadline-item:nth-child(4) { animation-delay: 0.3s; }
-.deadline-item:nth-child(5) { animation-delay: 0.4s; }
-.deadline-item:nth-child(6) { animation-delay: 0.5s; }
 
 
 .deadline-item:hover {
@@ -796,6 +796,7 @@
 
 .why-photo {
   width: 100%;
+  max-width: 500px;
   aspect-ratio: 4/5;
   object-fit: cover;
   filter: brightness(0.8) saturate(0.75);
@@ -1028,16 +1029,17 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: 2px solid rgba(0, 88, 149, 0);
+  border: 2px solid rgba(0, 88, 149, 0.3);
   border-radius: 2px;
+  box-shadow: inset 0 0 16px rgba(0, 88, 149, 0.1);
+  opacity: 0;
   animation: borderGlowUpdate 1.2s ease forwards;
   pointer-events: none;
 }
 
 @keyframes borderGlowUpdate {
   to {
-    border-color: rgba(0, 88, 149, 0.3);
-    box-shadow: inset 0 0 16px rgba(0, 88, 149, 0.1);
+    opacity: 1;
   }
 }
 

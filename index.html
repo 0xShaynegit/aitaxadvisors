@@ -49,7 +49,6 @@
 
   <!-- Performance Optimisations -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preconnect" href="https://www.youtube.com">
 
   <!-- Preload Critical Fonts -->
   <link rel="preload" href="fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
@@ -90,9 +89,9 @@
     }
   </style>
 
-  <!-- Libraries (GSAP required for preloader) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Libraries (deferred for non-blocking render) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
   <!-- External Stylesheets -->
@@ -278,7 +277,7 @@
 
   <!-- PRELOADER -->
   <div id="preloader">
-    <img class="pl-logo" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
+    <img class="pl-logo" width="126" height="126" src="images/logo-opt.webp" alt="AI Tax Advisers">
     <div class="pl-bar"></div>
   </div>
 
@@ -287,7 +286,7 @@
   <nav id="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="#">
-        <img src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
+        <img width="126" height="126" src="images/logo-opt.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -381,7 +380,7 @@
     <div class="hero-right">
       <div class="hero-portrait-wrap">
         <div class="hero-portrait-frame"></div>
-        <img class="hero-photo" src="images/professional-man-formal-bow-tie-confident-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers lead advisor">
+        <img class="hero-photo" width="360" height="500" src="images/professional-man-opt.webp" alt="American International Tax Advisers lead advisor">
         <div class="hero-photo-badge">
           <div class="hero-photo-badge-dot"></div>
           <div class="hero-photo-badge-text">
@@ -555,9 +554,9 @@
     <div class="container">
       <div class="why-grid">
         <div class="why-photo-wrap reveal">
-          <img class="why-photo" src="images/team-photo-three-professionals-updated-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers team">
+          <img class="why-photo" width="400" height="500" loading="lazy" src="images/team-photo-opt.webp" alt="AI Tax Advisers team">
           <div class="why-photo-badge">
-            <img class="why-photo-badge-logo" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
+            <img class="why-photo-badge-logo" width="64" height="64" src="images/logo-opt.webp" alt="AI Tax Advisers">
             <div class="why-photo-badge-text">
               <strong>U.S. Embassy Listed</strong>
               Official Tax Consultant, Bangkok Thailand
@@ -830,7 +829,7 @@
   <!-- FINAL CTA -->
   <section id="final-cta">
     <div class="container">
-      <img class="cta-logo" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
+      <img class="cta-logo" width="48" height="48" src="images/logo-opt.webp" alt="AI Tax Advisers">
       <h2 class="cta-title reveal">Ready to Get Your<br>U.S. Taxes Right?</h2>
       <p class="cta-sub reveal">
         One conversation changes everything. Free, confidential, no obligation.
@@ -885,7 +884,7 @@
       <div class="container">
         <div class="footer-top-inner">
           <div class="footer-col">
-            <img class="footer-logo-img" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
+            <img class="footer-logo-img" width="36" height="36" src="images/logo-opt.webp" alt="AI Tax Advisers">
             <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
             <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
             <div class="footer-irs-badge">

@@ -1,7 +1,7 @@
 /* ============================================================
    PAGES CSS — AI Tax Advisors
    Overrides global.css colors for pages/ directory
-   Uses purple instead of blue
+   Uses beautiful purple instead of blue
    ============================================================ */
 
 :root {
@@ -10,6 +10,11 @@
   --global-palette2: #4a2f66;    /* Purple-mid */
   --global-palette3: #1a0f33;    /* Navy-dark */
   --global-palette4: #5a3d7a;    /* Purple-light */
+  --global-palette5: #e5d4f0;    /* Purple-light text */
+  --global-palette6: #b89dd9;    /* Purple medium */
+  --global-palette7: #7d5c9f;    /* Purple accent */
+  --global-palette8: #2a1a42;    /* Purple darker */
+  --global-palette9: #faf8fc;    /* Purple-tinted white */
   --global-palette-highlight: #7d5c9f;
   --global-palette-highlight-alt: #9b7dbc;
   --global-palette-highlight-alt2: #b89dd9;
@@ -17,4 +22,30 @@
   --global-palette-btn-bg-hover: #4a2f66;
   --global-palette-btn: #ffffff;
   --global-palette-btn-hover: #ffffff;
+}
+
+/* Page background and layout */
+body {
+  background: linear-gradient(135deg, #1a0f33 0%, #3d2456 50%, #2a1a42 100%);
+  min-height: 100vh;
+}
+
+/* Text colors */
+p, span, a {
+  color: #e5d4f0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #f0e6ff;
+}
+
+/* Links */
+a {
+  color: #b89dd9;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #d4b9e8;
 }
