@@ -35,10 +35,10 @@
 
 /* ── ROOT ── */
 :root {
-  --navy:      #1a0f33;
-  --navy-mid:  #2d1b52;
-  --navy-card: #3d2762;
-  --navy-deep: #0d0618;
+  --navy:      #0A1128;
+  --navy-mid:  #0D1635;
+  --navy-card: #111d3f;
+  --navy-deep: #070e1e;
   --blue:      #005895;
   --blue-light:#1a6faa;
   --red:       #e61f32;
