@@ -48,15 +48,15 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Performance Optimisations -->
-  
+  <link rel="dns-prefetch" href="https://www.google-analytics.com/">
   <link rel="preconnect" href="https://www.youtube.com/">
 
   <!-- Preload Critical Fonts -->
-  <link rel="preload" href="../fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin="">
-  <link rel="preload" href="../fonts/LibreBaskerville-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin="">
+  <link rel="preload" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin="">
+  <link rel="preload" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/fonts/LibreBaskerville-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin="">
 
   <!-- Favicon Setup -->
-  <link rel="icon" type="image/webp" href="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp">
+  <link rel="icon" type="image/webp" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/images/aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers-%20logo.webp">
 
   <!-- Local Fonts -->
   <style>
@@ -88,18 +88,18 @@
       font-style: italic;
       font-display: swap;
     }
-
+    
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
-  <script src="../js/gsap.min.js"></script>
-  <script src="../js/ScrollTrigger.min.js"></script>
-  <script src="../js/lenis.min.js" defer></script>
+  <script src="./Expat Tax Strategy 2026_ The Complete Guide for Americans Abroad_files/gsap.min.js.download"></script>
+  <script src="./Expat Tax Strategy 2026_ The Complete Guide for Americans Abroad_files/ScrollTrigger.min.js.download"></script>
+  <script src="./Expat Tax Strategy 2026_ The Complete Guide for Americans Abroad_files/lenis.min.js.download" defer=""></script>
 
   <!-- External Stylesheets -->
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/homepage.css">
-  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/css/global.css">
+  <link rel="stylesheet" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/css/homepage.css">
+  <link rel="stylesheet" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/css/thailand.css">
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -130,28 +130,28 @@
 
 <body style="">
   <!-- PRELOADER -->
-  <div id="preloader">
-    <img class="pl-logo" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Loading">
+  <div id="preloader" style="opacity: 0; display: none;">
+    <img class="pl-logo" src="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/../images/logo-opt.webp" alt="Loading">
     <div class="pl-bar"></div>
   </div>
 
   <!-- NAV -->
   <nav id="nav" class="">
     <div class="nav-inner">
-      <a class="nav-logo" href="../index.html">
-        <img src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
+      <a class="nav-logo" href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/index.html">
+        <img src="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/../images/logo-opt.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#process">How It Works</a></li>
+        <li><a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#services">Services</a></li>
+        <li><a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#why">Why Us</a></li>
+        <li><a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#process">How It Works</a></li>
         <li class="nav-dropdown">
-          <a href="#" onclick="toggleExpatMenu(event)">Resources</a>
+          <a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#" onclick="toggleExpatMenu(event)">Resources</a>
           <div class="nav-dropdown-menu" id="expat-menu">
-            <a href="https://aitaxadvisors.com/expat-tax/us-expat-taxes-2026/">Expat Tax Guide</a>
-            <a href="https://aitaxadvisors.com/expat-tax/tax-residency/">Tax Residency</a>
-            <a href="https://aitaxadvisors.com/expat-tax/digital-nomads/">Digital Nomads</a>
-            <a href="https://aitaxadvisors.com/expat-tax/retirement-planning/">Retirement Planning</a>
+            <a href="file:///C:/expat-tax/us-expat-taxes-2026/">Expat Tax Guide</a>
+            <a href="file:///C:/expat-tax/tax-residency/">Tax Residency</a>
+            <a href="file:///C:/expat-tax/digital-nomads/">Digital Nomads</a>
+            <a href="file:///C:/expat-tax/retirement-planning/">Retirement Planning</a>
           </div>
         </li>
       </ul>
@@ -166,11 +166,11 @@
 
   <!-- MOBILE MENU -->
   <div class="nav-mobile-menu" id="nav-mobile-menu">
-    <a href="#services" onclick="closeMobileMenu()">Services</a>
-    <a href="#why" onclick="closeMobileMenu()">Why Us</a>
-    <a href="#process" onclick="closeMobileMenu()">How It Works</a>
-    <a href="#testimonial" onclick="closeMobileMenu()">Client Stories</a>
-    <a href="#final-cta" onclick="closeMobileMenu()">Book a Consult</a>
+    <a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#services" onclick="closeMobileMenu()">Services</a>
+    <a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#why" onclick="closeMobileMenu()">Why Us</a>
+    <a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#process" onclick="closeMobileMenu()">How It Works</a>
+    <a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#testimonial" onclick="closeMobileMenu()">Client Stories</a>
+    <a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#final-cta" onclick="closeMobileMenu()">Book a Consult</a>
   </div>
 
   <!-- MAIN CONTENT -->
@@ -180,18 +180,18 @@
     <section id="hero">
       <div class="hero-bg-gradient"></div>
       <div class="hero-left">
-        <p class="hero-eyebrow">
+        <p class="hero-eyebrow" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
           <span class="hero-eyebrow-dot"></span>
           Expat Tax Planning 2026
         </p>
-        <h1 class="hero-h1">
+        <h1 class="hero-h1" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
           US Expat Taxes<br>
           <em>A Complete Guide for Americans Abroad</em>
         </h1>
-        <p class="hero-sub">
+        <p class="hero-sub" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
           Tax rules, compliance requirements, and strategies for managing US tax obligations while living abroad. This guide covers everything American expats, digital nomads, and retirees need to know about staying tax-compliant internationally.
         </p>
-        <div class="hero-actions">
+        <div class="hero-actions" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
           <button class="btn-primary magnetic-item" onclick="document.getElementById(&#39;mid-cta&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">
             Get the Full Guide
             <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
@@ -206,8 +206,8 @@
           </button>
         </div>
       </div>
-      <div class="hero-right" style="opacity: 0;">
-        <img src="../images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Tax documents and forms" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);"/>
+      <div class="hero-right" style="opacity: 1;">
+        <img src="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Tax documents and forms" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
       </div>
     </section>
 
@@ -448,31 +448,31 @@
     <!-- KEY TOPICS SECTION -->
     <section style="padding: 3rem 0; background: var(--navy-dark);">
       <div class="container">
-        <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: &quot;Libre Baskerville&quot;; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;" class="reveal">Key Topics for US Expats Worldwide</h3>
+        <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: &quot;Libre Baskerville&quot;; translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;" class="reveal">Key Topics for Americans in Thailand</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
           <div class="reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <h4 style="margin-bottom: 0.5rem;"><a href="./feie-ftc-120k-threshold-2026.html" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">The $120k Threshold: FEIE vs FTC</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Choose between Foreign Earned Income Exclusion and Foreign Tax Credit. Critical for all expat income strategies.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="file:///C:/thailand/tax-residency-180-day-rule/" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Tax Residency &amp; 180-Day Rule</a></h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">How to track your days and avoid unexpected tax residency status.</p>
           </div>
           <div class="reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <h4 style="margin-bottom: 0.5rem;"><a href="./fbar-crackdown-2026.html" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">The FBAR Crackdown 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Foreign account reporting requirement. Understand FBAR, FATCA, and Streamlined Filing amnesty options.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="file:///C:/thailand/foreign-sourced-income-remittance/" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Foreign Income &amp; Remittance</a></h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">Understanding what triggers Thai tax when you bring money into Thailand.</p>
           </div>
           <div class="reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <h4 style="margin-bottom: 0.5rem;"><a href="./tax-treaty-optimization-2026.html" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Tax Treaty Optimization 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Bilateral tax treaties reduce double taxation. Essential for expats in high-tax countries.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="file:///C:/thailand/digital-nomads-remote-workers-thailand/" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Digital Nomads &amp; Remote Workers</a></h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">DTV visa tax implications and staying compliant while working online.</p>
           </div>
           <div class="reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <h4 style="margin-bottom: 0.5rem;"><a href="./corporate-gilti-tax-trap-2026.html" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">The Corporate Trap 2026: GILTI</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">If you own a foreign company, GILTI rules create unexpected tax liability. Learn safe structures.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="file:///C:/thailand/retiring-in-thailand-us-tax-planning/" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Retiring in Thailand</a></h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">Social Security, pensions, 401(k) withdrawals, and tax treaty benefits.</p>
           </div>
           <div class="reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <h4 style="margin-bottom: 0.5rem;"><a href="./ai-tax-audit-algorithm-2026.html" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">AI &amp; The Modern Tax Agent 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">IRS algorithms automatically flag returns. Understand audit triggers and stay algorithmically compliant.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="file:///C:/thailand/how-to-file-thai-tax-as-an-expat/" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Thai Tax Filing (PND 90/91)</a></h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">Step-by-step guide to filing Thai personal income tax as an expat.</p>
           </div>
           <div class="reveal" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-            <h4 style="margin-bottom: 0.5rem;"><a href="./esg-ethical-taxpayer-2026.html" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">ESG &amp; Ethical Taxation 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Green investments and ESG credits offset tax liability. Discover how to leverage sustainability for savings.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="file:///C:/thailand/filing-us-taxes-from-thailand/" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">US Filing from Thailand</a></h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">FEIE, FTC, FBAR reporting, and avoiding double taxation.</p>
           </div>
         </div>
       </div>
@@ -508,7 +508,7 @@
       <div class="container">
         <div class="footer-top-inner">
           <div class="footer-col">
-            <img class="footer-logo-img" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
+            <img class="footer-logo-img" src="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/../images/logo-opt.webp" alt="AI Tax Advisers">
             <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
             <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
             <div class="footer-irs-badge">
@@ -545,17 +545,17 @@
             <div class="footer-col-title">Navigate</div>
             <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 2.5rem;">
               <ul class="footer-nav" style="margin: 0; padding: 0;">
-                <li><a href="https://aitaxadvisors.com/thailand/us-expat-taxes-thailand-2026/">Full Guide</a></li>
-                <li><a href="https://aitaxadvisors.com/thailand/retiring-in-thailand-us-tax-planning/">Retiring</a></li>
-                <li><a href="https://aitaxadvisors.com/thailand/us-thailand-expat-tax-checklist-2026/">Checklist</a></li>
-                <li><a href="https://aitaxadvisors.com/thailand/filing-us-taxes-from-thailand/">US Filing</a></li>
-                <li><a href="#final-cta">Contact</a></li>
+                <li><a href="file:///C:/thailand/us-expat-taxes-thailand-2026/">Full Guide</a></li>
+                <li><a href="file:///C:/thailand/retiring-in-thailand-us-tax-planning/">Retiring</a></li>
+                <li><a href="file:///C:/thailand/us-thailand-expat-tax-checklist-2026/">Checklist</a></li>
+                <li><a href="file:///C:/thailand/filing-us-taxes-from-thailand/">US Filing</a></li>
+                <li><a href="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/pages/template.html#final-cta">Contact</a></li>
               </ul>
               <ul class="footer-nav" style="margin: 0; padding: 0; white-space: nowrap;">
-                <li><a href="https://aitaxadvisors.com/thailand/tax-residency-180-day-rule/">180-Day Rule</a></li>
-                <li><a href="https://aitaxadvisors.com/thailand/foreign-sourced-income-remittance/">Foreign Income</a></li>
-                <li><a href="https://aitaxadvisors.com/thailand/digital-nomads-remote-workers-thailand/">Digital Nomads</a></li>
-                <li><a href="https://aitaxadvisors.com/thailand/how-to-file-thai-tax-as-an-expat/">Thai Filing</a></li>
+                <li><a href="file:///C:/thailand/tax-residency-180-day-rule/">180-Day Rule</a></li>
+                <li><a href="file:///C:/thailand/foreign-sourced-income-remittance/">Foreign Income</a></li>
+                <li><a href="file:///C:/thailand/digital-nomads-remote-workers-thailand/">Digital Nomads</a></li>
+                <li><a href="file:///C:/thailand/how-to-file-thai-tax-as-an-expat/">Thai Filing</a></li>
               </ul>
             </div>
             <div class="footer-social" style="margin-top: 1rem;">
@@ -576,8 +576,8 @@
     </div>
   </footer>
   <!-- External JavaScript files loaded below -->
-  <script src="../js/global.js"></script>
-  <script src="../js/homepage.js"></script>
+  <script src="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/js/global.js"></script>
+  <script src="file:///C:/1myguy/Team%20Inbox/aitaxadvisors/js/homepage.js"></script>
 
 
 </body></html>

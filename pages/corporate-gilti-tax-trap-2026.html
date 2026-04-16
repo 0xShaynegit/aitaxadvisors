@@ -46,42 +46,42 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Performance Optimisations -->
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  
   <link rel="preconnect" href="https://www.youtube.com">
 
   <!-- Preload Critical Fonts -->
-  <link rel="preload" href="../fonts/Inter-VariableFont_opsz,wght_a7872e.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="../fonts/LibreBaskerville-VariableFont_wght_a7872e.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/LibreBaskerville-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
 
   <!-- Favicon Setup -->
-  <link rel="icon" type="image/webp" href="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp">
+  <link rel="icon" type="image/webp" href="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp">
 
   <!-- Local Fonts -->
   <style>
     @font-face {
       font-family: 'Libre Baskerville';
-      src: url('../fonts/LibreBaskerville-VariableFont_wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/LibreBaskerville-VariableFont_wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Libre Baskerville';
-      src: url('../fonts/LibreBaskerville-Italic-VariableFont_wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/LibreBaskerville-Italic-VariableFont_wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: italic;
       font-display: swap;
     }
     @font-face {
       font-family: 'Inter';
-      src: url('../fonts/Inter-VariableFont_opsz,wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Inter';
-      src: url('../fonts/Inter-Italic-VariableFont_opsz,wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: italic;
       font-display: swap;
@@ -89,9 +89,9 @@
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="../js/gsap.min.js"></script>
+  <script src="../js/ScrollTrigger.min.js"></script>
+  <script src="../js/lenis.min.js" defer></script>
 
   <!-- External Stylesheets -->
   <link rel="stylesheet" href="../css/global.css">
@@ -124,7 +124,7 @@
 <body>
   <!-- PRELOADER -->
   <div id="preloader">
-    <img class="pl-logo" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" alt="Loading">
+    <img class="pl-logo" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Loading">
     <div class="pl-bar"></div>
   </div>
 
@@ -132,7 +132,7 @@
   <nav id="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="../index.html">
-        <img src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" alt="American International Tax Advisers">
+        <img src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -199,7 +199,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img alt="Business tax planning" src="../images/business-owners-meeting-success-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" width="100%" height="auto" style="border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);"/>
+        <img alt="Business tax planning" src="../images/business-owners-meeting-success-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" width="100%" height="auto" style="border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);"/>
       </div>
     </section>
 
@@ -233,6 +233,76 @@
         <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 2rem;'>Strategic Planning for the Expat Entrepreneur</h2>
         <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">To avoid losing 50% of earnings to combined local and US taxes, you need proactive structure. The Section 962 election allows you to be taxed at US corporate rates (21%) rather than personal rates (up to 37%), and crucially, allows you to claim a Foreign Tax Credit. This single election can cut your total tax burden by 10-15%.</p>
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Depending on your business model, you may be advised to "check the box" to treat your foreign corporation as a "disregarded entity" for US purposes. This can simplify your filings and allow for more direct use of Foreign Tax Credits or FEIE depending on your structure. The key: salary versus dividend optimisation to find the "sweet spot" between FEIE-qualified salary and GILTI-triggering dividends.</p>
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;"><strong>3. Salary vs. Dividend Optimization:</strong> How you pay yourself matters. We help you find the "sweet spot" between a salary that qualifies for the Foreign Earned Income Exclusion (FEIE, currently USD 132,900 annually) and dividends that might trigger GILTI. The right balance can legally reduce your total tax burden by USD 20,000+ annually.</p>
+      </div>
+    </section>
+
+    <!-- Form 5471 Compliance -->
+    <section id="content" style="padding: 2rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
+        <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 0px;'>The USD 10,000 "Missed Form" Penalty: Form 5471 Compliance</h2>
+        <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">Compliance isn't just about the tax you owe; it's about the paperwork you file. IRS Form 5471 is required for US citizens who own 10% or more of a foreign company. It is arguably the most complex form in the IRS catalog, and the penalty for failing to file it or filing it incorrectly starts at USD 10,000 per year.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">In 2026, with automated data-sharing between global business registries and the IRS (via tax information exchange agreements), "forgetting" about your foreign company is no longer an option. The IRS will have reports from Company House registries in London, the Thai Department of Business Development, the Singapore Accounting and Corporate Regulatory Authority, and dozens of other jurisdictions. When your Form 5471 doesn't match, penalties are automatic.</p>
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;"><strong>The Math:</strong> If you missed filing Form 5471 for 5 years on a company that earned USD 100,000 annually, the minimum penalty exposure is USD 50,000 (5 years x USD 10,000), plus interest. Many expats have faced penalties exceeding USD 100,000. And that's before you even address the GILTI tax you owe.</p>
+        <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 1.5rem;'>Expat Business Health Check</h2>
+        <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">Ask yourself these three questions before your next filing to assess your GILTI exposure and Form 5471 compliance:</p>
+        <div style="background: rgba(0, 88, 149, 0.08); padding: 1.5rem; border-left: 4px solid var(--blue); margin-bottom: 1.5rem;">
+          <p class="reveal" style="margin-bottom: 0.5rem; font-weight: 600;"><strong>[ ] The 10% Rule:</strong> Do I, or any other US citizens, own more than 10% of this foreign entity? (If yes, Form 5471 is required).</p>
+          <p class="reveal" style="margin-bottom: 0.5rem; font-weight: 600;"><strong>[ ] The Deferral Check:</strong> Am I leaving profits in the company to avoid personal tax? (If yes, you're triggering GILTI).</p>
+          <p class="reveal" style="margin-bottom: 0px; font-weight: 600;"><strong>[ ] The Local Credit Check:</strong> Am I actually getting "credit" on my US return for the corporate tax paid locally? (If no, you're potentially double-taxed).</p>
+        </div>
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;"><strong>Scoring:</strong> If you answered "yes" to any of these questions and don't have a Section 962 election or check-the-box strategy in place, you likely have significant GILTI exposure. The cost of getting it wrong can be 20-30% of your annual profits. A corporate structure review is worth USD 2,000-3,000 in professional fees when the upside is USD 20,000+ in annual tax savings.</p>
+      </div>
+    </section>
+
+    <!-- DARK SECTION: Corporate Strategy Specialist -->
+    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 4rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 3.5rem; align-items: start;">
+          <div>
+            <img alt="Corporate tax planning" src="../images/business-owners-meeting-success-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" style="width: 100%; border-radius: 4px; filter: brightness(0.85) saturate(0.8);"/>
+          </div>
+          <div>
+            <p style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--platinum); margin-bottom: 0.9rem;">Corporate Strategy</p>
+            <h3 style="font-size: 2rem; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; line-height: 1.2; color: var(--white);">Request a Corporate Structure Review</h3>
+            <ul style="list-style: none; gap: 1rem; display: flex; flex-direction: column;">
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--platinum); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">.</span>
+                <span style="color: var(--white);"><strong>GILTI Exposure Analysis:</strong> Calculate your actual GILTI tax burden and Section 962 savings potential.</span>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--platinum); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">.</span>
+                <span style="color: var(--white);"><strong>Form 5471 Compliance Audit:</strong> Verify you're filing correctly and avoid USD 10,000+ annual penalties.</span>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--platinum); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">.</span>
+                <span style="color: var(--white);"><strong>Check-the-Box Election Strategy:</strong> Determine if entity classification changes could reduce your tax burden.</span>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--platinum); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">.</span>
+                <span style="color: var(--white);"><strong>Salary vs. Dividend Optimization:</strong> Find the sweet spot between FEIE and dividend income for your situation.</span>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--platinum); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">.</span>
+                <span style="color: var(--white);"><strong>Foreign Tax Credit Strategy:</strong> Maximize credits for local corporate taxes already paid.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section: GILTI & Corporate -->
+    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
+        <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 2rem; font-family: "Libre Baskerville"; margin-top: 0px;'>FAQ: GILTI, Section 962, and Corporate Tax Planning 2026</h2>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What exactly is GILTI and why does it apply to my company?</strong> A: GILTI (Global Intangible Low-Taxed Income) is income earned by a Controlled Foreign Corporation (CFC) that the IRS treats as if it was distributed to you personally, even if you leave it in the company. It applies if you (or related US persons) own more than 50% of the company.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I avoid GILTI by not taking dividends?</strong> A: No. GILTI applies to retained earnings regardless of whether you distribute them. The only way to reduce GILTI is through elections like Section 962 or by reducing your company's profit margin through strategic salary payments.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What is the Section 962 election and how does it save me money?</strong> A: The Section 962 election allows you to be taxed at US corporate rates (21%) on GILTI instead of personal rates (up to 37%), and it allows you to claim a Foreign Tax Credit. For many expat entrepreneurs, this saves 10-15% of profits annually.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: How much does a Form 5471 penalty really cost?</strong> A: The minimum penalty for failing to file Form 5471 is USD 10,000 per year per violation. If you missed 5 years, that's USD 50,000 minimum, plus interest. Many expats have faced penalties exceeding USD 100,000. It's one of the harshest penalties in the tax code.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: If I elect Section 962, do I still get the Foreign Tax Credit?</strong> A: Yes. Section 962 preserves your ability to claim a Foreign Tax Credit for local taxes paid by the company. This is critical because it prevents double taxation on the same income.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What if I have a partnership or LLC instead of a corporation?</strong> A: Pass-through entities like partnerships and LLCs are taxed differently under GILTI rules. You may benefit from "check-the-box" elections to treat the entity as a corporation, or you may benefit from Subpart F rules instead. The strategy depends on your specific structure.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I use my Foreign Earned Income Exclusion (FEIE) to offset GILTI?</strong> A: Partially. If you pay yourself a salary from the company that qualifies for FEIE, that salary portion is excluded from US taxation. The remaining profit (after salary) triggers GILTI. Optimizing the salary vs. dividend split is key to minimizing GILTI.</p>
       </div>
     </section>
 
@@ -285,7 +355,7 @@
       <div class="container">
         <div class="footer-top-inner">
           <div class="footer-col">
-            <img alt="AI Tax Advisers" class="footer-logo-img" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" width="48" height="48"/>
+            <img alt="AI Tax Advisers" class="footer-logo-img" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" width="48" height="48"/>
             <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
             <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
             <div class="footer-irs-badge">

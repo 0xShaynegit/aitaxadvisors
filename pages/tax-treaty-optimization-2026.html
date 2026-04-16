@@ -46,42 +46,42 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Performance Optimisations -->
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  
   <link rel="preconnect" href="https://www.youtube.com">
 
   <!-- Preload Critical Fonts -->
-  <link rel="preload" href="../fonts/Inter-VariableFont_opsz,wght_a7872e.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="../fonts/LibreBaskerville-VariableFont_wght_a7872e.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="../fonts/LibreBaskerville-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
 
   <!-- Favicon Setup -->
-  <link rel="icon" type="image/webp" href="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp">
+  <link rel="icon" type="image/webp" href="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp">
 
   <!-- Local Fonts -->
   <style>
     @font-face {
       font-family: 'Libre Baskerville';
-      src: url('../fonts/LibreBaskerville-VariableFont_wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/LibreBaskerville-VariableFont_wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Libre Baskerville';
-      src: url('../fonts/LibreBaskerville-Italic-VariableFont_wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/LibreBaskerville-Italic-VariableFont_wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: italic;
       font-display: swap;
     }
     @font-face {
       font-family: 'Inter';
-      src: url('../fonts/Inter-VariableFont_opsz,wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Inter';
-      src: url('../fonts/Inter-Italic-VariableFont_opsz,wght_a7872e.ttf') format('truetype-variations');
+      src: url('../fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
       font-weight: 100 900;
       font-style: italic;
       font-display: swap;
@@ -89,9 +89,9 @@
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="../js/gsap.min.js"></script>
+  <script src="../js/ScrollTrigger.min.js"></script>
+  <script src="../js/lenis.min.js" defer></script>
 
   <!-- External Stylesheets -->
   <link rel="stylesheet" href="../css/global.css">
@@ -124,7 +124,7 @@
 <body>
   <!-- PRELOADER -->
   <div id="preloader">
-    <img class="pl-logo" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" alt="Loading">
+    <img class="pl-logo" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Loading">
     <div class="pl-bar"></div>
   </div>
 
@@ -132,7 +132,7 @@
   <nav id="nav">
     <div class="nav-inner">
       <a class="nav-logo" href="../index.html">
-        <img src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" alt="American International Tax Advisers">
+        <img src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -199,7 +199,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img alt="Tax planning and treaties" src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" width="100%" height="auto" style="border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);"/>
+        <img alt="Tax planning and treaties" src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" width="100%" height="auto" style="border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);"/>
       </div>
     </section>
 
@@ -229,11 +229,105 @@
         <h2 class="reveal" style='font-size: 1.8rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville";'>Who This Guide Is For</h2>
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">If you earn a pension, Social Security, government benefits, or foreign-sourced income in any country, this guide is for you. Expats in high-tax countries, remote workers, retirees, and business owners. Most expats don't claim the treaty positions available to them. That costs thousands annually.</p>
         <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 2rem;'>The Hook: What Most Expats Miss</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">Tax treaties are notoriously dense. 30+ pages of jargon that most people skip. But buried in the fine print are exactly three sentences that could save you $20,000 or more annually. The catch: the IRS won't apply the treaty for you. You must claim it, prove it, and file Form 8833 to disclose it.</p>
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Most expats don't know these treaty positions exist. They file their taxes normally, double-taxed on income that the treaty explicitly exempts. Result: unnecessary tax bills, missed refunds, and exposure to penalties for not claiming available benefits.</p>
-        <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 1.5rem;'>The Power of Pension & Government Service Protections</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;"><strong>Pension Exemptions:</strong> Most tax treaties (e.g., U.S.-UK Article 18, U.S.-Australia Article 18) include a rule allowing pensions to be taxed exclusively in the country where you reside. If you're receiving a U.S. pension while living in a lower-tax jurisdiction, the treaty exempts you from U.S. tax on that pension income.</p>
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;"><strong>Government Service Benefits:</strong> Former government employees and Social Security beneficiaries get exclusive taxing rights under most treaties. Social Security is not fully taxable in the U.S., and treaties often provide further protection. A $30,000 annual Social Security benefit could be largely tax-free in your country of residence versus partially taxable under U.S. rules alone.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">Tax treaties are dense 30+ page documents. But buried in them are exactly three core provisions that could save you $20,000+ annually. The IRS won't apply these for you. You must claim them and file Form 8833.</p>
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Most expats don't know these positions exist. They file normally, double-taxed on income the treaty explicitly exempts. Result: unnecessary tax bills, missed refunds, and exposure to penalties for not claiming benefits.</p>
+      </div>
+    </section>
+
+    <!-- The Big Three Secrets -->
+    <section id="content" style="padding: 2rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
+        <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 0px;'>The "Big Three" Treaty Optimization Secrets</h2>
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 1.2rem; border-left: 4px solid var(--blue);">
+          <h4 style="margin-bottom: 1rem;">Secret 1: The Pension Power-Play</h4>
+          <p style="margin-bottom: 1rem;"><strong>What it is:</strong> Most treaties (U.S.-UK Article 18, U.S.-Australia Article 18) allow pensions to be taxed exclusively in your residence country, not where earned.</p>
+          <p style="margin-bottom: 1rem;"><strong>The Benefit:</strong> USD 50,000 annual pension in a 10% jurisdiction vs. U.S. 22% bracket saves approximately USD 6,000 annually.</p>
+          <p style="margin-bottom: 0;"><strong>The Catch:</strong> You must file Form 8833. Many expats don't, unnecessarily paying U.S. tax.</p>
+        </div>
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 1.2rem; border-left: 4px solid var(--blue);">
+          <h4 style="margin-bottom: 1rem;">Secret 2: The Government Service Shield</h4>
+          <p style="margin-bottom: 1rem;"><strong>What it is:</strong> Former government employees and Social Security beneficiaries get exclusive taxing rights. Residence country taxes this income, or exempts it.</p>
+          <p style="margin-bottom: 1rem;"><strong>The Benefit:</strong> USD 30,000 annual Social Security could be tax-free or partially exempt in your residence country vs. 50% taxable under U.S. rules.</p>
+          <p style="margin-bottom: 0;"><strong>The Reality:</strong> One Form 8833 changes the outcome. Many clients are unknowingly paying U.S. federal tax on benefits they should never owe.</p>
+        </div>
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 1.2rem; border-left: 4px solid var(--blue);">
+          <h4 style="margin-bottom: 1rem;">Secret 3: The Savings Clause Workaround</h4>
+          <p style="margin-bottom: 1rem;"><strong>What it is:</strong> The "Savings Clause" lets the IRS tax citizens as if the treaty didn't exist. However, most treaties exclude pension and government service income from this clause.</p>
+          <p style="margin-bottom: 1rem;"><strong>The Benefit:</strong> Understanding which income is excluded from the Savings Clause lets you claim bulletproof treaty benefits the IRS technically cannot override.</p>
+          <p style="margin-bottom: 0;"><strong>Strategy:</strong> Read the specific treaty, find the exceptions, file Form 8833 with the treaty article cited. Done correctly, it's bulletproof.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK SECTION: Form 8833 Filing -->
+    <section style="padding: 4rem 0; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+          <div>
+            <p style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--platinum); margin-bottom: 0.9rem;">Compliance & Disclosure</p>
+            <h3 style="font-size: 2rem; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; line-height: 1.2; color: var(--white);">How to Claim Treaty Positions: Form 8833</h3>
+            <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--white); font-size: 0.95rem;">You cannot omit income hoping the IRS understands. To legally claim a treaty position overriding U.S. domestic law, file Form 8833 (Treaty-Based Return Position Disclosure) with Form 1040.</p>
+            <p style="margin-bottom: 1rem; line-height: 1.6; color: var(--white); font-size: 0.95rem;"><strong>What Form 8833 Does:</strong> It discloses to the IRS that you're claiming a treaty benefit. Cite the exact treaty article, explain why you qualify, show the income amount. This creates a paper trail that protects you.</p>
+            <p style="margin-bottom: 1.5rem; line-height: 1.6; color: var(--white); font-size: 0.95rem;"><strong>Penalty for Not Filing:</strong> USD 1,000 per position claimed without disclosure. Failing to file Form 8833 while claiming benefits costs thousands.</p>
+          </div>
+          <div>
+            <img alt="Form 8833" src="../images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" style="width: 100%; border-radius: 4px; filter: brightness(0.85) saturate(0.8);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treaty Residency -->
+    <section style="padding: 3.5rem 2.5rem; background: #ffffff; border-top: 1px solid var(--border); position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+          <div class="reveal">
+            <img alt="Treaty residency" src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" style="width: 100%; border-radius: 4px; filter: brightness(0.85) saturate(0.8);">
+          </div>
+          <div class="reveal">
+            <p style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.9rem;">Treaty Eligibility</p>
+            <h3 style="font-size: 2rem; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; line-height: 1.2; color: var(--navy);">Treaty Residency: How to Prove You Qualify</h3>
+            <p style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--navy);">Every treaty defines "resident" differently. Some use 183 days presence. Others use permanent home. Knowing which definition applies to your treaty and income is critical.</p>
+            <ul style="list-style: none; gap: 1rem; display: flex; flex-direction: column;">
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--navy); font-weight: 600; flex-shrink: 0;">.</span>
+                <span style="color: var(--navy);">Physical presence: Track days carefully. Different thresholds apply in different treaties.</span>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--blue); font-weight: 600; flex-shrink: 0;">.</span>
+                <span style="color: var(--navy);">Permanent home: Treaties often define residency by where you maintain a permanent abode.</span>
+              </li>
+              <li style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="color: var(--blue); font-weight: 600; flex-shrink: 0;">.</span>
+                <span style="color: var(--navy);">Income type: Some treaties cover specific income (pensions, government service) differently.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Checklist -->
+    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px), repeating-linear-gradient(-45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px); background-size: 24px 24px; pointer-events: none; z-index: 0;"></div>
+      <div class="container">
+        <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville"; margin-top: 2rem;'>Treaty Upgrade Eligibility Checklist 2026</h2>
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Answer these questions to determine if you're eligible for a treaty position that could save thousands.</p>
+        <div class="reveal callout-box" style="padding: 1.2rem; background: transparent; border-left: none;">
+          <h4 style="margin-bottom: 1rem;">1. Is Your Income Pension or Government Service?</h4>
+          <p style="margin-bottom: 1rem; font-size: 0.95rem;">Pensions, Social Security, government employment benefits get special treaty treatment. If yes, research your specific treaty's articles.</p>
+          <p style="font-size: 0.95rem; color: var(--navy);"><strong>Action:</strong> If yes, research your specific treaty's pension and government service articles.</p>
+        </div>
+        <div class="reveal callout-box" style="padding: 1.2rem; background: transparent; border-left: none;">
+          <h4 style="margin-bottom: 1rem;">2. Do You Have Legal Residency Status in Your Country?</h4>
+          <p style="margin-bottom: 1rem; font-size: 0.95rem;">Treaties require "residency." If you're on a temporary visa, you may not qualify. Obtain a residency certificate if needed.</p>
+          <p style="font-size: 0.95rem; color: var(--navy);"><strong>Action:</strong> Obtain a residency certificate or government letter confirming your tax resident status.</p>
+        </div>
+        <div class="reveal callout-box" style="padding: 1.2rem; background: transparent; border-left: none;">
+          <h4 style="margin-bottom: 1rem;">3. Have You Been Double-Taxed Without Realizing It?</h4>
+          <p style="margin-bottom: 1rem; font-size: 0.95rem;">If both countries taxed the same income and you didn't file Form 8833, you've been double-taxed. Review past 3 years.</p>
+          <p style="font-size: 0.95rem; color: var(--navy);"><strong>Action:</strong> Review past 3 years of returns. Look for income on both U.S. and foreign returns. This is a red flag for a missed treaty position.</p>
+        </div>
       </div>
     </section>
 
@@ -286,7 +380,7 @@
       <div class="container">
         <div class="footer-top-inner">
           <div class="footer-col">
-            <img alt="AI Tax Advisers" class="footer-logo-img" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers_41389b.webp" width="48" height="48"/>
+            <img alt="AI Tax Advisers" class="footer-logo-img" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" width="48" height="48"/>
             <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
             <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
             <div class="footer-irs-badge">
