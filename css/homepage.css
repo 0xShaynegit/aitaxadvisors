@@ -1260,6 +1260,10 @@
   .services-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; gap: 3rem; }
   .why-photo-wrap { max-width: 400px; margin: 0 auto; }
+  .tax-cal-timeline { grid-template-columns: repeat(2, 1fr); }
+  .who-grid { grid-template-columns: repeat(2, 1fr); }
+  .deadlines-grid { grid-template-columns: repeat(2, 1fr); }
+  .updates-grid { grid-template-columns: repeat(2, 1fr); }
   .process-steps { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .process-steps::before { display: none; }
   .testimonial-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -1309,8 +1313,21 @@
   .service-card { padding: 1.75rem; }
 
   /* Why */
+  .why-grid { grid-template-columns: 1fr; }
   .why-photo-wrap { max-width: 100%; }
   .why-pillars { gap: 1.75rem; }
+
+  /* Tax Calendar */
+  .tax-cal-timeline { grid-template-columns: 1fr; }
+
+  /* Who We Help */
+  .who-grid { grid-template-columns: 1fr; }
+
+  /* Deadlines */
+  .deadlines-grid { grid-template-columns: 1fr; }
+
+  /* Updates */
+  .updates-grid { grid-template-columns: 1fr; }
 
   /* Process */
   .process-steps { max-width: 100%; }

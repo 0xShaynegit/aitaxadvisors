@@ -19,11 +19,16 @@ window.addEventListener('load', () => {
     });
   }
 
-  // PRELOADER
+  // PRELOADER (Skip if coming from another Thailand page or homepage)
+  const referrer = document.referrer;
+  const isFromSite = referrer.includes('aitaxadvisors');
+  const isFromThailandOrHome = referrer.includes('/thailand/') || referrer.includes('index.html') || referrer.includes('aitaxadvisors/') && !referrer.includes('/thailand/') && referrer.split('/').pop() === '';
+  const skipPreloader = isFromSite && (isFromThailandOrHome || referrer.includes('thailand'));
+
   gsap.to('#preloader', {
     opacity: 0,
     duration: 0.55,
-    delay: 1.1,
+    delay: skipPreloader ? 0 : 1.1,
     ease: 'power2.inOut',
     onComplete: () => {
       document.getElementById('preloader').style.display = 'none';
