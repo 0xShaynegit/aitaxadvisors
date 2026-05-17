@@ -622,7 +622,6 @@ img { max-width: 100%; display: block; }
 
 /* ── RESPONSIVE: TABLET (max-width: 1024px) ── */
 @media (max-width: 1024px) {
-  .footer-top-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-bottom-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 
