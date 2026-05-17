@@ -1,0 +1,48 @@
+# American International Tax Advisers
+
+> Asia's leading U.S. tax firm specialising in strategic compliance and tax planning for U.S. expats and cross-border businesses across Thailand and Southeast Asia. Listed by the U.S. Embassy Bangkok.
+
+## What We Do
+
+American International Tax Advisers (AI Tax Advisers) provides U.S. tax services for American expats, retirees, digital nomads, and cross-border businesses operating in Thailand, Vietnam, Cambodia, Malaysia, Philippines, Singapore, Indonesia, Taiwan, Australia, and the UAE.
+
+Services include:
+- U.S. expat tax filing (Form 1040, FEIE, Foreign Tax Credit)
+- FBAR and FATCA compliance (FinCEN 114, Form 8938)
+- Thai tax filing (PND 90/91)
+- Cross-border tax planning and treaty optimisation
+- Corporate tax structuring (GILTI, CFC, Subpart F)
+- IRS audit representation
+
+## Key Facts
+
+- Authorized IRS e-File Provider
+- Listed on the U.S. Embassy Bangkok recommended tax consultant list
+- Head office: 15/F Skyway Centre, 23 Queen's Road West, Sheung Wan, Hong Kong
+- Additional offices: Bangkok, Chiang Mai, Manila, Phnom Penh, Ho Chi Minh City, Kuala Lumpur, Jakarta, Taipei, Sydney, Abu Dhabi, Riyadh, Florida
+- Contact: Admin@aitaxadvisers.com
+- Hours: Monday to Friday, 9:00am to 6:00pm HKT
+
+## Key Content
+
+### Thailand Tax Guides
+- [U.S. Expat Taxes in Thailand 2026](https://aitaxadvisors.com/thailand/us-expat-taxes-thailand-2026/)
+- [Filing US Taxes from Thailand](https://aitaxadvisors.com/thailand/filing-us-taxes-from-thailand/)
+- [Thailand 180-Day Rule](https://aitaxadvisors.com/thailand/tax-residency-180-day-rule/)
+- [Thailand 2026 Remittance Revolution](https://aitaxadvisors.com/thailand/thailand-remittance-revolution-2026/)
+- [Foreign Income and Remittance Doctrine](https://aitaxadvisors.com/thailand/foreign-sourced-income-remittance/)
+- [Digital Nomad Visa Tax Guide](https://aitaxadvisors.com/thailand/digital-nomads-remote-workers-thailand/)
+- [Retiring in Thailand: US Tax Planning](https://aitaxadvisors.com/thailand/retiring-in-thailand-us-tax-planning/)
+- [How to File Thai Tax as an Expat](https://aitaxadvisors.com/thailand/how-to-file-thai-tax-as-an-expat/)
+- [US Expat Tax Checklist 2026](https://aitaxadvisors.com/thailand/us-thailand-expat-tax-checklist-2026/)
+
+### U.S. Tax Guides
+- [FEIE vs Foreign Tax Credit: The $120k Decision](https://aitaxadvisors.com/pages/feie-ftc-120k-threshold-2026/)
+- [FBAR Crackdown 2026](https://aitaxadvisors.com/pages/fbar-crackdown-2026/)
+- [IRS AI Audit Algorithm 2026](https://aitaxadvisors.com/pages/ai-tax-audit-algorithm-2026/)
+- [GILTI and CFC Tax Planning](https://aitaxadvisors.com/pages/corporate-gilti-tax-trap-2026/)
+- [Tax Treaty Optimisation 2026](https://aitaxadvisors.com/pages/tax-treaty-optimization-2026/)
+
+## Sitemap
+
+https://aitaxadvisors.com/sitemap.xml

@@ -6,5 +6,27 @@ Disallow: /md/
 Disallow: /.claude/
 Disallow: /thailand/base-template.html
 
+# AI Search Crawlers (explicitly allowed for citation and AI Overviews)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 # Sitemap location
 Sitemap: https://aitaxadvisors.com/sitemap.xml
