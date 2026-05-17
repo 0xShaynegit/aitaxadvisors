@@ -1,8 +1,10 @@
 # American International Tax Advisers - robots.txt
-# Allow all search engines to crawl the site
 
 User-agent: *
 Allow: /
+Disallow: /md/
+Disallow: /.claude/
+Disallow: /thailand/base-template.html
 
 # Sitemap location
 Sitemap: https://aitaxadvisors.com/sitemap.xml
