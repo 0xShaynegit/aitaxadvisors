@@ -208,7 +208,7 @@ img { max-width: 100%; display: block; }
   margin-top: 0.5rem;
 }
 
-.nav-dropdown-menu.open {
+.nav-dropdown:hover .nav-dropdown-menu {
   display: block;
 }
 

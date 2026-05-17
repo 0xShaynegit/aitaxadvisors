@@ -83,31 +83,3 @@ document.querySelectorAll('.magnetic-item').forEach(el => {
 
 // Refresh ScrollTrigger on window resize
 window.addEventListener('resize', () => ScrollTrigger.refresh());
-
-// ── DROPDOWN MENUS
-function toggleThailandMenu(e) {
-  e.preventDefault();
-  const tm = document.getElementById('thailand-menu');
-  if (tm) {
-    tm.classList.toggle('open');
-    const bm = document.getElementById('blogs-menu');
-    if (bm) bm.classList.remove('open');
-  }
-}
-
-function toggleBlogsMenu(e) {
-  e.preventDefault();
-  const bm = document.getElementById('blogs-menu');
-  if (bm) {
-    bm.classList.toggle('open');
-    const tm = document.getElementById('thailand-menu');
-    if (tm) tm.classList.remove('open');
-  }
-}
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('.nav-dropdown')) {
-    document.querySelectorAll('.nav-dropdown-menu').forEach(m => m.classList.remove('open'));
-  }
-});
