@@ -315,7 +315,7 @@
 
 /* ── FOOTER COLOR FOR BLOG PAGES ── */
 .footer-top {
-  background: var(--purple-mid);
+  background: var(--purple);
 }
 
 @media (max-width: 768px) {
