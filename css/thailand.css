@@ -313,6 +313,11 @@
   }
 }
 
+/* ── FOOTER COLOR FOR BLOG PAGES ── */
+.footer-top {
+  background: var(--navy);
+}
+
 @media (max-width: 768px) {
   .two-column {
     grid-template-columns: 1fr;
