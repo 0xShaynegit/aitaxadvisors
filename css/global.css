@@ -505,11 +505,14 @@ img { max-width: 100%; display: block; }
 .footer-top-inner {
   display: grid;
   grid-template-columns: 1.2fr 1.2fr 1fr 1fr 1.2fr;
-  gap: 2rem;
+  gap: 1.25rem;
   align-items: flex-start;
 }
 
-.footer-col {}
+.footer-col {
+  min-width: 0;
+  overflow: hidden;
+}
 
 .footer-logo-img {
   height: 36px;
