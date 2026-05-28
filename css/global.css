@@ -198,14 +198,14 @@ img { max-width: 100%; display: block; }
 .nav-dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% - 0.5rem);
+  top: 100%;
   left: 0;
   background: var(--navy-mid);
   border: 1px solid var(--border);
   border-radius: 4px;
   min-width: 200px;
   z-index: 1000;
-  padding-top: 0.5rem;
+  margin-top: 0.25rem;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
@@ -214,6 +214,20 @@ img { max-width: 100%; display: block; }
 .nav-dropdown:hover .nav-dropdown-menu {
   display: block;
   opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
   pointer-events: auto;
 }
 
