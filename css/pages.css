@@ -468,7 +468,7 @@ img { max-width: 100%; display: block; }
 
 /* ── FOOTER (EXPANDED) ── */
 .footer-top {
-  background: var(--navy-deep);
+  background: var(--navy-mid);
   padding: 4rem 2.5rem;
 }
 
@@ -590,7 +590,7 @@ img { max-width: 100%; display: block; }
 .footer-social-link:hover { color: var(--silver); }
 
 .footer-bottom {
-  background: #040a18;
+  background: var(--navy-mid);
   padding: 1.25rem 2.5rem;
   width: 100vw;
   position: relative;
@@ -604,9 +604,11 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   font-size: 0.75rem;
   color: var(--muted);
   letter-spacing: 0.05em;
+  flex-wrap: nowrap;
 }
 
 /* ── RESPONSIVE: TABLET (max-width: 1024px) ── */
