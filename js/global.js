@@ -83,3 +83,15 @@ document.querySelectorAll('.magnetic-item').forEach(el => {
 
 // Refresh ScrollTrigger on window resize
 window.addEventListener('resize', () => ScrollTrigger.refresh());
+
+// ── NAV DROPDOWNS (delayed close so mouse can travel to the menu)
+document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+  let closeTimer;
+  dropdown.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+    dropdown.classList.add('open');
+  });
+  dropdown.addEventListener('mouseleave', () => {
+    closeTimer = setTimeout(() => dropdown.classList.remove('open'), 300);
+  });
+});
