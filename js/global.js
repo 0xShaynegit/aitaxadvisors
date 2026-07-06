@@ -84,18 +84,17 @@ document.querySelectorAll('.magnetic-item').forEach(el => {
 // Refresh ScrollTrigger on window resize
 window.addEventListener('resize', () => ScrollTrigger.refresh());
 
-// ── NAV DROPDOWNS (click to open, click outside to close)
+// ── NAV DROPDOWNS (hover to open, small delay before closing)
 document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
-  const trigger = dropdown.querySelector(':scope > a');
-  trigger.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = dropdown.classList.contains('open');
-    document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
-    if (!isOpen) dropdown.classList.add('open');
+  let closeTimer;
+  dropdown.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+    document.querySelectorAll('.nav-dropdown.open').forEach(el => {
+      if (el !== dropdown) el.classList.remove('open');
+    });
+    dropdown.classList.add('open');
   });
-});
-document.addEventListener('click', (e) => {
-  document.querySelectorAll('.nav-dropdown.open').forEach(dropdown => {
-    if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+  dropdown.addEventListener('mouseleave', () => {
+    closeTimer = setTimeout(() => dropdown.classList.remove('open'), 400);
   });
 });
