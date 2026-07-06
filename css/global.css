@@ -208,7 +208,6 @@ img { max-width: 100%; display: block; }
   padding-top: 0.5rem;
 }
 
-.nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown.open .nav-dropdown-menu {
   display: block;
 }
