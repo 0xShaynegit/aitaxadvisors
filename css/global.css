@@ -145,6 +145,18 @@ img { max-width: 100%; display: block; }
   border-color: var(--border);
 }
 
+/* backdrop-filter on #nav makes it a containing block for position:fixed
+   descendants (same rule as transform/filter) - .nav-links is one of those
+   descendants, so once #nav.scrolled applies blur mid-scroll, the mobile
+   menu's "fixed full-screen overlay" collapses to #nav's own ~64px box
+   instead of the viewport and renders behind the page. Drop the nav bar's
+   own blur while the menu is open; .nav-links has its own backdrop-filter
+   covering the same area anyway, so nothing is visually lost. */
+body.menu-open #nav.scrolled {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .nav-inner {
   max-width: var(--max-w);
   width: 100%;
