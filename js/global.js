@@ -98,3 +98,20 @@ document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
     closeTimer = setTimeout(() => dropdown.classList.remove('open'), 400);
   });
 });
+
+// ── NAV SECOND-LEVEL FLYOUTS (e.g. Countries > Thailand > sub-pages)
+// Separate from the handler above so opening a flyout never closes its
+// own parent top-level dropdown.
+document.querySelectorAll('.nav-dropdown-sub').forEach(sub => {
+  let closeTimer;
+  sub.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+    document.querySelectorAll('.nav-dropdown-sub.open').forEach(el => {
+      if (el !== sub) el.classList.remove('open');
+    });
+    sub.classList.add('open');
+  });
+  sub.addEventListener('mouseleave', () => {
+    closeTimer = setTimeout(() => sub.classList.remove('open'), 400);
+  });
+});

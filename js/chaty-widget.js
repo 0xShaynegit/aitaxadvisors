@@ -274,20 +274,45 @@
       createWidget();
       return;
     }
-    // Wait for preloader to be removed from DOM, then init
+
+    var started = false;
+    function startOnce() {
+      if (started) return;
+      started = true;
+      observer.disconnect();
+      createWidget();
+    }
+
+    // The site's preloader is hidden via style.display = 'none' (GSAP
+    // onComplete) rather than removed from the DOM, and on some pages it
+    // never runs its hide animation at all (e.g. skip-preloader referrer
+    // logic). Watch for either the node being removed OR its inline style
+    // hiding it, and fall back to a hard timeout so the widget always
+    // appears even if neither signal fires.
     var observer = new MutationObserver(function (mutations) {
       for (var i = 0; i < mutations.length; i++) {
-        var removed = mutations[i].removedNodes;
-        for (var j = 0; j < removed.length; j++) {
-          if (removed[j].id === 'preloader') {
-            observer.disconnect();
-            createWidget();
+        var m = mutations[i];
+        if (m.type === 'childList') {
+          var removed = m.removedNodes;
+          for (var j = 0; j < removed.length; j++) {
+            if (removed[j].id === 'preloader') { startOnce(); return; }
+          }
+        }
+        if (m.type === 'attributes' && m.target === preloader) {
+          var style = preloader.getAttribute('style') || '';
+          var computedHidden = window.getComputedStyle(preloader).display === 'none';
+          if (style.indexOf('display: none') !== -1 || style.indexOf('display:none') !== -1 || computedHidden) {
+            startOnce();
             return;
           }
         }
       }
     });
     observer.observe(document.body, { childList: true });
+    observer.observe(preloader, { attributes: true, attributeFilter: ['style', 'class'] });
+
+    // Hard fallback: never let a stuck/skipped preloader hide the widget forever.
+    setTimeout(startOnce, 2500);
   }
 
   if (document.readyState === 'loading') {

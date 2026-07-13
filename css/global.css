@@ -230,6 +230,61 @@ img { max-width: 100%; display: block; }
   color: var(--white);
 }
 
+/* ── NAV DROPDOWN: SECOND-LEVEL FLYOUT (e.g. Countries > Thailand > sub-pages) ── */
+.nav-dropdown-sub {
+  position: relative;
+}
+
+.nav-dropdown-sub-trigger {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nav-dropdown-sub-trigger::after {
+  content: '\203A';
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.nav-dropdown-submenu {
+  display: none;
+  position: absolute;
+  top: -0.5rem;
+  left: 100%;
+  margin-left: 2px;
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  min-width: 220px;
+  z-index: 1001;
+  padding-top: 0.5rem;
+}
+
+.nav-dropdown-sub.open .nav-dropdown-submenu {
+  display: block;
+}
+
+.nav-dropdown-submenu a {
+  display: block;
+  padding: 0.75rem 1.1rem;
+  color: var(--silver);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+  font-size: 0.82rem;
+}
+
+.nav-dropdown-submenu a:last-child {
+  border-bottom: none;
+}
+
+.nav-dropdown-submenu a:hover {
+  color: var(--white);
+}
+
 @media (max-width: 768px) {
   .nav-dropdown-menu {
     position: static;
