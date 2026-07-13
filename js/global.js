@@ -51,14 +51,18 @@ const mobileMenu = document.getElementById('nav-mobile-menu');
 
 if (burger && mobileMenu) {
   burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+    const isOpen = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+    if (lenis) isOpen ? lenis.stop() : lenis.start();
   });
 }
 
 function closeMobileMenu() {
   if (burger) burger.classList.remove('open');
   if (mobileMenu) mobileMenu.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  if (lenis) lenis.start();
 }
 
 // Close on outside click
