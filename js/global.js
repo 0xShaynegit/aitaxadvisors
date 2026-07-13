@@ -46,12 +46,16 @@ window.addEventListener('load', () => {
 });
 
 // ── HAMBURGER MENU
+// .nav-links is the single nav markup reused for both desktop (hover dropdowns)
+// and mobile (full-screen accordion) — same pattern as chiangmaiambassador (CMA),
+// no separate duplicated mobile-only link list to fall out of sync.
+const MOBILE_NAV_BREAKPOINT = 1024;
 const burger = document.getElementById('nav-burger');
-const mobileMenu = document.getElementById('nav-mobile-menu');
+const mobileMenu = document.querySelector('.nav-links');
 
 if (burger && mobileMenu) {
   burger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
+    const isOpen = mobileMenu.classList.toggle('mobile-open');
     burger.classList.toggle('open', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
     if (lenis) isOpen ? lenis.stop() : lenis.start();
@@ -60,7 +64,10 @@ if (burger && mobileMenu) {
 
 function closeMobileMenu() {
   if (burger) burger.classList.remove('open');
-  if (mobileMenu) mobileMenu.classList.remove('open');
+  if (mobileMenu) {
+    mobileMenu.classList.remove('mobile-open');
+    mobileMenu.querySelectorAll('.nav-dropdown.open, .nav-dropdown-sub.open').forEach(el => el.classList.remove('open'));
+  }
   document.body.classList.remove('menu-open');
   if (lenis) lenis.start();
 }
@@ -71,6 +78,17 @@ document.addEventListener('click', e => {
     closeMobileMenu();
   }
 });
+
+// Close mobile menu when a real content link is tapped (not a dropdown toggle)
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    if (link.classList.contains('nav-dropdown-sub-trigger')) return;
+    if (link.parentElement.classList.contains('nav-dropdown') && link === link.parentElement.querySelector(':scope > a')) return;
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) closeMobileMenu();
+    });
+  });
+}
 
 // ── MAGNETIC BUTTONS
 document.querySelectorAll('.magnetic-item').forEach(el => {
@@ -88,10 +106,14 @@ document.querySelectorAll('.magnetic-item').forEach(el => {
 // Refresh ScrollTrigger on window resize
 window.addEventListener('resize', () => ScrollTrigger.refresh());
 
-// ── NAV DROPDOWNS (hover to open, small delay before closing)
+// ── NAV DROPDOWNS: desktop hover-to-open, small delay before closing.
+// Gated to > MOBILE_NAV_BREAKPOINT so it never fights the mobile accordion
+// click handlers below (touch doesn't fire mouseenter anyway, but hybrid
+// touch+mouse laptops can).
 document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
   let closeTimer;
   dropdown.addEventListener('mouseenter', () => {
+    if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) return;
     clearTimeout(closeTimer);
     document.querySelectorAll('.nav-dropdown.open').forEach(el => {
       if (el !== dropdown) el.classList.remove('open');
@@ -99,8 +121,23 @@ document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
     dropdown.classList.add('open');
   });
   dropdown.addEventListener('mouseleave', () => {
+    if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) return;
     closeTimer = setTimeout(() => dropdown.classList.remove('open'), 400);
   });
+
+  // Mobile: tap toggles the accordion instead of following the
+  // href="javascript:void(0)" placeholder. Same technique as CMA's
+  // .nav-dropdown-toggle click handler.
+  const topLink = dropdown.querySelector(':scope > a');
+  if (topLink) {
+    topLink.addEventListener('click', e => {
+      if (window.innerWidth > MOBILE_NAV_BREAKPOINT) return;
+      e.preventDefault();
+      const isOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) dropdown.classList.add('open');
+    });
+  }
 });
 
 // ── NAV SECOND-LEVEL FLYOUTS (e.g. Countries > Thailand > sub-pages)
@@ -109,6 +146,7 @@ document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
 document.querySelectorAll('.nav-dropdown-sub').forEach(sub => {
   let closeTimer;
   sub.addEventListener('mouseenter', () => {
+    if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) return;
     clearTimeout(closeTimer);
     document.querySelectorAll('.nav-dropdown-sub.open').forEach(el => {
       if (el !== sub) el.classList.remove('open');
@@ -116,6 +154,21 @@ document.querySelectorAll('.nav-dropdown-sub').forEach(sub => {
     sub.classList.add('open');
   });
   sub.addEventListener('mouseleave', () => {
+    if (window.innerWidth <= MOBILE_NAV_BREAKPOINT) return;
     closeTimer = setTimeout(() => sub.classList.remove('open'), 400);
   });
+
+  // Mobile: tap the country name to expand its link list instead of
+  // navigating straight to the hub page. The hub page is still reachable
+  // as the first link inside the revealed submenu.
+  const trigger = sub.querySelector('.nav-dropdown-sub-trigger');
+  if (trigger) {
+    trigger.addEventListener('click', e => {
+      if (window.innerWidth > MOBILE_NAV_BREAKPOINT) return;
+      e.preventDefault();
+      const isOpen = sub.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown-sub.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) sub.classList.add('open');
+    });
+  }
 });

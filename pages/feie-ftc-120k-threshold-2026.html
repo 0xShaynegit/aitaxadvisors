@@ -92,9 +92,9 @@
   <script src="../js/lenis.min.js" defer></script>
 
   <!-- External Stylesheets -->
-  <link rel="stylesheet" href="../css/global.css?v=5">
+  <link rel="stylesheet" href="../css/global.css?v=6">
   <link rel="stylesheet" href="../css/homepage.css?v=2">
-  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/pages.css?v=2">
 
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
@@ -191,25 +191,6 @@
       </button>
     </div>
   </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="nav-mobile-menu" id="nav-mobile-menu">
-    <a href="/#services" onclick="closeMobileMenu()">Services</a>
-    <a href="/#why" onclick="closeMobileMenu()">Why Us</a>
-    <a href="/#process" onclick="closeMobileMenu()">How It Works</a>
-    <a href="/#testimonial" onclick="closeMobileMenu()">Client Stories</a>
-    <div class="mobile-menu-label">Resources</div>
-    <a href="./us-expats-retiring.html" onclick="closeMobileMenu()">Expat Tax Guide</a>
-    <a href="./fbar-crackdown-2026.html" onclick="closeMobileMenu()">FBAR Crackdown</a>
-    <a href="./feie-ftc-120k-threshold-2026.html" onclick="closeMobileMenu()">FEIE vs FTC</a>
-    <a href="./tax-treaty-optimization-2026.html" onclick="closeMobileMenu()">Tax Treaties</a>
-    <a href="./us-llc-vs-hong-kong-vs-uae-2026.html" onclick="closeMobileMenu()">US LLC vs Hong Kong vs UAE</a>
-<div class="mobile-menu-label">Blogs: Global</div>
-    <a href="/pages/fbar-crackdown-2026/" onclick="closeMobileMenu()">FBAR Crackdown 2026</a>
-    <a href="/pages/feie-ftc-120k-threshold-2026/" onclick="closeMobileMenu()">FEIE vs Foreign Tax Credit</a>
-    <a href="/pages/tax-treaty-optimization-2026/" onclick="closeMobileMenu()">Tax Treaty Optimisation</a>
-    <a href="#final-cta" onclick="closeMobileMenu()">Book a Consult</a>
-  </div>
 
   <!-- MAIN CONTENT -->
   <main>
@@ -456,22 +437,10 @@
   </footer>
 
   <!-- External JavaScript files loaded below -->
-  <script src="../js/global.js?v=3"></script>
+  <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
   <script>
-    function toggleMenu(e) {
-      e.preventDefault();
-      const menu = document.getElementById('resources-menu');
-      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-    }
-    function closeMobileMenu() {
-      document.getElementById('nav-mobile-menu').style.display = 'none';
-    }
-    document.getElementById('nav-burger').addEventListener('click', function() {
-      const menu = document.getElementById('nav-mobile-menu');
-      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-    });
 
     // Hide preloader after 1s fallback timeout (or 0 if from same site)
     const hidePreloader = () => {

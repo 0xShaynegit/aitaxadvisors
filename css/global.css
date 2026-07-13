@@ -289,15 +289,7 @@ img { max-width: 100%; display: block; }
   color: var(--white);
 }
 
-@media (max-width: 768px) {
-  .nav-dropdown-menu {
-    position: static;
-    background: var(--navy-dark);
-    border: none;
-  }
-}
-
-/* ── NAV BURGER + MOBILE MENU ── */
+/* ── NAV BURGER ── */
 .nav-burger {
   display: none;
   flex-direction: column;
@@ -306,6 +298,8 @@ img { max-width: 100%; display: block; }
   background: none;
   border: none;
   padding: 4px;
+  position: relative;
+  z-index: 801;
 }
 
 .nav-burger span {
@@ -320,57 +314,125 @@ img { max-width: 100%; display: block; }
 .nav-burger.open span:nth-child(2) { opacity: 0; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-.nav-mobile-menu {
-  display: none !important;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(7,14,30,0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: calc(var(--nav-h) + 1.5rem) 1.25rem 2rem;
-  z-index: 799;
-  flex-direction: column;
-  gap: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-mobile-menu.open { display: flex !important; visibility: visible; }
-
-.nav-mobile-menu a {
-  font-size: 0.88rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--silver);
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
-  display: block;
-  transition: color 0.2s;
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-.nav-mobile-menu a:hover { color: var(--white); }
-
-.mobile-menu-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  padding: 1rem 2rem 0.4rem;
-  opacity: 0.7;
-}
-
+/* ── MOBILE NAV: .nav-links itself becomes the full-screen accordion menu,
+   the same single-markup pattern chiangmaiambassador (CMA) uses — no separate
+   duplicated mobile-only link list to fall out of sync with the desktop nav. ── */
 @media (max-width: 1024px) {
   .nav-burger { display: flex; }
-  .nav-links { display: none; }
-  .nav-mobile-menu { display: none !important; }
   #nav { padding: 0 1.5rem; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7,14,30,0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: calc(var(--nav-h) + 1.5rem) 1.25rem 2rem;
+    z-index: 799;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links.mobile-open { display: flex; }
+
+  .nav-links > li {
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links > li:last-child { border-bottom: none; }
+
+  /* Top-level links and dropdown toggles: same size/weight, no more
+     "Countries is way smaller than the other links". */
+  .nav-links > li > a {
+    display: block;
+    width: 100%;
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--silver);
+    padding: 1rem 0;
+    text-align: left;
+  }
+
+  .nav-dropdown > a {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-dropdown > a::after {
+    content: '\203A';
+    font-size: 1.1rem;
+    opacity: 0.6;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-dropdown.open > a::after { transform: rotate(90deg); }
+
+  /* Accordion via max-height, not display:none/block, so it can transition */
+  .nav-dropdown-menu {
+    display: block !important;
+    position: static !important;
+    background: transparent;
+    border: none;
+    min-width: unset;
+    width: 100%;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-dropdown.open .nav-dropdown-menu {
+    max-height: 3000px;
+  }
+
+  .nav-dropdown-menu a {
+    font-size: 0.88rem;
+    padding: 0.85rem 0 0.85rem 1rem;
+  }
+
+  .nav-dropdown-sub-trigger {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-dropdown-sub-trigger::after { transition: transform 0.2s ease; }
+  .nav-dropdown-sub.open .nav-dropdown-sub-trigger::after { transform: rotate(90deg); }
+
+  .nav-dropdown-submenu {
+    display: block !important;
+    position: static !important;
+    left: auto !important;
+    margin-left: 0 !important;
+    background: transparent;
+    border: none;
+    min-width: unset;
+    width: 100%;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-dropdown-sub.open .nav-dropdown-submenu {
+    max-height: 2000px;
+  }
+
+  .nav-dropdown-submenu a {
+    font-size: 0.85rem;
+    padding: 0.8rem 0 0.8rem 2rem;
+  }
 }
 
 /* ── BUTTONS ── */
