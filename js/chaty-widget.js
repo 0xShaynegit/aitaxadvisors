@@ -155,18 +155,16 @@
       circle.innerHTML = ch.svg;
 
       var label = document.createElement('span');
+      label.className = 'ait-chat-label';
       label.style.cssText = [
         'font-family:\'Inter\',system-ui,sans-serif',
         'font-size:11px',
         'letter-spacing:0.14em',
         'text-transform:uppercase',
         'color:' + BLUE,
-        'background:rgba(10,17,40,0.85)',
-        'padding:3px 8px',
-        'border-radius:3px',
         'white-space:nowrap',
         'opacity:0',
-        'transition:opacity 0.18s ease'
+        'transition:opacity 0.18s ease, color 0.18s ease'
       ].join(';');
       label.textContent = ch.label;
 
@@ -188,8 +186,59 @@
       row.appendChild(link);
       document.body.appendChild(row);
 
-      channelEls.push({ el: row, bottom: targetBottom });
+      channelEls.push({ el: row, bottom: targetBottom, label: label });
     });
+
+    /* --- adaptive label color: read what's actually behind the widget --- */
+    function sampleLuminanceAt(x, y) {
+      // Hide our own elements for one frame so elementFromPoint sees the
+      // page content underneath rather than the widget itself.
+      trigger.style.visibility = 'hidden';
+      if (chatNow) chatNow.style.visibility = 'hidden';
+      channelEls.forEach(function (item) { item.el.style.visibility = 'hidden'; });
+
+      var el = document.elementFromPoint(x, y);
+
+      trigger.style.visibility = 'visible';
+      if (chatNow) chatNow.style.visibility = 'visible';
+      channelEls.forEach(function (item) { item.el.style.visibility = 'visible'; });
+
+      var node = el;
+      while (node && node !== document.documentElement) {
+        var bg = window.getComputedStyle(node).backgroundColor;
+        var m = bg.match(/rgba?\(([^)]+)\)/);
+        if (m) {
+          var parts = m[1].split(',').map(function (s) { return parseFloat(s); });
+          var a = parts.length > 3 ? parts[3] : 1;
+          if (a > 0.4) {
+            var luminance = (0.299 * parts[0] + 0.587 * parts[1] + 0.114 * parts[2]) / 255;
+            return luminance < 0.5 ? 'dark' : 'light';
+          }
+        }
+        node = node.parentElement;
+      }
+      return 'dark'; // body background is navy site-wide if nothing more specific is found
+    }
+
+    function updateLabelThemes() {
+      channelEls.forEach(function (item) {
+        var y = window.innerHeight - item.bottom - (CHAN_SIZE / 2);
+        var x = LEFT + CHAN_SIZE + 40;
+        var theme = sampleLuminanceAt(x, y);
+        item.label.style.color = theme === 'dark' ? '#f5f3ee' : BLUE;
+      });
+    }
+
+    var themeScrollQueued = false;
+    function queueThemeUpdate() {
+      if (themeScrollQueued || !isOpen) return;
+      themeScrollQueued = true;
+      requestAnimationFrame(function () {
+        themeScrollQueued = false;
+        if (isOpen) updateLabelThemes();
+      });
+    }
+    window.addEventListener('scroll', queueThemeUpdate, { passive: true });
 
     /* --- open / close --- */
     function openWidget() {
@@ -202,6 +251,7 @@
         item.el.style.opacity = '1';
         item.el.style.pointerEvents = 'auto';
       });
+      setTimeout(updateLabelThemes, 300); // after the open transition settles
     }
 
     function closeWidget() {
