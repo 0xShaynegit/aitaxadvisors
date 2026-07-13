@@ -1330,8 +1330,18 @@
   /* Tax Calendar */
   .tax-cal-timeline { grid-template-columns: 1fr; }
 
-  /* Who We Help */
-  .who-grid { grid-template-columns: 1fr; }
+  /* Who We Help: cards stack full-width on mobile (no side-by-side row to
+     keep height-matched), so the 3-line clamp that exists for desktop's
+     row layout just cuts real content off instead - "employees and
+     contractors, business owners... missing most of the text". Icon sits
+     above the text instead of beside it so the text column isn't also
+     squeezed by the icon's width on a narrow screen. */
+  .who-card { flex-direction: column !important; text-align: center; gap: 1rem; }
+  .who-desc {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    min-height: auto;
+  }
 
   /* Deadlines */
   .deadlines-grid { grid-template-columns: 1fr; }
