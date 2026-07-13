@@ -143,6 +143,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Legal -->
+  <url>
+    <loc>https://aitaxadvisors.com/privacy-policy.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/terms-of-service.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/disclaimer.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Oman Tax Guides -->
   <url>
     <loc>https://aitaxadvisors.com/oman/us-expat-taxes-oman-2026</loc>

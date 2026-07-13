@@ -681,6 +681,16 @@ img { max-width: 100%; display: block; }
   flex-wrap: nowrap;
 }
 
+.footer-legal-links a {
+  color: var(--silver);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal-links a:hover {
+  color: var(--white);
+}
+
 /* ── RESPONSIVE: TABLET (max-width: 1024px) ── */
 @media (max-width: 1024px) {
   .footer-bottom-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
