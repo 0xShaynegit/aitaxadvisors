@@ -718,3 +718,24 @@ img { max-width: 100%; display: block; }
   .footer-top-inner { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom-inner { flex-direction: column; gap: 0.4rem; font-size: 0.62rem; text-align: center; }
 }
+
+/* ── CONTENT PAGES: floated/grid images collapse to full width on mobile ── */
+/* Country guide pages use inline float:left/right on images beside body copy,
+   and inline display:grid two-column layouts (image + text). Neither collapses
+   on narrow viewports, which squeezes body text into a tiny wrapped column. */
+@media (max-width: 768px) {
+  img[style*="float: left"],
+  img[style*="float:left"],
+  img[style*="float: right"],
+  img[style*="float:right"] {
+    float: none !important;
+    width: 100% !important;
+    max-height: none !important;
+    margin: 0 0 1.25rem 0 !important;
+  }
+
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
