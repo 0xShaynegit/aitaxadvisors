@@ -4,20 +4,20 @@ Modern, responsive website for American International Tax Advisers with complete
 
 ## Quick Start
 
-**Current Branch**: `cloudflare` (ready for deployment)
-**Status**: ✅ Complete and ready for Cloudflare Pages
+**Current Branch**: `main` (live)
+**Status**: ✅ Complete and deployed to Cloudflare Pages
 
 ### Push to GitHub
 
 ```bash
-git push origin cloudflare
+git push origin main
 ```
 
 ### Deploy to Cloudflare
 
 1. Go to https://dash.cloudflare.com/ > Pages
 2. Connect this GitHub repo
-3. Select `cloudflare` branch
+3. Select `main` branch
 4. Leave build command empty (static site)
 5. Deploy
 
@@ -61,18 +61,15 @@ All documentation is in the `/md/` folder (not deployed):
 
 ## Git Branches
 
-- **cloudflare** (current) - New version ready for deployment
-- **master** - Original version (archive)
-
-Both branches share the same commit history.
+- **main** (current) - Only branch; the `cloudflare` and `master` branches referenced in earlier versions of this doc no longer exist in the remote.
 
 ## Next Steps
 
 1. [x] Website redesign complete
 2. [x] SEO implementation done
 3. [x] Git repository initialized
-4. [ ] **Push to GitHub**: `git push origin cloudflare`
-5. [ ] **Connect to Cloudflare Pages**
+4. [x] **Pushed to GitHub**: `git push origin main`
+5. [ ] **Connect to Cloudflare Pages** (verify project is tracking `main`, not a stale `cloudflare` branch)
 6. [ ] Test live deployment
 7. [ ] Configure custom domain
 8. [ ] Monitor search console
