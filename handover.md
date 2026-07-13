@@ -2,6 +2,13 @@
 
 Sliding session log. Newest entry first. Update at end of every session.
 
+## Current State (07/13/2026, continued)
+- Site now has 3 countries live: Thailand (14 pages), Oman (9 pages), Saudi Arabia (11 pages), all under one nested "Countries" flyout dropdown in the desktop nav (Countries > country name > that country's pages) plus a flat country list in the mobile menu.
+- A one-shot playbook for adding future countries lives at `md/playbook-new-country.md` (gitignored, not deployed, local reference only). Read it before adding country #4.
+- `js/chaty-widget.js`: floating bottom-left contact widget (Phone/Email/Facebook/Messenger), ported from a sibling project and rebranded. Labels adapt color to whatever's behind them at runtime (near-white on dark sections, brand blue on light sections).
+- Legal pages live: `/privacy-policy.html`, `/terms-of-service.html`, `/disclaimer.html` (dark navy background standard, not attorney-reviewed, draft template language). Linked from every page's footer bottom bar.
+- Standing rules now baked into every page: no em dashes anywhere, no generic "Get the Full Guide" CTA text (must be content-specific), no "Download Checklist" button (nothing is actually downloadable, and it shouldn't link to email), no duplicate photos within a single page, and `professional-man-formal-bow-tie-confident-*.webp` (a real team member's photo, likely Thomas Carden per the site's schema data) is homepage-only, never reused on article pages.
+
 ## Current State (07/13/2026)
 - Site complete and Cloudflare Pages deployment-ready on the cloudflare branch (per README).
 - SEO implementation done, lighthouse reports present in repo.
