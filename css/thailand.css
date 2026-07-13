@@ -250,7 +250,12 @@
     grid-template-columns: 1fr;
   }
 
+  .hero-right {
+    display: none;
+  }
+
   .hero-left {
+    grid-column: 1;
     padding: 3rem 2rem 2rem;
   }
 

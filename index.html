@@ -93,8 +93,8 @@
 
   <!-- External Stylesheets -->
   <link rel="stylesheet" href="css/global.css?v=4">
-  <link rel="stylesheet" href="css/homepage.css">
-  <link rel="stylesheet" href="css/thailand.css">
+  <link rel="stylesheet" href="css/homepage.css?v=2">
+  <link rel="stylesheet" href="css/thailand.css?v=2">
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -439,7 +439,10 @@
     <div class="hero-right">
       <div class="hero-portrait-wrap">
         <div class="hero-portrait-frame"></div>
-        <img class="hero-photo" width="360" height="500" fetchpriority="high" src="images/professional-man-formal-bow-tie-confident-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers lead advisor">
+        <picture>
+          <source media="(max-width: 1024px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==">
+          <img class="hero-photo" width="360" height="500" fetchpriority="high" src="images/professional-man-formal-bow-tie-confident-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers lead advisor">
+        </picture>
         <div class="hero-photo-badge">
           <div class="hero-photo-badge-dot"></div>
           <div class="hero-photo-badge-text">

@@ -1255,6 +1255,16 @@
   #hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
   .hero-left { padding: 5rem 2rem 4rem; max-width: 100%; }
+
+  /* Skip the GSAP staggered fade-in for hero copy on mobile: the JS timeline
+     (js/homepage.js) delays hero-h1 to 0.45s and hero-actions to 0.75s+, which
+     only reads as a cinematic intro on desktop and is pure LCP/paint delay on
+     phones. !important beats GSAP's inline opacity/transform on every frame,
+     so text renders in its final state immediately regardless of JS timing. */
+  .hero-brand, .hero-eyebrow, .hero-h1, .hero-sub, .hero-actions, .hero-proof {
+    opacity: 1 !important;
+    transform: none !important;
+  }
   .trust-bar-inner { grid-template-columns: repeat(2, 1fr); }
   .trust-item:nth-child(2) { border-right: none; }
   .services-grid { grid-template-columns: 1fr; }
