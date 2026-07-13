@@ -61,6 +61,14 @@
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: auto; }
 
+/* Any #anchor jump (nav links, in-page hashes) lands its target flush at
+   the document top, which the fixed #nav bar then covers - same fix as
+   other sites: reserve nav height as scroll margin on every possible
+   anchor target instead of patching each link/section individually. */
+[id] {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
 body {
   background: var(--navy);
   color: var(--platinum);
