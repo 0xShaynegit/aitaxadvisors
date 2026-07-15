@@ -230,10 +230,6 @@ body.menu-open #nav.scrolled {
   min-width: 200px;
   z-index: 1000;
   padding-top: 0.5rem;
-  /* Long lists (e.g. Countries, 12+ items) can otherwise run off the
-     bottom of the viewport on desktop with no way to reach the rest. */
-  max-height: calc(100vh - var(--nav-h) - 1.5rem);
-  overflow-y: auto;
 }
 
 .nav-dropdown.open .nav-dropdown-menu {
@@ -311,6 +307,20 @@ body.menu-open #nav.scrolled {
 
 .nav-dropdown-submenu a:hover {
   color: var(--white);
+}
+
+/* Countries list is 12 items; a submenu anchored to its trigger's top
+   runs off the bottom of the screen for entries lower in the list.
+   Split the list into thirds: top group opens from the top, middle
+   group opens centered, bottom group opens from the bottom (upward). */
+.nav-dropdown-menu > .nav-dropdown-sub:nth-child(n+5):nth-child(-n+8) .nav-dropdown-submenu {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-dropdown-menu > .nav-dropdown-sub:nth-child(n+9) .nav-dropdown-submenu {
+  top: auto;
+  bottom: -0.5rem;
 }
 
 /* ── NAV BURGER ── */
