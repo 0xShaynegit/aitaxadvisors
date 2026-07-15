@@ -56,6 +56,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://aitaxadvisors.com/pages/us-llc-vs-hong-kong-vs-uae-2026</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- Thailand Tax Guides -->
   <url>
@@ -145,19 +151,19 @@
 
   <!-- Legal -->
   <url>
-    <loc>https://aitaxadvisors.com/privacy-policy.html</loc>
+    <loc>https://aitaxadvisors.com/privacy-policy</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://aitaxadvisors.com/terms-of-service.html</loc>
+    <loc>https://aitaxadvisors.com/terms-of-service</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://aitaxadvisors.com/disclaimer.html</loc>
+    <loc>https://aitaxadvisors.com/disclaimer</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
