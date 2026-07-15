@@ -410,5 +410,67 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Vietnam Tax Guides -->
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/us-expat-taxes-vietnam-2026</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/filing-us-taxes-from-vietnam</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/feie-vietnam-us-expats</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/no-us-vietnam-tax-treaty-totalization</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/digital-nomad-visa-status-vietnam-us-tax</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/retiring-in-vietnam-us-tax-planning</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/us-vietnam-expat-tax-checklist-2026</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/us-expat-teachers-tax-vietnam</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/property-ownership-vietnam-us-tax</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aitaxadvisors.com/vietnam/us-business-owners-vietnam-tax-guide</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
 
