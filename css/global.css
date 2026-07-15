@@ -230,6 +230,10 @@ body.menu-open #nav.scrolled {
   min-width: 200px;
   z-index: 1000;
   padding-top: 0.5rem;
+  /* Long lists (e.g. Countries, 12+ items) can otherwise run off the
+     bottom of the viewport on desktop with no way to reach the rest. */
+  max-height: calc(100vh - var(--nav-h) - 1.5rem);
+  overflow-y: auto;
 }
 
 .nav-dropdown.open .nav-dropdown-menu {
@@ -707,10 +711,17 @@ body.menu-open #nav.scrolled {
   gap: 0.4rem 0.75rem;
 }
 
-.footer-offices-grid span {
+.footer-offices-grid span,
+.footer-offices-grid a {
   font-size: 0.75rem;
   font-weight: 300;
   color: var(--silver);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-offices-grid a:hover {
+  color: var(--white);
 }
 
 .footer-nav {
