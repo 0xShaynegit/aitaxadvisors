@@ -2,6 +2,9 @@
 
 Sliding session log. Newest entry first. Update at end of every session.
 
+## Current State (07/15/2026)
+- 4th country added: `australia/` (10 pages, hub + filing + FEIE vs FTC + superannuation + treaty/totalization + retiring + checklist + teachers + defense contractors + FIRB property investment). Australia's own standout issue is superannuation, IRS treats it as a foreign trust, not a qualified plan, driving Forms 3520/3520-A/8621 for most expats, not a low-tax posting like the Gulf countries, so the FEIE-vs-FTC calculus flips (FTC usually wins given 30-45% Australian marginal rates). Nav dropdown propagated to all 37 sitewide files that carry `#countries-menu` (index, legal pages, every Thailand/Oman/Saudi Arabia page); the 2 Thailand pages confirmed to lack a Countries dropdown by design were left untouched, matching playbook Section 4a's documented exception. sitemap.xml updated with 10 new Australia URLs.
+
 ## Current State (07/14/2026)
 - Site has 3 countries live: Thailand (14 pages), Oman (9 pages), Saudi Arabia (11 pages), all under one nested "Countries" flyout dropdown in the desktop nav. Mobile no longer has a separate flat link list: `.nav-links` (the same markup as desktop) is now the mobile menu, a full-screen accordion overlay below 1024px, reusing the exact same `#countries-menu` / `.nav-dropdown-sub` markup as desktop. The old `#nav-mobile-menu` block was fully retired site-wide this session; if you ever see one on an old/archived page copy, delete it.
 - Shared nav CSS/JS lives only in `css/global.css` / `js/global.js`. `css/pages.css` (loaded after global.css on the 8 `/pages/*.html` articles) used to carry its own competing copy of every nav rule; that duplicate was deleted this session, never re-add nav rules there.
