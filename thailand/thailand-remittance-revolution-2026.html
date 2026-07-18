@@ -136,6 +136,177 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+
+    <!-- Page-specific article styling: self-contained, light-first, high-contrast.
+       Deliberately does NOT use the --site-* tokens (those only resolve inside a
+       .site-scope wrapper, which the body isn't in) so text/backgrounds never
+       silently fail to render. Only the footer relies on site-scope, unchanged. -->
+  <style>
+    :root {
+      --art-ink: #101a33;
+      --art-ink-soft: rgba(16,26,51,0.78);
+      --art-line: #e1e5ee;
+      --art-card-bg: #f4f6fa;
+      --art-link: var(--blue);
+      --art-accent: var(--blue);
+    }
+    .article-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      color: var(--art-ink);
+    }
+    .article-section + .article-section {
+      border-top: 1px solid var(--art-line);
+    }
+    /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
+    .article-section.dark {
+      background: var(--navy);
+      color: #ffffff;
+      border-top: none;
+    }
+    .article-section h2, .article-section h3, .article-section h4 {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--art-ink);
+    }
+    .article-section.dark h2, .article-section.dark h3, .article-section.dark h4 {
+      color: #ffffff;
+    }
+    .article-section h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0 0 1.5rem; }
+    .article-section h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin: 0 0 1.5rem; }
+    .article-section h4 { font-size: 1.05rem; margin: 0 0 1rem; }
+    .article-section p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: var(--art-ink-soft);
+      font-size: 1.02rem;
+    }
+    .article-section.dark p { color: rgba(255,255,255,0.85); }
+    .article-section p:last-child { margin-bottom: 0; }
+    .article-section ul, .article-section ol {
+      margin: 0 0 1.5rem 1.25rem;
+      line-height: 1.8;
+      color: var(--art-ink-soft);
+    }
+    .article-section.dark ul, .article-section.dark ol { color: rgba(255,255,255,0.85); }
+    .article-section strong { color: var(--art-ink); }
+    .article-section.dark strong { color: #ffffff; }
+    .article-section a { color: var(--art-link); font-weight: 600; text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+    .article-section.dark a { color: #8ecbf5; }
+
+    /* Callout / example boxes: clearly bordered light cards, not floating boxes */
+    .article-callout {
+      background: var(--art-card-bg);
+      border: 1px solid var(--art-line);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-section.dark .article-callout {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .article-callout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .article-callout-grid .article-callout { margin-bottom: 0; }
+    .article-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .article-section.dark .article-eyebrow { color: #8ecbf5; }
+
+    /* Checklist (replaces the old ad-hoc bullet lists) */
+    .article-checklist {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .article-checklist li {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+    .article-checklist svg {
+      flex-shrink: 0;
+      color: var(--art-accent);
+      margin-top: 0.15rem;
+    }
+    .article-section.dark .article-checklist svg { color: #8ecbf5; }
+    .article-checklist strong { display: block; margin-bottom: 0.15rem; }
+
+    /* FAQ accordion (self-contained, light) */
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details {
+      background: var(--art-card-bg);
+      border: 1px solid var(--art-line);
+      border-radius: 12px;
+      padding: 1.1rem 1.5rem;
+    }
+    .article-faq-list summary {
+      font-weight: 600;
+      color: var(--art-ink);
+      cursor: pointer;
+      list-style: none;
+    }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; }
+
+    .article-breadcrumb {
+      padding: 1rem 0;
+      background: #f4f6fa;
+      border-bottom: 1px solid var(--art-line);
+      position: relative;
+      z-index: 1;
+    }
+    .article-breadcrumb .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-breadcrumb nav { font-size: 0.85rem; color: var(--art-ink-soft); }
+    .article-breadcrumb nav a { color: var(--art-link); text-decoration: none; font-weight: 600; }
+    .article-breadcrumb nav a:hover { text-decoration: underline; }
+    .article-breadcrumb .meta { font-size: 0.85rem; color: var(--art-ink-soft); }
+    .article-key-topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    /* Constrain the article body to a comfortable reading width */
+    .article-breadcrumb .container,
+    .article-section .container {
+      max-width: 1140px;
+    }
+    .article-section .container > p,
+    .article-section .container > h2,
+    .article-section .container > h3,
+    .article-section .container > ul,
+    .article-section .container > .reveal.article-callout,
+    .article-section .container > .article-faq-list {
+      max-width: 1064px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -146,15 +317,16 @@
   </div>
 
   <!-- NAV -->
+  <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="../index.html">
+      <a class="nav-logo" href="/">
         <img loading="lazy" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#why">Why Us</a></li>
-        <li><a href="/#process">How It Works</a></li>
+        <li><a href="/#site-services">Services</a></li>
+        <li><a href="/#site-why">Why Us</a></li>
+        <li><a href="/#site-process">How It Works</a></li>
         <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Countries</a>
           <div class="nav-dropdown-menu" id="countries-menu">
@@ -346,6 +518,16 @@
           </div>
         </li>
         <li class="nav-dropdown">
+          <a href="javascript:void(0)" role="button" tabindex="0">Resources</a>
+          <div class="nav-dropdown-menu" id="resources-menu">
+            <a href="/pages/us-expats-retiring">Expat Tax Guide</a>
+            <a href="/pages/fbar-crackdown-2026">FBAR Crackdown</a>
+            <a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs FTC</a>
+            <a href="/pages/tax-treaty-optimization-2026">Tax Treaties</a>
+            <a href="/pages/us-llc-vs-hong-kong-vs-uae-2026">US LLC vs Hong Kong vs UAE</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Blogs</a>
           <div class="nav-dropdown-menu" id="blogs-menu">
             <a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a>
@@ -370,8 +552,8 @@
 
     <!-- HERO SECTION -->
     <section class="hero" style="padding: 8rem 2.5rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); position: relative; overflow: hidden;">
-      <div class="container">
-        <div class="hero-content">
+      <div class="container" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;">
+        <div>
           <h1 class="reveal" style="font-size: 3.2rem; line-height: 1.2; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; color: var(--white);">Thailand's 2026 Remittance Revolution</h1>
           <p class="reveal" style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--blue-light); line-height: 1.6;">Is Your "Land of Smiles" Lifestyle Under Threat?</p>
           <p class="reveal" style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.8; color: var(--silver); max-width: 700px;">For decades, Thailand was a tax haven for expats. The rule was simple: wait until January 1st to bring your money into the country, and the IRS and Thai Revenue Department would stay out of your pockets. But in 2026, that loophole has been demolished. Under new interpretations of Section 41 (Instructions Por. 161 and 162), the timing of your transfer no longer protects you. If you live in Thailand for more than 180 days, your foreign income just got a lot more complicated.</p>
@@ -382,37 +564,36 @@
             </svg>
           </button>
         </div>
+        <div>
+          <img loading="lazy" src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US dollars representing foreign income subject to Thailand's 2026 remittance tax rules" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
+        </div>
       </div>
     </section>
 
     <!-- BREADCRUMB & META -->
-    <section style="padding: 1rem 0; background: #ffffff; border-bottom: 1px solid var(--border); position: relative; z-index: 1;">
-      <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <nav style="font-size: 0.85rem; color: var(--navy-mid);">
-            <a href="/" style="color: var(--blue); text-decoration: none;">Home</a>
-            <span style="margin: 0 0.5rem;">/</span>
-            <a href="/thailand" style="color: var(--blue); text-decoration: none;">Thailand</a>
-            <span style="margin: 0 0.5rem;">/</span>
-            <span style="color: var(--navy);">2026 Remittance Revolution</span>
-          </nav>
-          <div style="font-size: 0.85rem; color: var(--navy-mid);">
-            <span>📅 Last Updated: April 2026</span>
-            <span style="margin: 0 1rem;">|</span>
-            <span>⏱️ 16 min read</span>
-          </div>
+    <section class="article-breadcrumb">
+      <div class="container row">
+        <nav>
+          <a href="/">Home</a>
+          <span style="margin: 0 0.5rem;">/</span>
+          <a href="/thailand/us-expat-taxes-thailand-2026">Thailand</a>
+          <span style="margin: 0 0.5rem;">/</span>
+          <span>2026 Remittance Revolution</span>
+        </nav>
+        <div class="meta">
+          <span>Last Updated: April 2026</span>
+          <span style="margin: 0 1rem;">|</span>
+          <span>16 min read</span>
         </div>
       </div>
     </section>
 
     <!-- SECTION 1: THE DEATH OF THE "WAIT-A-YEAR" RULE -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <section class="article-section">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0;">The Death of the "Wait-a-Year" Rule</h2>
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">The biggest shift in Thai tax history officially took full effect in 2026. Under the new interpretation of Section 41 of the Revenue Code (Instructions Por. 161 and 162), the timing of your transfer no longer protects you. This change fundamentally rewrites how expats plan their finances in Thailand.</p>
-<img src="../images/hand-combat-visa-banknote-currency-money-cash-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Cash and visa documents illustrating Thailand remittance tax rules for 2026" loading="lazy" style="float: right; margin: 0 0 1rem 1.5rem; width: 270px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">What Was the Old Rule?</h3>
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">For years, the standard remittance doctrine allowed a critical workaround: foreign income remitted in a different calendar year than it was earned was tax-free in Thailand. This meant you could earn USD 100,000 in 2024, keep it in your US bank account, and transfer it to Thailand on January 1st, 2025 without owing Thai tax on it. The key was that the money crossed into Thailand in a different calendar year from when it was earned. Thousands of expats relied on this timing strategy to minimise Thai tax exposure.</p>
@@ -420,20 +601,20 @@
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">The 2026 Reality Under Section 41</h3>
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">If you are a Thai tax resident (staying 180+ days) and you remit any foreign income earned after January 1, 2024, it is taxable in Thailand regardless of how long you waited to bring it in. The Thai Revenue Department now looks at when the income was earned, not when it was remitted. This means the January 1st calendar flip no longer shields you from taxation. Income earned in 2024 is taxable in Thailand when remitted in 2026, 2027, or any future year. The timing window has been closed permanently.</p>
 
-        <div class="reveal callout-box" style="padding: 1.2rem; margin: 2rem 0; background: rgba(0, 88, 149, 0.08); border-left: 4px solid var(--blue);">
-          <h4 style="margin-bottom: 1rem; color: var(--blue);">The Critical Cutoff: January 1, 2024</h4>
-          <p style="margin: 0; line-height: 1.8;">Only income earned BEFORE January 1, 2024 retains the old tax-free status. Any income earned on or after January 1, 2024 falls under the new Section 41 interpretation and is taxable in Thailand upon remittance, regardless of the calendar year you bring it in. This distinction is essential to understand because it creates a permanent dividing line in your financial history.</p>
-<img src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US dollar bills and American flag representing foreign income remittance to Thailand" loading="lazy" style="float: left; margin: 0 1.5rem 1rem 0; width: 250px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
+        <div class="reveal article-callout">
+          <h4>The Critical Cutoff: January 1, 2024</h4>
+          <p style="margin-bottom: 0;">Only income earned BEFORE January 1, 2024 retains the old tax-free status. Any income earned on or after January 1, 2024 falls under the new Section 41 interpretation and is taxable in Thailand upon remittance, regardless of the calendar year you bring it in. This distinction is essential to understand because it creates a permanent dividing line in your financial history.</p>
         </div>
       </div>
     </section>
 
     <!-- SECTION 2: WHAT COUNTS AS REMITTANCE (Dark Navy) -->
-    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 4rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white); position: relative; z-index: 1;">
+    <section class="article-section dark">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; color: var(--white);">What Counts as Remittance?</h2>
         <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; color: var(--silver);">In 2026, the TRD isn't just looking at bank transfers. Their definition of bringing money into Thailand is broad, and enforcement has tightened significantly. If you think you're avoiding remittance by being clever, the Revenue Department likely sees it differently.</p>
+
+        <img loading="lazy" src="../images/currency-calculator-hands-notebook-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calculating currency conversions for a Thai remittance" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; filter: brightness(0.9) saturate(0.9);">
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; color: var(--white);">Direct and Indirect Remittance Methods</h3>
 
@@ -468,13 +649,35 @@
       </div>
     </section>
 
+    <!-- When to Consult a Specialist -->
+    <section class="article-section dark">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 3.5rem; align-items: start;">
+          <div>
+            <img loading="lazy" src="../images/getting-around-facial-expression-gesture-happiness-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Tax consultation" style="width: 100%; border-radius: 12px; filter: brightness(0.9) saturate(0.9);">
+          </div>
+          <div>
+            <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8ecbf5; margin-bottom: 0.9rem;">Expert Guidance</p>
+            <h3>When to Consult a Specialist</h3>
+            <ul class="article-checklist">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Large or irregular remittances</strong><span>Any single transfer over USD 20,000, especially if it mixes pre- and post-2024 funds.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Unclear fund vintage</strong><span>You can't cleanly document whether income was earned before or after January 1, 2024.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Crypto or investment gains</strong><span>Digital asset or capital gains remittances carry extra scrutiny under the new rules.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>LTR visa eligibility</strong><span>Determining whether your visa category qualifies for foreign-income exemptions.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Large family transfers</strong><span>Gift or family-support remittances that could be reclassified as taxable income.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 3: HOW TO STAY LEGALLY COMPLIANT -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
-      <!-- Diagonal Blue Grid -->
-      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px), repeating-linear-gradient(-45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px); background-size: 24px 24px; pointer-events: none; z-index: 0;"></div>
+    <section class="article-section">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">How to Stay Legally Compliant (and Exempt)</h2>
         <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">While the rules are tighter, there are still legal pathways to protect your wealth. Strategy is now mandatory.</p>
+
+        <img loading="lazy" src="../images/closeup-thailand-visa-sticker-background-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thailand visa documentation relevant to LTR and long-stay tax planning" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; position: relative; z-index: 1;">
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">The Pre-2024 Shield</h3>
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Income earned before January 1, 2024, remains permanently exempt from Thai tax, even if remitted today. This is your strongest protection. However, you must have the documentation to prove the "vintage" of those funds. Keep bank statements from your US or foreign accounts showing:
@@ -504,8 +707,8 @@
       </div>
     </section>
 
-    <!-- SECTION 4: ADVANCED PLANNING STRATEGIES & FAQ -->
-    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 4rem 2.5rem; background: var(--navy); border-top: 1px solid var(--border); color: var(--white); position: relative; z-index: 1;">
+    <!-- SECTION 4: ADVANCED PLANNING STRATEGIES -->
+    <section class="article-section dark">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; color: var(--white);">Strategic Planning for 2026 and Beyond</h2>
 
@@ -521,63 +724,70 @@
     </section>
 
     <!-- SECTION 5: FAQ -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <section class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">Frequently Asked Questions: 2026 Remittance Rules</h2>
+        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">Frequently Asked Questions: 2026 Remittance Rules</h2><div class="article-faq-list">
+<details><summary>If I earned money in 2023 and didn't remit it until 2026, is it still tax-free?</summary><p>Yes, if you can prove it was earned before January 1, 2024. Keep bank statements and income documentation dating to 2023 showing the funds arrived in your foreign account before the cutoff. The timing of remittance in 2026 doesn't matter if the vintage is pre-2024.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: If I earned money in 2023 and didn't remit it until 2026, is it still tax-free?</strong><br/>A: Yes, if you can prove it was earned before January 1, 2024. Keep bank statements and income documentation dating to 2023 showing the funds arrived in your foreign account before the cutoff. The timing of remittance in 2026 doesn't matter if the vintage is pre-2024.</p>
+        <details><summary>What if I don't have clear documentation of when the income was earned?</summary><p>The TRD will assume it was earned after January 1, 2024, and is therefore taxable. If you have a dispute, the burden is on you to prove otherwise. This is why documentation is your legal shield. Gather pay stubs, invoices, dividend statements, and bank deposit records immediately.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What if I don't have clear documentation of when the income was earned?</strong><br/>A: The TRD will assume it was earned after January 1, 2024, and is therefore taxable. If you have a dispute, the burden is on you to prove otherwise. This is why documentation is your legal shield. Gather pay stubs, invoices, dividend statements, and bank deposit records immediately.</p>
+        <details><summary>I use my foreign credit card to pay my rent in Thailand. Does this count as remittance?</summary><p>Yes. The TRD now considers this a remittance. If you're paying for Thai expenses with foreign income via credit card, you're bringing money into Thailand. It's taxable if the income was earned after January 1, 2024.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: I use my foreign credit card to pay my rent in Thailand. Does this count as remittance?</strong><br/>A: Yes. The TRD now considers this a remittance. If you're paying for Thai expenses with foreign income via credit card, you're bringing money into Thailand. It's taxable if the income was earned after January 1, 2024.</p>
+        <details><summary>Can I withdraw money from my ATM at Kasikorn and claim it's not a remittance?</summary><p>No. Using a foreign debit card to withdraw Thai baht is conversion of foreign currency to Thai currency within Thailand, which counts as remittance. The TRD tracks this activity through ATM records.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I withdraw money from my ATM at Kasikorn and claim it's not a remittance?</strong><br/>A: No. Using a foreign debit card to withdraw Thai baht is conversion of foreign currency to Thai currency within Thailand, which counts as remittance. The TRD tracks this activity through ATM records.</p>
+        <details><summary>If I hold cryptocurrency outside Thailand, is it taxable when I remit it?</summary><p>Yes, crypto capital gains and crypto remittances are treated like any foreign-sourced income. If you earned crypto gains after January 1, 2024, converting it to baht and bringing it to Thailand is taxable. The US also taxes crypto gains regardless of remittance, so you owe tax in both countries.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: If I hold cryptocurrency outside Thailand, is it taxable when I remit it?</strong><br/>A: Yes, crypto capital gains and crypto remittances are treated like any foreign-sourced income. If you earned crypto gains after January 1, 2024, converting it to baht and bringing it to Thailand is taxable. The US also taxes crypto gains regardless of remittance, so you owe tax in both countries.</p>
+        <details><summary>What happens if I don't report a remittance on my PND 90 return?</summary><p>The TRD tracks large remittances through banks and cross-references them with filed returns. If discovered, you face back taxes, 1.5 percent monthly interest penalties, and potential criminal charges for tax evasion. Additionally, if you're a US citizen, unreported Thai bank accounts trigger FBAR penalties. Always report remittances.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What happens if I don't report a remittance on my PND 90 return?</strong><br/>A: The TRD tracks large remittances through banks and cross-references them with filed returns. If discovered, you face back taxes, 1.5 percent monthly interest penalties, and potential criminal charges for tax evasion. Additionally, if you're a US citizen, unreported Thai bank accounts trigger FBAR penalties. Always report remittances.</p>
+        <details><summary>Can I ask my spouse in the US to send me a "gift" to avoid Thai tax?</summary><p>Gifts up to 20 million baht may be exempted, but the TRD increasingly scrutinises large personal transfers. Document the gift in writing, specifying the relationship and non-taxable nature. If the TRD reclassifies it as income, you face tax plus penalties. This is a grey area; consult a specialist.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I ask my spouse in the US to send me a "gift" to avoid Thai tax?</strong><br/>A: Gifts up to 20 million baht may be exempted, but the TRD increasingly scrutinises large personal transfers. Document the gift in writing, specifying the relationship and non-taxable nature. If the TRD reclassifies it as income, you face tax plus penalties. This is a grey area; consult a specialist.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem;"><strong>Q: I'm on a DTV visa (non-resident). Do these rules apply to me?</strong><br/>A: Only if you exceed 180 days and become tax resident. As a non-resident under the 180-day threshold, you owe zero Thai tax on foreign-sourced income regardless of remittance. But the moment you cross into 180 days, these rules apply. Track your days carefully.</p>
-      </div>
+        <details><summary>I'm on a DTV visa (non-resident). Do these rules apply to me?</summary><p>Only if you exceed 180 days and become tax resident. As a non-resident under the 180-day threshold, you owe zero Thai tax on foreign-sourced income regardless of remittance. But the moment you cross into 180 days, these rules apply. Track your days carefully.</p></details>
+</div></div>
     </section>
 
     <!-- KEY TOPICS SECTION -->
-    <section style="padding: 3rem 0; background: var(--navy-dark);">
+    <section class="article-section dark">
       <div class="container">
-        <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: 'Libre Baskerville';" class="reveal">Related Thailand Tax Topics</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+        <h3 class="reveal">Key Topics for Americans in Thailand</h3>
+        <div class="article-key-topics">
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/foreign-sourced-income-remittance" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Foreign Income & Remittance Doctrine</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Complete guide to what counts as foreign-sourced income and how the remittance doctrine works.</p>
+            <h4><a href="/thailand/tax-residency-180-day-rule">Tax Residency &amp; 180-Day Rule</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">How to track your days and avoid unexpected tax residency status.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/tax-residency-180-day-rule" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Tax Residency & 180-Day Rule</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">How to track your days and determine whether you're a tax resident.</p>
+            <h4><a href="/thailand/thailand-remittance-revolution-2026">2026 Remittance Revolution</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Section 41 changes, pre-2024 shield, and 2026 planning strategies.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/us-expat-taxes-thailand-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Complete 2026 US Expat Tax Guide</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Full overview of Thai and US tax coordination, FEIE, FTC, and visa planning.</p>
+            <h4><a href="/thailand/foreign-sourced-income-remittance">Foreign Income &amp; Remittance</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Understanding what triggers Thai tax when you bring money into Thailand.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/how-to-file-thai-tax-as-an-expat" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Thai Tax Filing (PND 90/91)</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Step-by-step guide to filing your annual Thai tax return.</p>
+            <h4><a href="/thailand/digital-nomads-remote-workers-thailand">Digital Nomads &amp; Remote Workers</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">DTV visa tax implications and staying compliant while working online.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/filing-us-taxes-from-thailand" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">US Filing from Thailand</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">FEIE, FTC, FBAR reporting, and avoiding double taxation.</p>
+            <h4><a href="/thailand/retiring-in-thailand-us-tax-planning">Retiring in Thailand</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Social Security, pensions, 401(k) withdrawals, and tax treaty benefits.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/digital-nomads-remote-workers-thailand" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Digital Nomads & Remote Workers</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">DTV visa tax implications and staying compliant while working online.</p>
+            <h4><a href="/thailand/how-to-file-thai-tax-as-an-expat">Thai Tax Filing (PND 90/91)</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Step-by-step guide to filing Thai personal income tax as an expat.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/filing-us-taxes-from-thailand">US Filing from Thailand</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">FEIE, FTC, FBAR reporting, and avoiding double taxation.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/us-thailand-expat-tax-checklist-2026">2026 Expat Tax Checklist</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">A step-by-step rundown of every filing task and deadline for the year.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- MID-PAGE CTA -->
-    <section id="mid-cta" style="background: var(--navy-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 0;">
+    <section class="article-section dark">
       <div class="container">
         <div style="text-align: center; max-width: 600px; margin: 0 auto;">
           <h3 class="reveal" style="font-size: 1.8rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">
@@ -596,102 +806,100 @@
       </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section id="final-cta" style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 5rem 2.5rem; background: var(--navy); position: relative; z-index: 1; color: var(--white); text-align: center;">
-      <div class="container" style="max-width: 600px; margin: 0 auto;">
-        <h2 class="reveal" style="font-size: 2rem; margin-bottom: 1rem; font-family: 'Libre Baskerville'; color: var(--white);">Protect Your Wealth in the New Thailand Tax Environment</h2>
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 1rem; color: var(--silver);">The 2026 remittance revolution is here. Know your pre-2024 shield. Document everything. Plan your remittances strategically. Our specialists help you master the new rules and keep more of what you earn.</p>
-        <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'" style="margin-bottom: 1rem;">
-          Book a Free Consultation
-          <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
-            <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <p class="reveal" style="font-size: 0.85rem; color: var(--muted);">Average consultation: 45 minutes. No obligation.</p>
-      </div>
-    </section>
+</main>
 
-  </main>
-
-    <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+66-94-681-9734">Call 094-681-9734</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OTHER THAILAND OFFICES</strong>
+            Pattaya: <a href="tel:+66-96-806-5445">096-806-5445</a> &middot; Chiang Mai: <a href="tel:+66-53-218-823">053-218-823</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/thailand/us-expat-taxes-thailand-2026">Thailand Tax Hub</a></li>
-              <li><a href="/thailand/filing-us-taxes-from-thailand">Filing US Taxes from Thailand</a></li>
-              <li><a href="/thailand/how-to-file-thai-tax-as-an-expat">How to File Thai Tax</a></li>
-              <li><a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a></li>
-              <li><a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs Foreign Tax Credit</a></li>
-              <li><a href="/pages/tax-treaty-optimization-2026">Tax Treaty Optimisation</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call (Thailand)</dt>
+            <dd><a href="tel:+66-94-681-9734">094-681-9734</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
+        <a href="/#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
+
 
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 
 <!-- Cloudflare Web Analytics -->

@@ -16,7 +16,7 @@
 
   var isMobile = window.innerWidth <= 768;
 
-  var AIT_LOGO_HTML = '<img src="/images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" width="52" height="52" alt="" aria-hidden="true" style="width:52px;height:52px;display:block;pointer-events:none;object-fit:cover;border-radius:50%;">';
+  var AIT_LOGO_HTML = '<img src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" width="52" height="52" alt="" aria-hidden="true" style="width:52px;height:52px;display:block;pointer-events:none;object-fit:cover;border-radius:50%;">';
 
   var CHAT_ICON =
     '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +

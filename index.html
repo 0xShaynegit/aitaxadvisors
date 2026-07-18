@@ -95,6 +95,8 @@
   <link rel="stylesheet" href="css/global.css?v=8">
   <link rel="stylesheet" href="css/homepage.css?v=3">
   <link rel="stylesheet" href="css/thailand.css?v=2">
+  <link rel="stylesheet" href="css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -290,9 +292,9 @@
         <img width="126" height="126" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#why">Why Us</a></li>
-        <li><a href="/#process">How It Works</a></li>
+        <li><a href="#site-services">Services</a></li>
+        <li><a href="#site-why">Why Us</a></li>
+        <li><a href="#site-process">How It Works</a></li>
         <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Countries</a>
           <div class="nav-dropdown-menu" id="countries-menu">
@@ -614,533 +616,411 @@
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-      <div class="services-header reveal">
-        <p class="s-eyebrow">What We Do</p>
-        <h2 class="s-title">Complete U.S. Tax Solutions for Life in Asia</h2>
-        <p class="s-body">Whether you are an individual expat or running a cross-border business, we handle the full picture from one base in Asia.</p>
-      </div>
+  <!-- ============ SITE CONTENT (colors/fonts kept as aitaxadvisors brand) ============ -->
+  <div class="site-scope">
 
-      <div class="services-grid">
-        <div class="service-card featured reveal">
-          <div class="service-tag">For Individuals</div>
-          <div class="service-title">Expat Tax Filing and Planning</div>
-          <div class="service-desc">
-            Comprehensive U.S. tax services for Americans living and working across Asia. We handle the complexity so you can focus on living your life.
-          </div>
-          <ul class="service-list">
-            <li>Federal and state income tax returns</li>
-            <li>FBAR and FATCA compliance (FinCEN 114, Form 8938)</li>
-            <li>Foreign Earned Income Exclusion (FEIE) optimization</li>
-            <li>Foreign Tax Credit strategy</li>
-            <li>Delinquent filing catch-up (SDOP, SFCP programs)</li>
-            <li>Pre-move and departure tax planning</li>
-          </ul>
-          <a href="mailto:admin@aitaxadvisers.com" class="service-link">
-            Get started
-            <svg width="12" height="12" viewBox="0 0 13 13" fill="none">
-              <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
+  <!-- TOPICS MARQUEE -->
+  <div class="marquee" aria-label="Topics we cover">
+    <div class="marquee-track">
+      <span>FBAR</span><span>FATCA</span><span>FEIE</span><span>GILTI</span><span>1042-S Withholding</span><span>Tax Treaties</span><span>Streamlined Filing</span><span>Subpart F</span><span>W-8BEN / W-8BEN-E</span><span>Delinquent Returns</span><span>Departure Tax</span><span>Transfer Pricing</span><span>Digital Nomad Tax</span><span>Entity Structuring</span>
+      <span aria-hidden="true">FBAR</span><span aria-hidden="true">FATCA</span><span aria-hidden="true">FEIE</span><span aria-hidden="true">GILTI</span><span aria-hidden="true">1042-S Withholding</span><span aria-hidden="true">Tax Treaties</span><span aria-hidden="true">Streamlined Filing</span><span aria-hidden="true">Subpart F</span><span aria-hidden="true">W-8BEN / W-8BEN-E</span><span aria-hidden="true">Delinquent Returns</span><span aria-hidden="true">Departure Tax</span><span aria-hidden="true">Transfer Pricing</span><span aria-hidden="true">Digital Nomad Tax</span><span aria-hidden="true">Entity Structuring</span>
+    </div>
+  </div>
 
-        <div class="service-card reveal">
-          <div class="service-tag">For Businesses</div>
-          <div class="service-title">Cross-Border Tax Engineering</div>
-          <div class="service-desc">
-            Entity structuring, treaty mapping and ongoing compliance for businesses operating across the U.S. and Asian jurisdictions.
-          </div>
-          <ul class="service-list">
-            <li>U.S.-Asia corporate structure design</li>
-            <li>Transfer pricing documentation</li>
-            <li>W-8BEN and W-8BEN-E filing management</li>
-            <li>Subpart F and GILTI exposure analysis</li>
-            <li>1042-S withholding compliance</li>
-            <li>Multi-jurisdiction tax treaty optimization</li>
-          </ul>
-          <a href="mailto:admin@aitaxadvisers.com" class="service-link">
-            Discuss your structure
-            <svg width="12" height="12" viewBox="0 0 13 13" fill="none">
-              <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="container mission-grid">
+      <p class="mission-statement" data-reveal>We look at your <span class="accent">whole financial picture</span>, plan around your specific residency and treaty position, and handle both today's filing and the <span class="accent">strategy</span> behind it. Precisely.</p>
+      <div data-reveal style="--i:1">
+        <p class="outcomes-label">What clients leave with</p>
+        <ul class="outcomes">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fully compliant, on-time U.S. filings</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>An optimised FEIE, FTC or treaty position</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>FBAR, FATCA and GILTI exposure under control</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>A clear plan for next year, not just this one</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- TAX CALENDAR -->
-  <section id="tax-calendar">
+  <!-- SERVICES / CARE RAIL -->
+  <section class="care" id="site-services">
     <div class="container">
-      <div class="tax-cal-header reveal">
-        <p class="s-eyebrow">Stay Ahead</p>
-        <h2 class="s-title">Critical Tax Deadlines Ahead</h2>
-        <p class="s-body">Don't miss filing deadlines that trigger penalties. We track every date so you don't have to.</p>
-      </div>
-
-      <div class="tax-cal-timeline">
-        <div class="tax-cal-line"></div>
-
-        <div class="tax-cal-item reveal">
-          <div class="tax-cal-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-              <line x1="8" y1="14" x2="8" y1="18"></line>
-              <line x1="12" y1="14" x2="12" y1="18"></line>
-              <line x1="16" y1="14" x2="16" y1="18"></line>
-            </svg>
-          </div>
-          <div class="tax-cal-date">April 15</div>
-          <div class="tax-cal-title">Annual U.S. Tax Return Due</div>
-          <p class="tax-cal-desc">Expat filing deadline (with FEIE extension available to June 15).</p>
-        </div>
-
-        <div class="tax-cal-item reveal">
-          <div class="tax-cal-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="8"></circle>
-              <path d="M12 6v6l4 2"></path>
-            </svg>
-          </div>
-          <div class="tax-cal-date">June 15</div>
-          <div class="tax-cal-title">Q2 Estimated Tax Due</div>
-          <p class="tax-cal-desc">Quarterly estimated tax payment deadline for self-employed and business owners.</p>
-        </div>
-
-        <div class="tax-cal-item reveal">
-          <div class="tax-cal-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-              <polyline points="13 2 13 9 20 9"></polyline>
-              <line x1="9" y1="15" x2="15" y2="15"></line>
-              <line x1="9" y1="19" x2="15" y2="19"></line>
-            </svg>
-          </div>
-          <div class="tax-cal-date">Sept 15</div>
-          <div class="tax-cal-title">Q3 Estimated Tax Due</div>
-          <p class="tax-cal-desc">Third quarterly installment for self-employed expats managing U.S. income.</p>
-        </div>
-
-        <div class="tax-cal-item reveal">
-          <div class="tax-cal-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-          </div>
-          <div class="tax-cal-date">April 15</div>
-          <div class="tax-cal-title">FBAR Filing Deadline</div>
-          <p class="tax-cal-desc">FinCEN Form 114 due for foreign accounts over USD 10,000. Automatic extension to October 15.</p>
+      <div class="section-head">
+        <h2 class="title" data-reveal>Services that <span class="accent">work together</span></h2>
+        <div class="rail-controls" data-reveal style="--i:1">
+          <button class="rail-btn" id="rail-prev" aria-label="Previous service">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="rail-btn" id="rail-next" aria-label="Next service">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHY AI TAX ADVISERS -->
-  <section id="why">
-    <div class="container">
-      <div class="why-grid">
-        <div class="why-photo-wrap reveal">
-          <img class="why-photo" width="400" height="600" loading="lazy" src="images/team-photo-three-professionals-updated-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers team">
-          <div class="why-photo-badge">
-            <img class="why-photo-badge-logo" width="64" height="64" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <div class="why-photo-badge-text">
-              <strong>U.S. Embassy Listed</strong>
-              Official Tax Consultant, Bangkok Thailand
-            </div>
+      <div class="care-rail" id="care-rail" tabindex="0" aria-label="Our services, scroll horizontally">
+        <a class="care-card" href="pages/feie-ftc-120k-threshold-2026.html" data-reveal>
+          <figure><img src="images/tax-document-calculator-hands-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Hands reviewing tax documents with a calculator" loading="lazy"></figure>
+          <div class="care-card-body">
+            <p class="care-card-tag">For individuals</p>
+            <h3 class="title-sm">FEIE vs FTC Strategy</h3>
+            <p>Compare the Foreign Earned Income Exclusion against the Foreign Tax Credit and get the right call at the $120k+ income threshold.</p>
           </div>
-        </div>
-
-        <div class="reveal">
-          <p class="s-eyebrow">Why AI Tax Advisers</p>
-          <h2 class="s-title">Asia's Best U.S. Tax Firm. Not a Claim. A Record.</h2>
-          <p class="s-body">
-            Most firms are either strong on U.S. federal law or present in Asia. Very few are genuinely both.
-            AI Tax Advisers has spent over 15 years building the rarest combination in this industry.
-          </p>
-
-          <div class="why-pillars">
-            <div class="pillar">
-              <div class="pillar-number">01</div>
-              <div class="pillar-content">
-                <div class="pillar-title">The Only Embassy-Listed Asia Firm</div>
-                <div class="pillar-body">
-                  AI Tax Advisers appears on the U.S. Embassy Bangkok's official list of recommended tax consultants.
-                  This is an independent government endorsement that no competitor in the region holds.
-                </div>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-number">02</div>
-              <div class="pillar-content">
-                <div class="pillar-title">On-the-Ground Across Asia and Beyond</div>
-                <div class="pillar-body">
-                  Twelve-plus offices: Bangkok, Chiang Mai, Manila, Phnom Penh, Ho Chi Minh City, Kuala Lumpur,
-                  Jakarta, Taipei, Sydney, UAE, Saudi Arabia and Florida. Real advisors in your timezone.
-                </div>
-              </div>
-            </div>
-            <div class="pillar">
-              <div class="pillar-number">03</div>
-              <div class="pillar-content">
-                <div class="pillar-title">U.S. Federal Precision at the Core</div>
-                <div class="pillar-body">
-                  CPA-oversight on every engagement. We do not approximate. Every position is defensible,
-                  every filing is built to withstand IRS scrutiny, every strategy is grounded in federal law.
-                </div>
-              </div>
-            </div>
+        </a>
+        <a class="care-card" href="pages/us-llc-vs-hong-kong-vs-uae-2026.html" data-reveal style="--i:1">
+          <figure><img src="images/businessmen-double-exposure-skyline-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Business professionals overlaid on a city skyline" loading="lazy"></figure>
+          <div class="care-card-body">
+            <p class="care-card-tag">For businesses</p>
+            <h3 class="title-sm">US LLC vs Hong Kong vs UAE</h3>
+            <p>Comparing entity options for tax efficiency in 2026: the hidden compliance traps and why DIY entity selection backfires.</p>
           </div>
-        </div>
+        </a>
+        <a class="care-card" href="pages/fbar-crackdown-2026.html" data-reveal style="--i:2">
+          <figure><img src="images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Organised tax forms and documents" loading="lazy"></figure>
+          <div class="care-card-body">
+            <p class="care-card-tag">Compliance</p>
+            <h3 class="title-sm">FBAR &amp; FATCA Compliance</h3>
+            <p>FinCEN Form 114 and Form 8938 penalties explained, plus the Streamlined Filing amnesty programs for catching up.</p>
+          </div>
+        </a>
+        <a class="care-card" href="pages/tax-treaty-optimization-2026.html" data-reveal style="--i:3">
+          <figure><img src="images/financial-analysis-charts-hands-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Reviewing financial analysis charts" loading="lazy"></figure>
+          <div class="care-card-body">
+            <p class="care-card-tag">Strategy</p>
+            <h3 class="title-sm">Tax Treaty Optimisation</h3>
+            <p>Form 8833 treaty positions, pension and government-service exemptions, and how to claim $20,000+ in annual treaty savings.</p>
+          </div>
+        </a>
+        <a class="care-card" href="pages/corporate-gilti-tax-trap-2026.html" data-reveal style="--i:4">
+          <figure><img src="images/man-business-discussion-office-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Advisor discussing entity structure in an office meeting" loading="lazy"></figure>
+          <div class="care-card-body">
+            <p class="care-card-tag">Corporate</p>
+            <h3 class="title-sm">GILTI &amp; CFC Tax Planning</h3>
+            <p>Section 962 elections, Form 5471 compliance, and structuring foreign corporations to avoid double taxation.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- WHO WE HELP -->
-  <section id="who-we-help">
-    <div class="parallax-layer" id="whoParallax">
-      <div></div>
-    </div>
+  <section class="conditions" id="site-who">
     <div class="container">
-      <div class="who-header reveal">
-        <p class="s-eyebrow">Our Expertise</p>
-        <h2 class="s-title">Who We Help</h2>
-        <p class="s-body">Whether you are self-employed, working for a US company, running an international business, or building your retirement abroad, we have the expertise for your situation.</p>
+      <div class="section-head">
+        <h2 class="title" data-reveal>Where do <span class="accent">you</span> fit in?</h2>
+        <p class="lede" data-reveal style="--i:1">Whichever of these describes you, we've built the filing and planning approach for it already.</p>
       </div>
+      <ul class="difference-list">
+        <li data-reveal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Employees &amp; contractors</strong><span>W-2 remote employees, 1099 contractors and freelancers earning U.S. income while based abroad.</span></li>
+        <li data-reveal style="--i:1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Business owners</strong><span>LLC owners, S-corps and partnerships operating U.S.-Asia structures across multiple jurisdictions.</span></li>
+        <li data-reveal style="--i:2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Expat professionals</strong><span>Long-term Asia residents managing tax residency, treaty positions and multi-country obligations.</span></li>
+        <li data-reveal style="--i:3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>FBAR &amp; FATCA cases</strong><span>Unreported foreign accounts and voluntary disclosure needs, resolved efficiently and confidentially.</span></li>
+        <li data-reveal style="--i:4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Retirees &amp; investors</strong><span>Social Security, pensions and investment income coordinated across countries with full treaty benefit.</span></li>
+        <li data-reveal style="--i:5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Digital nomads</strong><span>Location-independent professionals whose residency and filing obligations shift as they move.</span></li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="who-grid">
-        <div class="who-card who-card-left reveal">
-          <div class="who-icon">💼</div>
-          <div class="who-content">
-            <div class="who-title">Employees & Contractors</div>
-            <div class="who-desc">W-2 employees working remotely, 1099 contractors, and remote freelancers earning U.S. income while based abroad. We optimize your Foreign Earned Income Exclusion, manage quarterly estimated tax payments, and ensure compliance with IRS filing deadlines for maximum tax efficiency and peace of mind.</div>
-          </div>
-        </div>
-
-        <div class="who-card who-card-right reveal">
-          <div class="who-content">
-            <div class="who-title">Business Owners</div>
-            <div class="who-desc">Entrepreneurs with U.S.-Asia business structures, LLC owners, S-corps, and partnership entities operating across multiple jurisdictions. We design optimal entity structures, manage treaty compliance, handle transfer pricing documentation, and ensure consistent tax efficiency across your entire operation.</div>
-          </div>
-          <div class="who-icon">🏢</div>
-        </div>
-
-        <div class="who-card who-card-left reveal">
-          <div class="who-icon">👨‍💼</div>
-          <div class="who-content">
-            <div class="who-title">Expat Professionals</div>
-            <div class="who-desc">Long-term residents in Asia managing complex tax residency determinations, treaty positions, and multi-country obligations. We navigate intricate tax scenarios across all jurisdictions to ensure complete compliance while strategically minimizing your global tax burden and protecting your assets.</div>
-          </div>
-        </div>
-
-        <div class="who-card who-card-right reveal">
-          <div class="who-content">
-            <div class="who-title">FBAR & FATCA Cases</div>
-            <div class="who-desc">Individuals with foreign accounts, unreported filings, and complex voluntary disclosure needs requiring expert IRS resolution. We provide strategic guidance on FBAR and FATCA reporting requirements, represent you with tax authorities, and resolve compliance issues efficiently and confidentially.</div>
-          </div>
-          <div class="who-icon">🏦</div>
-        </div>
-
-        <div class="who-card who-card-left reveal">
-          <div class="who-icon">🎓</div>
-          <div class="who-content">
-            <div class="who-title">Retirees & Investors</div>
-            <div class="who-desc">Managing Social Security, pensions, investment income, and retirement account distributions while living abroad. We coordinate your complete retirement picture across countries, optimize your tax-efficient withdrawal strategy, and ensure full IRS compliance with all treaty benefits applied.</div>
-          </div>
-        </div>
-
-        <div class="who-card who-card-right reveal">
-          <div class="who-content">
-            <div class="who-title">Digital Nomads</div>
-            <div class="who-desc">Location-independent professionals navigating constantly changing tax residency determinations and evolving filing obligations across multiple countries. We track your status shifts, manage filing deadlines in every relevant jurisdiction, and ensure you meet every U.S. tax requirement no matter where you are working.</div>
-          </div>
-          <div class="who-icon">🌏</div>
-        </div>
+  <!-- WHY -->
+  <section class="difference" id="site-why">
+    <div class="container difference-grid">
+      <div class="difference-intro">
+        <h2 class="title" data-reveal>Asia's best U.S. tax firm. <span class="accent">Not a claim. A record.</span></h2>
+        <p data-reveal style="--i:1">Most firms are either strong on U.S. federal law or present in Asia. Very few are genuinely both. AI Tax Advisers has spent over 15 years building the rarest combination in this industry.</p>
+        <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com" data-reveal style="--i:2">Book a free consult</a>
       </div>
+      <ul class="difference-list">
+        <li data-reveal><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>The only Embassy-listed Asia firm</strong><span>Appears on the U.S. Embassy Bangkok's official list of recommended tax consultants.</span></li>
+        <li data-reveal style="--i:1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>On the ground across Asia</strong><span>Twelve-plus offices from Bangkok to Sydney to Florida. Real advisors in your timezone.</span></li>
+        <li data-reveal style="--i:2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>U.S. federal precision at the core</strong><span>CPA oversight on every engagement. Every position is built to withstand IRS scrutiny.</span></li>
+        <li data-reveal style="--i:3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Authorised IRS e-File Provider</strong><span>Filed directly and securely, with a 99.8% accuracy rate.</span></li>
+        <li data-reveal style="--i:4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Individuals and businesses</strong><span>One firm covers your personal filing and your company's cross-border structure.</span></li>
+        <li data-reveal style="--i:5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></svg><strong>Confidential, no obligation</strong><span>A free 30-minute consult with a straight answer on where you stand.</span></li>
+      </ul>
     </div>
   </section>
 
   <!-- PROCESS -->
-  <section id="process">
-    <div class="container">
-      <div class="process-header reveal">
-        <p class="s-eyebrow">How It Works</p>
-        <h2 class="s-title">Simple Start. Expert Execution.</h2>
-        <p class="s-body">Getting your U.S. taxes right in Asia does not have to be complicated on your end.</p>
+  <section class="visit" id="site-process">
+    <div class="container visit-grid">
+      <div class="visit-media" data-reveal>
+        <img src="images/team-photo-three-professionals-updated-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers team" loading="lazy">
       </div>
+      <div>
+        <h2 class="title" data-reveal>Simple start, <span class="accent">expert execution</span></h2>
+        <ol class="visit-steps">
+          <li data-reveal><div><strong>Book a free consultation</strong><p>A 30-minute call with an AI Tax Advisers advisor. We review your situation, identify risks and opportunities, and give you a clear picture of what needs to happen.</p></div></li>
+          <li data-reveal style="--i:1"><div><strong>We build your tax strategy</strong><p>Your advisor maps your full picture: treaty positions, exclusion elections, FBAR obligations, entity structure. A complete plan, no surprises.</p></div></li>
+          <li data-reveal style="--i:2"><div><strong>Filed. Compliant. Done.</strong><p>We handle the filings and you get confirmation when everything is submitted and accepted. Peace of mind, not paperwork anxiety.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="step-circle"><span class="step-circle-num">1</span></div>
-          <div class="step-title">Book a Free Consultation</div>
-          <div class="step-body">
-            A 30-minute call with an AI Tax Advisers advisor. We review your situation, identify risks and opportunities,
-            and give you a clear picture of what needs to happen.
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-portrait" data-reveal>
+        <figure><img src="images/professional-man-formal-bow-tie-confident-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Portrait of Thomas Carden, Lead Tax Advisor" loading="lazy"></figure>
+        <ul class="about-credentials">
+          <li>Lead Tax Advisor</li>
+          <li>U.S. Embassy Bangkok Listed</li>
+          <li>15+ years in practice</li>
+        </ul>
+      </div>
+      <div class="about-body">
+        <h2 class="title" data-reveal>Meet Thomas Carden</h2>
+        <p class="about-role" data-reveal style="--i:1">Lead Tax Advisor, American International Tax Advisers</p>
+        <p data-reveal style="--i:2">Thomas has spent over 15 years building AI Tax Advisers into Asia's leading U.S. tax firm, headquartered in Hong Kong with advisors across twelve-plus offices from Bangkok to Sydney to Florida.</p>
+        <p data-reveal style="--i:3">Every engagement runs under CPA oversight, whether it's a straightforward expat return or a multi-jurisdiction corporate structure. No approximations: every position is defensible and built to withstand IRS scrutiny.</p>
+        <blockquote class="about-quote" data-reveal style="--i:4">
+          One conversation changes everything. Our job is to give you a clear, honest picture of your U.S. tax position, wherever in Asia you're based.
+          <footer>Thomas Carden, Lead Tax Advisor</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="site-testimonial">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="title" data-reveal>What our <span class="accent">clients say</span></h2>
+        <div class="rail-controls" data-reveal style="--i:1">
+          <button class="rail-btn" id="testimonial-prev" aria-label="Previous review">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="rail-btn" id="testimonial-next" aria-label="Next review">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="testimonial-rail" id="testimonial-rail" tabindex="0" aria-label="Client reviews, scroll horizontally">
+        <article class="testimonial-card" data-reveal>
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-circle"><span class="step-circle-num">2</span></div>
-          <div class="step-title">We Build Your Tax Strategy</div>
-          <div class="step-body">
-            Your advisor maps your full picture: treaty positions, exclusion elections, FBAR obligations,
-            entity structure. A complete plan with no surprises.
+          <p>&ldquo;I am a U.S. citizen currently residing in Thailand on an OA visa. The staff at AIT did an amazing job in filing my taxes in Thailand, and they were able to save me a lot of money as well due to their expert knowledge of Thailand/United States tax law.&rdquo;</p>
+          <p class="testimonial-name">T B<span>Local Guide &middot; 30 Google reviews</span></p>
+        </article>
+        <article class="testimonial-card" data-reveal style="--i:1">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
-        </div>
-        <div class="process-step reveal">
-          <div class="step-circle"><span class="step-circle-num">3</span></div>
-          <div class="step-title">Filed. Compliant. Done.</div>
-          <div class="step-body">
-            We handle the filings and you get confirmation when everything is submitted and accepted.
-            Peace of mind, not paperwork anxiety.
+          <p>&ldquo;I have lived in Thailand for more than 25 years. 2024 was a particularly good year, because I acquired the LTR Visa and met Thomas Carden. Within the first few minutes of that initial consultation, he told me he could recover some of my overpaid taxes.&rdquo;</p>
+          <p class="testimonial-name">Frank Polizzotto<span>Google review</span></p>
+        </article>
+        <article class="testimonial-card" data-reveal style="--i:2">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2026 FILING DEADLINES -->
-  <section id="deadlines">
-    <div class="container">
-      <div class="deadlines-header reveal">
-        <p class="s-eyebrow">Stay Compliant</p>
-        <h2 class="s-title">2026 Filing Deadlines</h2>
-        <p class="s-body">Mark your calendar. Missing U.S. tax deadlines carries serious penalties. We track deadlines for you so you never miss a filing requirement.</p>
-      </div>
-
-      <div class="deadlines-grid">
-        <div class="deadline-item">
-          <div class="deadline-date">April 15, 2026</div>
-          <div class="deadline-title">U.S. Tax Returns Due</div>
-          <div class="deadline-desc">Form 1040, state returns, and all supporting schedules. Extensions available until October 15.</div>
-        </div>
-        <div class="deadline-item">
-          <div class="deadline-date">April 15, 2026</div>
-          <div class="deadline-title">FBAR & FATCA Reports</div>
-          <div class="deadline-desc">FinCEN Form 114 (FBAR) and Form 8938 (FATCA) due for all U.S. persons with foreign accounts over thresholds. Automatic extension to October 15.</div>
-        </div>
-        <div class="deadline-item">
-          <div class="deadline-date">April 15, 2026</div>
-          <div class="deadline-title">Q1 Estimated Taxes</div>
-          <div class="deadline-desc">If self-employed or receiving passive income, Q1 estimated payments may be due.</div>
-        </div>
-        <div class="deadline-item">
-          <div class="deadline-date">June 15, 2026</div>
-          <div class="deadline-title">Automatic Extension (2025 Returns)</div>
-          <div class="deadline-desc">File Form 4868 to extend your return to October 15, 2026.</div>
-        </div>
-        <div class="deadline-item">
-          <div class="deadline-date">December 31, 2026</div>
-          <div class="deadline-title">GILTI & Subpart F Elections</div>
-          <div class="deadline-desc">U.S. persons with foreign corporations must make critical tax elections by year-end.</div>
-        </div>
-        <div class="deadline-item">
-          <div class="deadline-date">Throughout 2026</div>
-          <div class="deadline-title">Ongoing Compliance</div>
-          <div class="deadline-desc">Foreign earned income elections, treaty position statements, and quarterly payments due on varying schedules.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIAL -->
-  <section id="testimonial">
-    <div class="container">
-      <div class="testimonial-inner">
-        <div class="testimonial-photo-wrap reveal">
-          <img class="testimonial-photo" src="images/couple-professional-happy-headshot-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers clients">
-          <div class="testimonial-photo-frame"></div>
-        </div>
-        <div class="reveal">
-          <span class="quote-mark">"</span>
-          <p class="quote-text">
-            Delivered on everything that they said they would.
-            Recovered tax overpayment. Many thanks again.
-          </p>
-          <div class="quote-attr">
-            <div class="quote-attr-line"></div>
-            <div>
-              <div class="quote-attr-name">David Clarke</div>
-              <div class="quote-attr-role">American International Tax Advisers client</div>
-            </div>
+          <p>&ldquo;AIT have been extremely competent, professional and supportive during a process whereby they managed to help me get a penalty abated. Thomas and his team have a high level of expertise and experience which is invaluable.&rdquo;</p>
+          <p class="testimonial-name">Hami Dragon<span>Google review</span></p>
+        </article>
+        <article class="testimonial-card" data-reveal style="--i:3">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
           </div>
-        </div>
+          <p>&ldquo;Thomas and Chris gave me excellent service. I got a refund when I thought I would certainly have to pay cap gains tax...the refund more than paid for their service! These guys are pros you can trust.&rdquo;</p>
+          <p class="testimonial-name">Morgan Lake<span>Google review</span></p>
+        </article>
+        <article class="testimonial-card" data-reveal style="--i:4">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+          </div>
+          <p>&ldquo;AIT have excellent knowledge of my tax situation and helped me to navigate the confusing new tax requirement in Thailand for a foreigner. Knowledgeable, friendly, and good value service. A+&rdquo;</p>
+          <p class="testimonial-name">Brian JC<span>Google review</span></p>
+        </article>
+        <article class="testimonial-card" data-reveal style="--i:5">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 7.1-1.01z"/></svg>
+          </div>
+          <p>&ldquo;American international tax advisors have been doing my US taxes since 2019. I will continue to use them for as long as i have to do my taxes.&rdquo;</p>
+          <p class="testimonial-name">Noah Kanter<span>Local Guide &middot; 64 Google reviews</span></p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- LATEST TAX UPDATES -->
-  <section id="updates">
-    <div id="updatesParallax"><div></div></div>
+  <!-- BELIEF / CTA -->
+  <section class="belief">
+    <div class="container belief-inner">
+      <p class="belief-label" data-reveal>Our belief</p>
+      <blockquote data-reveal style="--i:1">One conversation changes everything. The <span class="accent">sooner</span> you get your position reviewed, the <span class="accent">fewer</span> surprises you'll face at filing time.</blockquote>
+    </div>
+  </section>
+
+  <!-- DEADLINES / COMPLIANCE -->
+  <section class="cover" id="site-deadlines">
     <div class="container">
-      <div class="updates-header reveal">
-        <p class="s-eyebrow">Stay Informed</p>
-        <h2 class="s-title">Latest Tax Updates for Asia Expats</h2>
-        <p class="s-body">Regulatory changes, IRS announcements, and tax law updates that affect U.S. expats in Asia. We track changes so you stay compliant.</p>
-      </div>
-
-      <div class="updates-grid">
-        <div class="update-card">
-          <div class="update-tag">2026 Update</div>
-          <div class="update-title">FEIE Limit Increase for 2026</div>
-          <div class="update-body">The Foreign Earned Income Exclusion (FEIE) limit increases to USD 120,000+ for 2026. Review your FEIE election status now to maximise tax-free income.</div>
-        </div>
-        <div class="update-card">
-          <div class="update-tag">IRS Alert</div>
-          <div class="update-title">FBAR Penalties Remain Strict</div>
-          <div class="update-body">The IRS continues to enforce FBAR penalties. If you have unreported foreign accounts, consider the Voluntary Disclosure Practice (VDP) or Streamlined Filing Compliance Procedures.</div>
-        </div>
-        <div class="update-card">
-          <div class="update-tag">Thailand Tax</div>
-          <div class="update-title">Thailand Foreign Income Rules 2026</div>
-          <div class="update-body">Thailand permits tax exemption on foreign-sourced income if earned and remitted abroad. Critical treaty coordination required. U.S. expats in Thailand benefit from dual planning strategies.</div>
-        </div>
-        <div class="update-card">
-          <div class="update-tag">Filing News</div>
-          <div class="update-title">IRS E-File Extensions</div>
-          <div class="update-body">The IRS has extended e-file acceptance periods. We are an Authorised IRS e-File Provider with 99.8% accuracy rate.</div>
-        </div>
-        <div class="update-card">
-          <div class="update-tag">Compliance</div>
-          <div class="update-title">GILTI & Subpart F 2026</div>
-          <div class="update-body">U.S. owners of foreign corporations face GILTI (Global Intangible Low-Taxed Income) and Subpart F income inclusions. Strategic planning required for multi-entity structures.</div>
-        </div>
-        <div class="update-card">
-          <div class="update-tag">Planning</div>
-          <div class="update-title">Treaty Optimisation Strategies</div>
-          <div class="update-body">The U.S.-Thailand tax treaty provides significant relief. Our advisors specialise in treaty position statements and optimal filing strategies for Asia expats.</div>
-        </div>
+      <h2 class="title" data-reveal>2026 filing deadlines, <span class="accent">tracked for you</span></h2>
+      <p class="cover-intro" data-reveal style="--i:1">Missing a U.S. tax deadline carries real penalties. We track every date across every jurisdiction so you don't have to.</p>
+      <div class="cover-notes">
+        <div data-reveal><strong>April 15, 2026</strong><p>Form 1040, state returns, FBAR (FinCEN 114) and FATCA (Form 8938). Extensions available to October 15.</p></div>
+        <div data-reveal style="--i:1"><strong>June 15, 2026</strong><p>Automatic filing extension deadline for expats, and Q2 estimated tax payments for the self-employed.</p></div>
+        <div data-reveal style="--i:2"><strong>September 15, 2026</strong><p>Q3 estimated tax installment for self-employed expats managing U.S.-sourced income.</p></div>
+        <div data-reveal style="--i:3"><strong>December 31, 2026</strong><p>GILTI and Subpart F elections due for U.S. persons with foreign corporations.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section id="final-cta">
-    <div class="container">
-      <img class="cta-logo" width="48" height="48" fetchpriority="high" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-      <h2 class="cta-title reveal">Ready to Get Your<br>U.S. Taxes Right?</h2>
-      <p class="cta-sub reveal">
-        One conversation changes everything. Free, confidential, no obligation.
-        Talk to an AI Tax Advisers advisor who understands exactly where you are and what you need.
-      </p>
-      <div class="cta-actions reveal">
-        <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'">
-          Book a Free Consult
-          <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
-            <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container faq-grid">
+      <div class="faq-intro">
+        <h2 class="title" data-reveal>Good <span class="accent">questions</span></h2>
+        <p data-reveal style="--i:1">If yours isn't answered here, get in touch and an advisor will talk it through.</p>
+        <a class="btn btn-solid" href="mailto:admin@aitaxadvisers.com" data-reveal style="--i:2">Email an advisor</a>
       </div>
-      <p class="cta-note">Response within one business day. All consultations strictly confidential.</p>
-
-      <div class="cta-offices">
-        <span class="cta-office">Hong Kong</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Bangkok</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Chiang Mai</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Manila</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Phnom Penh</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Ho Chi Minh City</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Kuala Lumpur</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Jakarta</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Taipei</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Sydney</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">UAE</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Saudi Arabia</span>
-        <span class="cta-office-sep"></span>
-        <span class="cta-office">Florida</span>
+      <div class="faq-list">
+        <details data-reveal>
+          <summary>What services does AI Tax Advisers provide for U.S. expats?</summary>
+          <div><p>Federal and state income tax returns, FBAR and FATCA compliance, Foreign Earned Income Exclusion (FEIE) optimisation, Foreign Tax Credit strategy, delinquent filing catch-up programs, and pre-move departure tax planning for Americans living and working across Asia.</p></div>
+        </details>
+        <details data-reveal style="--i:1">
+          <summary>Do you help businesses with cross-border tax structuring?</summary>
+          <div><p>Yes. We specialise in cross-border tax engineering for businesses operating between the U.S. and Asian jurisdictions: entity structuring, transfer pricing documentation, W-8BEN and W-8BEN-E filing management, Subpart F and GILTI analysis, 1042-S withholding compliance, and multi-jurisdiction tax treaty optimisation.</p></div>
+        </details>
+        <details data-reveal style="--i:2">
+          <summary>Is AI Tax Advisers listed by the U.S. Embassy?</summary>
+          <div><p>Yes. American International Tax Advisers is listed on the official U.S. Embassy Bangkok list of recommended tax consultants, an independent government endorsement of our expertise in U.S. expat taxation in Thailand.</p></div>
+        </details>
+        <details data-reveal style="--i:3">
+          <summary>How many offices does AI Tax Advisers have?</summary>
+          <div><p>Twelve-plus international offices across Asia and beyond: Hong Kong (headquarters), Bangkok, Chiang Mai, Manila, Phnom Penh, Ho Chi Minh City, Kuala Lumpur, Jakarta, Taipei, Sydney, UAE, and Florida. Real advisors in your timezone across multiple jurisdictions.</p></div>
+        </details>
+        <details data-reveal style="--i:4">
+          <summary>What is the FBAR and do I need to file it?</summary>
+          <div><p>The FBAR (FinCEN Form 114) reports Foreign Bank and Financial Accounts. U.S. citizens with foreign accounts exceeding USD 10,000 in aggregate must file. We handle full FBAR compliance and can help you catch up on delinquent filings through government amnesty programs.</p></div>
+        </details>
+        <details data-reveal style="--i:5">
+          <summary>What is the Foreign Earned Income Exclusion (FEIE)?</summary>
+          <div><p>The FEIE allows qualifying U.S. expats to exclude foreign earned income (up to USD 120,000+ annually) from U.S. taxation. We optimise your FEIE strategy to minimise your overall tax burden while remaining fully compliant.</p></div>
+        </details>
+        <details data-reveal style="--i:6">
+          <summary>Do U.S. expats in Thailand pay taxes on worldwide income?</summary>
+          <div><p>Yes, the U.S. taxes citizens on worldwide income regardless of residence. However, treaties, exclusions and foreign tax credits can substantially reduce or eliminate liability. Our advisors navigate both U.S. and Thai tax law to optimise your position.</p></div>
+        </details>
+        <details data-reveal style="--i:7">
+          <summary>How do I get started with AI Tax Advisers?</summary>
+          <div><p>Book a free 30-minute consultation with one of our advisors. We review your situation, identify risks and opportunities, and give you a clear picture of your U.S. tax obligations and strategy, with no obligation.</p></div>
+        </details>
       </div>
     </div>
   </section>
+
+  </div>
+  <!-- ============ END SITE CONTENT ============ -->
 
   <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+1-800-906-598">Call (800) 906-598</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OFFICE HOURS</strong>
+            Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/thailand/us-expat-taxes-thailand-2026">Thailand Tax Hub</a></li>
-              <li><a href="/thailand/filing-us-taxes-from-thailand">Filing US Taxes from Thailand</a></li>
-              <li><a href="/thailand/how-to-file-thai-tax-as-an-expat">How to File Thai Tax</a></li>
-              <li><a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a></li>
-              <li><a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs Foreign Tax Credit</a></li>
-              <li><a href="/pages/tax-treaty-optimization-2026">Tax Treaty Optimisation</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call</dt>
+            <dd><a href="tel:+1-800-906-598">(800) 906-598</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="#site-services">Services</a>
+        <a href="#site-why">About</a>
+        <a href="#site-process">How It Works</a>
+        <a href="#site-testimonial">Client Stories</a>
+        <a href="#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
 
   </main>
 
@@ -1148,6 +1028,7 @@
   <script src="js/global.js?v=4"></script>
   <script src="js/homepage.js"></script>
   <script src="js/chaty-widget.js" defer></script>
+  <script src="js/site.js" defer></script>
 
 
 <!-- Cloudflare Web Analytics -->

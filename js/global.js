@@ -21,27 +21,33 @@ window.addEventListener('load', () => {
     }
   }
 
-  // PRELOADER (Skip if coming from another Thailand page or homepage)
+  // PRELOADER (only on the first page load of the session — every later page
+  // in this tab hides it instantly with no animation, via sessionStorage)
   const preloader = document.getElementById('preloader');
   if (preloader) {
-    const referrer = document.referrer;
-    const isFromSite = referrer.includes('aitaxadvisors');
-    const isFromThailandOrHome = referrer.includes('/thailand/') || referrer.includes('index.html') || referrer.includes('aitaxadvisors/') && !referrer.includes('/thailand/') && referrer.split('/').pop() === '';
-    const skipPreloader = isFromSite && (isFromThailandOrHome || referrer.includes('thailand'));
+    const alreadyShown = sessionStorage.getItem('aitax_preloader_shown');
 
-    gsap.to('#preloader', {
-      opacity: 0,
-      duration: 0.55,
-      delay: skipPreloader ? 0 : 1.1,
-      ease: 'power2.inOut',
-      onComplete: () => {
-        preloader.style.display = 'none';
-        // Call homepage animations if function exists (loaded from js/homepage.js)
-        if (typeof animateHero === 'function') {
-          animateHero();
-        }
+    if (alreadyShown) {
+      preloader.style.display = 'none';
+      if (typeof animateHero === 'function') {
+        animateHero();
       }
-    });
+    } else {
+      sessionStorage.setItem('aitax_preloader_shown', '1');
+      gsap.to('#preloader', {
+        opacity: 0,
+        duration: 0.55,
+        delay: 1.1,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          preloader.style.display = 'none';
+          // Call homepage animations if function exists (loaded from js/homepage.js)
+          if (typeof animateHero === 'function') {
+            animateHero();
+          }
+        }
+      });
+    }
   }
 });
 

@@ -97,6 +97,177 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+
+    <!-- Page-specific article styling: self-contained, light-first, high-contrast.
+       Deliberately does NOT use the --site-* tokens (those only resolve inside a
+       .site-scope wrapper, which the body isn't in) so text/backgrounds never
+       silently fail to render. Only the footer relies on site-scope, unchanged. -->
+  <style>
+    :root {
+      --art-ink: #101a33;
+      --art-ink-soft: rgba(16,26,51,0.78);
+      --art-line: #e1e5ee;
+      --art-card-bg: #f4f6fa;
+      --art-link: var(--blue);
+      --art-accent: var(--blue);
+    }
+    .article-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      color: var(--art-ink);
+    }
+    .article-section + .article-section {
+      border-top: 1px solid var(--art-line);
+    }
+    /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
+    .article-section.dark {
+      background: var(--navy);
+      color: #ffffff;
+      border-top: none;
+    }
+    .article-section h2, .article-section h3, .article-section h4 {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--art-ink);
+    }
+    .article-section.dark h2, .article-section.dark h3, .article-section.dark h4 {
+      color: #ffffff;
+    }
+    .article-section h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0 0 1.5rem; }
+    .article-section h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin: 0 0 1.5rem; }
+    .article-section h4 { font-size: 1.05rem; margin: 0 0 1rem; }
+    .article-section p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: var(--art-ink-soft);
+      font-size: 1.02rem;
+    }
+    .article-section.dark p { color: rgba(255,255,255,0.85); }
+    .article-section p:last-child { margin-bottom: 0; }
+    .article-section ul, .article-section ol {
+      margin: 0 0 1.5rem 1.25rem;
+      line-height: 1.8;
+      color: var(--art-ink-soft);
+    }
+    .article-section.dark ul, .article-section.dark ol { color: rgba(255,255,255,0.85); }
+    .article-section strong { color: var(--art-ink); }
+    .article-section.dark strong { color: #ffffff; }
+    .article-section a { color: var(--art-link); font-weight: 600; text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+    .article-section.dark a { color: #8ecbf5; }
+
+    /* Callout / example boxes: clearly bordered light cards, not floating boxes */
+    .article-callout {
+      background: var(--art-card-bg);
+      border: 1px solid var(--art-line);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-section.dark .article-callout {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .article-callout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .article-callout-grid .article-callout { margin-bottom: 0; }
+    .article-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .article-section.dark .article-eyebrow { color: #8ecbf5; }
+
+    /* Checklist (replaces the old ad-hoc bullet lists) */
+    .article-checklist {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .article-checklist li {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+    .article-checklist svg {
+      flex-shrink: 0;
+      color: var(--art-accent);
+      margin-top: 0.15rem;
+    }
+    .article-section.dark .article-checklist svg { color: #8ecbf5; }
+    .article-checklist strong { display: block; margin-bottom: 0.15rem; }
+
+    /* FAQ accordion (self-contained, light) */
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details {
+      background: var(--art-card-bg);
+      border: 1px solid var(--art-line);
+      border-radius: 12px;
+      padding: 1.1rem 1.5rem;
+    }
+    .article-faq-list summary {
+      font-weight: 600;
+      color: var(--art-ink);
+      cursor: pointer;
+      list-style: none;
+    }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; }
+
+    .article-breadcrumb {
+      padding: 1rem 0;
+      background: #f4f6fa;
+      border-bottom: 1px solid var(--art-line);
+      position: relative;
+      z-index: 1;
+    }
+    .article-breadcrumb .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-breadcrumb nav { font-size: 0.85rem; color: var(--art-ink-soft); }
+    .article-breadcrumb nav a { color: var(--art-link); text-decoration: none; font-weight: 600; }
+    .article-breadcrumb nav a:hover { text-decoration: underline; }
+    .article-breadcrumb .meta { font-size: 0.85rem; color: var(--art-ink-soft); }
+    .article-key-topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    /* Constrain the article body to a comfortable reading width */
+    .article-breadcrumb .container,
+    .article-section .container {
+      max-width: 1140px;
+    }
+    .article-section .container > p,
+    .article-section .container > h2,
+    .article-section .container > h3,
+    .article-section .container > ul,
+    .article-section .container > .reveal.article-callout,
+    .article-section .container > .article-faq-list {
+      max-width: 1064px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
@@ -155,15 +326,16 @@
   </div>
 
   <!-- NAV -->
+  <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="../index.html">
+      <a class="nav-logo" href="/">
         <img loading="lazy" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#why">Why Us</a></li>
-        <li><a href="/#process">How It Works</a></li>
+        <li><a href="/#site-services">Services</a></li>
+        <li><a href="/#site-why">Why Us</a></li>
+        <li><a href="/#site-process">How It Works</a></li>
         <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Countries</a>
           <div class="nav-dropdown-menu" id="countries-menu">
@@ -355,6 +527,16 @@
           </div>
         </li>
         <li class="nav-dropdown">
+          <a href="javascript:void(0)" role="button" tabindex="0">Resources</a>
+          <div class="nav-dropdown-menu" id="resources-menu">
+            <a href="/pages/us-expats-retiring">Expat Tax Guide</a>
+            <a href="/pages/fbar-crackdown-2026">FBAR Crackdown</a>
+            <a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs FTC</a>
+            <a href="/pages/tax-treaty-optimization-2026">Tax Treaties</a>
+            <a href="/pages/us-llc-vs-hong-kong-vs-uae-2026">US LLC vs Hong Kong vs UAE</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Blogs</a>
           <div class="nav-dropdown-menu" id="blogs-menu">
             <a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a>
@@ -410,37 +592,37 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/couple-holding-hands-beach-retirement-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Retirement planning and financial security for expats in Thailand" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/couple-holding-hands-beach-retirement-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Retirement planning and financial security for expats in Thailand" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
       </div>
     </section>
 
     <!-- BREADCRUMB & META -->
-    <section style="padding: 1rem 0; background: #ffffff; border-bottom: 1px solid var(--border); position: relative; z-index: 1;">
-      <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <nav style="font-size: 0.85rem; color: var(--navy-mid);">
-            <a href="/" style="color: var(--blue); text-decoration: none;">Home</a>
-            <span style="margin: 0 0.5rem;">/</span>
-            <a href="/thailand" style="color: var(--blue); text-decoration: none;">Thailand</a>
-            <span style="margin: 0 0.5rem;">/</span>
-            <span style="color: var(--navy);">Retirement Tax Planning</span>
-          </nav>
-          <div style="font-size: 0.85rem; color: var(--navy-mid);">
-            <span>📅 Last Updated: April 2026</span>
-            <span style="margin: 0 1rem;">|</span>
-            <span>⏱️ 15 min read</span>
-          </div>
+    <section class="article-breadcrumb">
+      <div class="container row">
+        <nav>
+          <a href="/">Home</a>
+          <span style="margin: 0 0.5rem;">/</span>
+          <a href="/thailand/us-expat-taxes-thailand-2026">Thailand</a>
+          <span style="margin: 0 0.5rem;">/</span>
+          <span>Retirement Tax Planning</span>
+        </nav>
+        <div class="meta">
+          <span>Last Updated: April 2026</span>
+          <span style="margin: 0 1rem;">|</span>
+          <span>15 min read</span>
         </div>
       </div>
     </section>
 
     <!-- SECTION 1: RETIREMENT INCOME SOURCES AND TAX TREATMENT (1200-1600 words) -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <section class="article-section">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0;">Understanding Retirement Income Sources and Their Tax Treatment</h2>
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">Retiring in Thailand offers significant lifestyle and healthcare advantages, but it requires careful tax planning across two jurisdictions: the United States and Thailand. Most Americans retiring in Thailand rely on a combination of income sources: Social Security, pensions from former employers, 401k withdrawals, investment income, and sometimes part-time work. Each income source has unique tax treatment in both the US and Thailand, and optimising how and when you receive these funds can save tens of thousands of dollars over your retirement years. The key is understanding the differences in how each jurisdiction taxes retirement income and coordinating withdrawals strategically.</p>
-<img src="../images/seniors-couple-health-wellness-casual-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Senior US expat couple enjoying healthy retirement lifestyle in Thailand" loading="lazy" style="float: left; margin: 0 1.5rem 1rem 0; width: 270px; max-height: 300px; object-fit: cover; border-radius: 6px;">
+
+        <img loading="lazy" src="../images/couple-holding-hands-beach-retirement-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Couple enjoying retirement in Thailand while planning US and Thai taxes" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin: 1.5rem 0;">
+<img src="../images/seniors-couple-health-wellness-casual-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Senior US expat couple enjoying healthy retirement lifestyle in Thailand" loading="lazy" style=" width: 270px; max-height: 300px; object-fit: cover; border-radius: 6px;">
 
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Social Security Benefits and Thai Tax Treaty Protection</h3>
@@ -450,7 +632,7 @@
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Pension Income: Coordinating US and Thai Taxation</h3>
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">Pension distributions from a US employer (whether from a defined benefit pension plan or a qualified distribution from a deferred compensation plan) are fully taxable in the US as ordinary income. If you're a Thai tax resident and remit pension funds to Thailand, those same funds are also subject to Thai taxation. This creates double taxation exposure. However, the US-Thailand tax treaty provides relief through the Foreign Tax Credit (Form 1116). If you receive a USD 40,000 annual pension and remit all of it to Thailand, your US tax liability on USD 40,000 might be USD 6,000 (depending on your bracket and other income). Your Thai tax liability might be USD 4,000 (depending on your total income and deductions). If you report the pension to both countries correctly, you'll claim the USD 4,000 Thai tax paid as a credit on Form 1116, reducing your US liability to USD 2,000. This prevents paying the full USD 10,000 total. Proper coordination between your US and Thai returns is essential.</p>
-<img src="../images/retirement-plan-coffee-glasses-money-jar-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Retirement plan with coffee and savings jar for Americans retiring in Thailand" loading="lazy" style="float: right; margin: 0 0 1rem 1.5rem; width: 250px; max-height: 300px; object-fit: cover; border-radius: 6px;">
+<img src="../images/retirement-plan-coffee-glasses-money-jar-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Retirement plan with coffee and savings jar for Americans retiring in Thailand" loading="lazy" style=" width: 250px; max-height: 300px; object-fit: cover; border-radius: 6px;">
 
 
         <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8;">Additionally, many pension plans allow you to elect how frequently distributions are paid. Some retirees structure distributions to minimise their tax bracket in both countries. For example, if you receive a large lump-sum distribution one year, you might enter a very high tax bracket. Instead, if you can take it over two or three years, you spread the income across multiple years and years, potentially reducing your overall tax. Some pensions allow for partial distributions, lump-sum options, or monthly payments; work with your pension administrator and a tax specialist to understand your options and choose the distribution method that minimises your combined US and Thai tax liability.</p>
@@ -458,7 +640,7 @@
     </section>
 
     <!-- SECTION 2: 401K WITHDRAWALS, RMDS, AND RETIREMENT VISA PLANNING (Dark Navy Section) -->
-    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 4rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white); position: relative; z-index: 1;">
+    <section class="article-section dark">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; color: var(--white);">401k Withdrawals, RMDs, and the O-A Retirement Visa</h2>
 
@@ -468,10 +650,30 @@
       </div>
     </section>
 
+    <!-- When to Consult a Specialist -->
+    <section class="article-section dark">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 3.5rem; align-items: start;">
+          <div>
+            <img loading="lazy" src="../images/man-shrug-uncertain-blazer-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Retiree unsure how Social Security and pensions will be taxed in Thailand" style="width: 100%; border-radius: 12px; filter: brightness(0.9) saturate(0.9);">
+          </div>
+          <div>
+            <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8ecbf5; margin-bottom: 0.9rem;">Expert Guidance</p>
+            <h3>When to Consult a Specialist</h3>
+            <ul class="article-checklist">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Multiple retirement income sources</strong><span>Social Security, pensions, and 401(k) withdrawals need coordinated planning.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Required Minimum Distributions</strong><span>RMDs starting at 73 interact with Thai remittance timing.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Estate planning across borders</strong><span>Your will and beneficiaries span both US and Thai jurisdictions.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Roth conversion timing</strong><span>Converting before RMDs begin can lock in lower rates, but timing matters.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Visa and residency changes</strong><span>Retirement, LTR, or marriage visa transitions affect your tax position.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 3: HEALTHCARE, INSURANCE, AND DEDUCTIONS (Crosshatch Pattern Section) -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
-      <!-- Diagonal Blue Grid -->
-      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px), repeating-linear-gradient(-45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px); background-size: 24px 24px; pointer-events: none; z-index: 0;"></div>
+    <section class="article-section">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">Healthcare, Insurance, and Maximising Deductions</h2>
 
@@ -490,19 +692,19 @@
     </section>
 
     <!-- SECTION 4: STRATEGIC RETIREMENT PLANNING AND FAQ -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <section class="article-section">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0;">Strategic Withdrawal Planning and Retirement Questions</h2>
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Creating an Optimal Withdrawal Strategy</h3>
 
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">A comprehensive retirement strategy in Thailand coordinates Social Security, pensions, 401k withdrawals, and investment income to minimise combined US and Thai tax. The order of withdrawals matters significantly. Some retirees prioritise drawing from taxable investment accounts first (since capital gains may be taxed at lower rates), then tax-deferred accounts (401k), then tax-free accounts (Roth). Others prioritise drawing from accounts with lower tax consequences in Thailand first, managing their Thai tax bracket while building US-based income later. Roth conversion strategies executed before RMDs begin can lock in lower tax rates and reduce future RMD burdens. The timing of remittances to Thailand also impacts your tax bracket; delaying or accelerating remittances strategically can keep you in a lower tax bracket both years. Without a well-structured plan, many retirees overpay tax significantly. Working with a cross-border specialist to create a comprehensive 5-10 year withdrawal and remittance plan typically costs USD 1,500-3,000 but saves far more through optimised taxation.</p>
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">A comprehensive retirement strategy in Thailand coordinates Social Security, pensions, 401k withdrawals, and investment income to minimise combined US and Thai tax. The order of withdrawals matters significantly. Some retirees prioritise drawing from taxable investment accounts first (since capital gains may be taxed at lower rates), then tax-deferred accounts (401k), then tax-free accounts (Roth). Others prioritise drawing from accounts with lower tax consequences in Thailand first, managing their Thai tax bracket while building US-based income later. Roth conversion strategies executed before RMDs begin can lock in lower tax rates and reduce future RMD burdens. The timing of remittances to Thailand also impacts your tax bracket; delaying or accelerating remittances strategically can keep you in a lower tax bracket both years. Without a well-structured plan, many retirees overpay tax significantly. Working with a cross-border specialist to create a comprehensive 5-10 year withdrawal and remittance plan typically costs USD 1,500-3,000 but saves far more through optimised taxation.</p><div class="article-faq-list">
+<details><summary>If I retire in Thailand at age 55, can I withdraw my 401k without penalty?</summary><p>Yes, if you separate from service at age 55 or later, you qualify for the Rule of 55, allowing penalty-free withdrawals from your 401k. You'll still owe ordinary income tax on the withdrawals, but not the 10 percent early withdrawal penalty. This is valuable for retirees 55+; those younger than 55 face penalties unless another exception applies.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;"><strong>Q: If I retire in Thailand at age 55, can I withdraw my 401k without penalty?</strong><br>A: Yes, if you separate from service at age 55 or later, you qualify for the Rule of 55, allowing penalty-free withdrawals from your 401k. You'll still owe ordinary income tax on the withdrawals, but not the 10 percent early withdrawal penalty. This is valuable for retirees 55+; those younger than 55 face penalties unless another exception applies.</p>
+        <details><summary>Will Social Security benefits be reduced if I live in Thailand?</summary><p>No. Social Security is paid based on your work history and age, not residency. You receive the full benefit regardless of where you live. Payment can be deposited to a US or foreign bank account, though a US account is typically more convenient.</p></details>
 
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;"><strong>Q: Will Social Security benefits be reduced if I live in Thailand?</strong><br>A: No. Social Security is paid based on your work history and age, not residency. You receive the full benefit regardless of where you live. Payment can be deposited to a US or foreign bank account, though a US account is typically more convenient.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8;"><strong>Q: How do I handle RMDs once I'm in Thailand?</strong><br>A: You must take RMDs from US-based accounts annually starting at age 73. The funds can be transferred to a Thai bank account, but the withdrawal is fully taxable in the US and (if remitted) in Thailand. Plan ahead to manage the tax impact; consider Roth conversions before RMDs begin to reduce future RMD amounts.</p>
+<details><summary>How do I handle RMDs once I'm in Thailand?</summary><p>You must take RMDs from US-based accounts annually starting at age 73. The funds can be transferred to a Thai bank account, but the withdrawal is fully taxable in the US and (if remitted) in Thailand. Plan ahead to manage the tax impact; consider Roth conversions before RMDs begin to reduce future RMD amounts.</p></details>
+        </div>
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Estate Planning and Wealth Succession</h3>
 
@@ -518,76 +720,63 @@
       </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section id="final-cta" style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 5rem 2.5rem; background: var(--navy); position: relative; z-index: 1; color: var(--white); text-align: center;">
-      <div class="container" style="max-width: 600px; margin: 0 auto;">
-        <h2 class="reveal" style="font-size: 2rem; margin-bottom: 1rem; font-family: 'Libre Baskerville'; color: var(--white);">Plan Your Retirement in Thailand with Confidence</h2>
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 1rem; color: var(--silver);">Let our retirement tax specialists create a comprehensive withdrawal and tax strategy that optimises your Social Security, pensions, and 401k distributions across US and Thai jurisdictions.</p>
-        <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'" style="margin-bottom: 1rem;">
-          Schedule Retirement Planning
-          <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
-            <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <p class="reveal" style="font-size: 0.85rem; color: var(--muted);">Average consultation: 60 minutes. No obligation.</p>
+<!-- KEY TOPICS SECTION -->
+    <section class="article-section dark">
+      <div class="container">
+        <h3 class="reveal">Key Topics for Americans in Thailand</h3>
+        <div class="article-key-topics">
+          <div class="reveal">
+            <h4><a href="/thailand/tax-residency-180-day-rule">Tax Residency &amp; 180-Day Rule</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">How to track your days and avoid unexpected tax residency status.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/thailand-remittance-revolution-2026">2026 Remittance Revolution</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Section 41 changes, pre-2024 shield, and 2026 planning strategies.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/foreign-sourced-income-remittance">Foreign Income &amp; Remittance</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Understanding what triggers Thai tax when you bring money into Thailand.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/digital-nomads-remote-workers-thailand">Digital Nomads &amp; Remote Workers</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">DTV visa tax implications and staying compliant while working online.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/retiring-in-thailand-us-tax-planning">Retiring in Thailand</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Social Security, pensions, 401(k) withdrawals, and tax treaty benefits.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/how-to-file-thai-tax-as-an-expat">Thai Tax Filing (PND 90/91)</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Step-by-step guide to filing Thai personal income tax as an expat.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/filing-us-taxes-from-thailand">US Filing from Thailand</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">FEIE, FTC, FBAR reporting, and avoiding double taxation.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/us-thailand-expat-tax-checklist-2026">2026 Expat Tax Checklist</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">A step-by-step rundown of every filing task and deadline for the year.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-      <!-- FAQ Section -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <!-- MID-PAGE CTA - SHARED TEMPLATE -->
+    <section class="article-section dark">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: U.S. Expat Taxes in Thailand 2026</h2>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I become a tax resident if I arrive on day 180?</strong> A: Yes. The 180-day rule is inclusive. Arriving on calendar day 180 counts as day 180, triggering tax residency.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I use FEIE if I'm a Thai tax resident?</strong> A: Yes, but you must file Form 8833 (Treaty-Based Return Position Disclosure) if claiming benefits inconsistent with Thai tax residency. Coordinate carefully with a specialist.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What if I earn income in cryptocurrency?</strong> A: Crypto gains are treated like any foreign-sourced income. Remittance doctrine applies: only amounts remitted to Thailand are taxed in Thailand. The US taxes all crypto gains regardless of remittance.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I file Thai tax if I'm non-resident?</strong> A: No PND 90 if you're non-resident under the 180-day test. However, you may owe Thai tax on Thailand-sourced income (rental property, Thai business). You also still file US taxes on worldwide income.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What's the FBAR threshold?</strong> A: USD 10,000 aggregate across all foreign financial accounts. If the total ever exceeds 10k in a calendar year, you must file FinCEN Form 114 (FBAR) by April 15.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I deduct my cost of living in Thailand?</strong> A: No. Living expenses are non-deductible. However, if you're self-employed, legitimate business expenses (office rent, internet, professional services) are deductible on both Thai and US returns.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What if I'm not sure whether I hit 180 days?</strong> A: Document every border crossing. If you're unsure, assume you're a tax resident and file PND 90. Failing to file when required incurs penalties. Proactive filing is safer.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I amend a prior Thai or US tax return?</strong> A: Yes. Thailand allows amendments within 5 years of filing. The US allows amendments within 3 years of filing. Contact a specialist to review whether amending saves you money.</p>
-
-        <p class="reveal" style="margin-bottom: 1.5rem;">For more details on specific topics, explore our related guides on <a href="/thailand/tax-residency-180-day-rule" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Tax Residency & 180-Day Rule</a>, <a href="/thailand/foreign-sourced-income-remittance" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Foreign Income & Remittance</a>, and <a href="/thailand/digital-nomads-remote-workers-thailand" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Digital Nomads & Remote Workers</a>.</p>
-      </div>
-    </section>
-
-    
-    <!-- KEY TOPICS SECTION -->
-    <section style="padding: 3rem 0; background: var(--navy-dark);">
-      <div class="container">
-        <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: 'Libre Baskerville';" class="reveal">Key Topics for Americans in Thailand</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-          <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/tax-residency-180-day-rule" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Tax Residency & 180-Day Rule</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">How to track your days and avoid unexpected tax residency status.</p>
-          </div>
-          <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/foreign-sourced-income-remittance" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Foreign Income & Remittance</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Understanding what triggers Thai tax when you bring money into Thailand.</p>
-          </div>
-          <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/digital-nomads-remote-workers-thailand" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Digital Nomads & Remote Workers</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">DTV visa tax implications and staying compliant while working online.</p>
-          </div>
-          <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/retiring-in-thailand-us-tax-planning" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Retiring in Thailand</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Social Security, pensions, 401(k) withdrawals, and tax treaty benefits.</p>
-          </div>
-          <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/how-to-file-thai-tax-as-an-expat" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Thai Tax Filing (PND 90/91)</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Step-by-step guide to filing Thai personal income tax as an expat.</p>
-          </div>
-          <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/thailand/filing-us-taxes-from-thailand" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">US Filing from Thailand</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">FEIE, FTC, FBAR reporting, and avoiding double taxation.</p>
-          </div>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h3 class="reveal" style="font-size: 1.8rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">
+            Plan Your Retirement in Thailand the Right Way
+          </h3>
+          <p class="cta-sub reveal" style="margin-bottom: 2rem;">
+            Social Security, pensions, and 401(k) withdrawals interact differently once you're a Thai tax resident. Get a coordinated US-Thailand retirement tax plan.
+          </p>
+          <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'">
+            Book a Free Consultation
+            <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
+              <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -596,85 +785,98 @@
 
   </main>
 
-    <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+66-94-681-9734">Call 094-681-9734</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OTHER THAILAND OFFICES</strong>
+            Pattaya: <a href="tel:+66-96-806-5445">096-806-5445</a> &middot; Chiang Mai: <a href="tel:+66-53-218-823">053-218-823</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/thailand/us-expat-taxes-thailand-2026">Thailand Tax Hub</a></li>
-              <li><a href="/thailand/filing-us-taxes-from-thailand">Filing US Taxes from Thailand</a></li>
-              <li><a href="/thailand/how-to-file-thai-tax-as-an-expat">How to File Thai Tax</a></li>
-              <li><a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a></li>
-              <li><a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs Foreign Tax Credit</a></li>
-              <li><a href="/pages/tax-treaty-optimization-2026">Tax Treaty Optimisation</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call (Thailand)</dt>
+            <dd><a href="tel:+66-94-681-9734">094-681-9734</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
+        <a href="/#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
+
 
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 
   

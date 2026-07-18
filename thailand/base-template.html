@@ -10,17 +10,17 @@
   <meta name="theme-color" content="#0A1128">
   <meta name="keywords" content="[PAGE_KEYWORDS]">
   <meta name="author" content="American International Tax Advisers">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="language" content="English">
   <meta name="revisit-after" content="7 days">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://aitaxadvisors.com/thailand">
+  <link rel="canonical" href="https://aitaxadvisors.com/thailand/[PAGE_SLUG]">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:site_name" content="American International Tax Advisers">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aitaxadvisors.com/thailand">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aitaxadvisors.com/thailand/[PAGE_SLUG]">
   <meta property="og:title" content="[PAGE_TITLE]">
   <meta property="og:description" content="[PAGE_DESCRIPTION]">
   <meta property="og:image" content="https://aitaxadvisors.com/images/aitaxadvisors-og-social-American-International-Tax-Advisers-aitaxadvisers.webp">
@@ -42,8 +42,6 @@
   <!-- Additional SEO Enhancements -->
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-  <!-- Performance Optimisations -->
 
   <!-- Preload Critical Fonts -->
   <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
@@ -82,7 +80,6 @@
       font-style: italic;
       font-display: swap;
     }
-    
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -94,6 +91,181 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Page-specific article styling: self-contained, light-first, high-contrast.
+       Deliberately does NOT use the --site-* tokens (those only resolve inside a
+       .site-scope wrapper, which the body isn't in) so text/backgrounds never
+       silently fail to render. Only the footer relies on site-scope, unchanged. -->
+  <style>
+    :root {
+      --art-ink: #101a33;
+      --art-ink-soft: rgba(16,26,51,0.78);
+      --art-line: #e1e5ee;
+      --art-card-bg: #f4f6fa;
+      --art-link: var(--blue);
+      --art-accent: var(--blue);
+    }
+    .article-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      color: var(--art-ink);
+    }
+    .article-section + .article-section {
+      border-top: 1px solid var(--art-line);
+    }
+    /* Dark accent section: use sparingly (1-2 per page) for visual rhythm */
+    .article-section.dark {
+      background: var(--navy);
+      color: #ffffff;
+      border-top: none;
+    }
+    .article-section h2, .article-section h3, .article-section h4 {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--art-ink);
+    }
+    .article-section.dark h2, .article-section.dark h3, .article-section.dark h4 {
+      color: #ffffff;
+    }
+    .article-section h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin: 0 0 1.5rem; }
+    .article-section h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); margin: 0 0 1.5rem; }
+    .article-section h4 { font-size: 1.05rem; margin: 0 0 1rem; }
+    .article-section p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: var(--art-ink-soft);
+      font-size: 1.02rem;
+    }
+    .article-section.dark p { color: rgba(255,255,255,0.85); }
+    .article-section p:last-child { margin-bottom: 0; }
+    .article-section ul, .article-section ol {
+      margin: 0 0 1.5rem 1.25rem;
+      line-height: 1.8;
+      color: var(--art-ink-soft);
+    }
+    .article-section.dark ul, .article-section.dark ol { color: rgba(255,255,255,0.85); }
+    .article-section strong { color: var(--art-ink); }
+    .article-section.dark strong { color: #ffffff; }
+    .article-section a { color: var(--art-link); font-weight: 600; text-decoration: none; }
+    .article-section a:hover { text-decoration: underline; }
+    .article-section.dark a { color: #8ecbf5; }
+
+    /* Callout / example boxes: clearly bordered light cards, not floating boxes */
+    .article-callout {
+      background: var(--art-card-bg);
+      border: 1px solid var(--art-line);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .article-section.dark .article-callout {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    /* Checklist (use instead of ad-hoc bullet lists) */
+    .article-checklist {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+    }
+    .article-checklist li {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+    .article-checklist svg {
+      flex-shrink: 0;
+      color: var(--art-accent);
+      margin-top: 0.15rem;
+    }
+    .article-section.dark .article-checklist svg { color: #8ecbf5; }
+    .article-checklist strong { display: block; margin-bottom: 0.15rem; }
+
+    /* FAQ accordion (self-contained, light) */
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details {
+      background: var(--art-card-bg);
+      border: 1px solid var(--art-line);
+      border-radius: 12px;
+      padding: 1.1rem 1.5rem;
+    }
+    .article-faq-list summary {
+      font-weight: 600;
+      color: var(--art-ink);
+      cursor: pointer;
+      list-style: none;
+    }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; }
+
+    .article-breadcrumb {
+      padding: 1rem 0;
+      background: #f4f6fa;
+      border-bottom: 1px solid var(--art-line);
+      position: relative;
+      z-index: 1;
+    }
+    .article-breadcrumb .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .article-breadcrumb nav { font-size: 0.85rem; color: var(--art-ink-soft); }
+    .article-breadcrumb nav a { color: var(--art-link); text-decoration: none; font-weight: 600; }
+    .article-breadcrumb nav a:hover { text-decoration: underline; }
+    .article-breadcrumb .meta { font-size: 0.85rem; color: var(--art-ink-soft); }
+    .article-key-topics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .article-final-cta {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: clamp(3rem, 7vw, 5rem) 2.5rem;
+      background: var(--navy);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .article-final-cta .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .article-final-cta h2 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+    .article-final-cta p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2rem;
+    }
+    /* Constrain the article body to a comfortable reading width */
+    .article-breadcrumb .container,
+    .article-section .container {
+      max-width: 1140px;
+    }
+    .article-section .container > p,
+    .article-section .container > h2,
+    .article-section .container > h3,
+    .article-section .container > ul,
+    .article-section .container > .reveal.article-callout,
+    .article-section .container > .article-faq-list {
+      max-width: 1064px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
@@ -128,13 +300,13 @@
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="../index.html">
+      <a class="nav-logo" href="/">
         <img src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American International Tax Advisers">
       </a>
       <ul class="nav-links">
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#why">Why Us</a></li>
-        <li><a href="/#process">How It Works</a></li>
+        <li><a href="/#site-services">Services</a></li>
+        <li><a href="/#site-why">Why Us</a></li>
+        <li><a href="/#site-process">How It Works</a></li>
         <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Countries</a>
           <div class="nav-dropdown-menu" id="countries-menu">
@@ -326,6 +498,16 @@
           </div>
         </li>
         <li class="nav-dropdown">
+          <a href="javascript:void(0)" role="button" tabindex="0">Resources</a>
+          <div class="nav-dropdown-menu" id="resources-menu">
+            <a href="/pages/us-expats-retiring">Expat Tax Guide</a>
+            <a href="/pages/fbar-crackdown-2026">FBAR Crackdown</a>
+            <a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs FTC</a>
+            <a href="/pages/tax-treaty-optimization-2026">Tax Treaties</a>
+            <a href="/pages/us-llc-vs-hong-kong-vs-uae-2026">US LLC vs Hong Kong vs UAE</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
           <a href="javascript:void(0)" role="button" tabindex="0">Blogs</a>
           <div class="nav-dropdown-menu" id="blogs-menu">
             <a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a>
@@ -336,9 +518,8 @@
             <a href="/pages/esg-ethical-taxpayer-2026">ESG & the Ethical Taxpayer</a>
           </div>
         </li>
-
       </ul>
-      <button class="nav-cta magnetic-item" onclick="document.getElementById('final-cta').scrollIntoView({behavior:'smooth'})">
+      <button class="nav-cta magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'">
         Book a Consult
       </button>
       <button class="nav-burger" id="nav-burger" aria-label="Open menu">
@@ -366,14 +547,14 @@
           [PAGE_HERO_DESCRIPTION]
         </p>
         <div class="hero-actions">
-          <button class="btn-primary magnetic-item" onclick="document.getElementById('content').scrollIntoView({behavior:'smooth'})">
+          <button class="btn-primary magnetic-item" onclick="document.getElementById('content-start').scrollIntoView({behavior:'smooth'})">
             [PAGE_PRIMARY_CTA_TEXT]
             <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
               <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
           <button class="btn-secondary" onclick="document.getElementById('final-cta').scrollIntoView({behavior:'smooth'})">
-            Download Guide
+            Book a Free Consult
             <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
               <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -386,164 +567,237 @@
     </section>
 
     <!-- BREADCRUMB & META -->
-    <section style="padding: 1rem 0; background: #ffffff; border-bottom: 1px solid var(--border); position: relative; z-index: 1;">
-      <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <nav style="font-size: 0.85rem; color: var(--navy-mid);">
-            <a href="/" style="color: var(--blue); text-decoration: none;">Home</a>
-            <span style="margin: 0 0.5rem;">/</span>
-            <a href="/thailand" style="color: var(--blue); text-decoration: none;">Thailand</a>
-            <span style="margin: 0 0.5rem;">/</span>
-            <span style="color: var(--navy);">[PAGE_BREADCRUMB_CURRENT]</span>
-          </nav>
-          <div style="font-size: 0.85rem; color: var(--navy-mid);">
-            <span>📅 Last Updated: [UPDATE_DATE]</span>
-            <span style="margin: 0 1rem;">|</span>
-            <span>⏱️ [READ_TIME] min read</span>
-          </div>
+    <section class="article-breadcrumb">
+      <div class="container row">
+        <nav>
+          <a href="/">Home</a>
+          <span style="margin: 0 0.5rem;">/</span>
+          <a href="/thailand/us-expat-taxes-thailand-2026">Thailand</a>
+          <span style="margin: 0 0.5rem;">/</span>
+          <span>[PAGE_BREADCRUMB_CURRENT]</span>
+        </nav>
+        <div class="meta">
+          <span>Last Updated: [UPDATE_DATE]</span>
+          <span style="margin: 0 1rem;">|</span>
+          <span>[READ_TIME] min read</span>
         </div>
       </div>
     </section>
 
     <!-- SECTION 1: OVERVIEW (1200-1600 words) -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <section id="content-start" class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0;">[SECTION_1_TITLE]</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">[SECTION_1_CONTENT_P1]</p>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">[SECTION_1_CONTENT_P2]</p>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8;">[SECTION_1_CONTENT_P3]</p>
+        <h2 class="reveal">[SECTION_1_TITLE]</h2>
+        <p class="reveal">[SECTION_1_CONTENT_P1]</p>
+        <p class="reveal">[SECTION_1_CONTENT_P2]</p>
+        <p class="reveal">[SECTION_1_CONTENT_P3]</p>
       </div>
     </section>
 
-    <!-- SECTION 2: DARK SECTION (Optional - use when needed) -->
-    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 4rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white); position: relative; z-index: 1;">
+    <!-- SECTION 2 -->
+    <section class="article-section dark">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; color: var(--white);">[SECTION_2_TITLE]</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--silver);">[SECTION_2_CONTENT_P1]</p>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; color: var(--silver);">[SECTION_2_CONTENT_P2]</p>
+        <h2 class="reveal">[SECTION_2_TITLE]</h2>
+        <p class="reveal">[SECTION_2_CONTENT_P1]</p>
+        <p class="reveal">[SECTION_2_CONTENT_P2]</p>
       </div>
     </section>
 
-    <!-- SECTION 3: WITH CROSSHATCH BACKGROUND (1200-1600 words) -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
-      <!-- Diagonal Blue Grid -->
-      <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px), repeating-linear-gradient(-45deg, rgba(0, 88, 149, 0.1) 0, rgba(0, 88, 149, 0.1) 0.5px, transparent 0.5px, transparent 12px); background-size: 24px 24px; pointer-events: none; z-index: 0;"></div>
+    <!-- SECTION 3 -->
+    <section class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">[SECTION_3_TITLE]</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">[SECTION_3_CONTENT_P1]</p>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">[SECTION_3_CONTENT_P2]</p>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">[SECTION_3_CONTENT_P3]</p>
+        <h2 class="reveal">[SECTION_3_TITLE]</h2>
+        <p class="reveal">[SECTION_3_CONTENT_P1]</p>
+        <p class="reveal">[SECTION_3_CONTENT_P2]</p>
+        <p class="reveal">[SECTION_3_CONTENT_P3]</p>
       </div>
     </section>
 
-    <!-- SECTION 4: ADDITIONAL CONTENT (Optional) -->
-    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+    <!-- SECTION 4 (Optional) -->
+    <section class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0;">[SECTION_4_TITLE]</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">[SECTION_4_CONTENT_P1]</p>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8;">[SECTION_4_CONTENT_P2]</p>
+        <h2 class="reveal">[SECTION_4_TITLE]</h2>
+        <p class="reveal">[SECTION_4_CONTENT_P1]</p>
+        <p class="reveal">[SECTION_4_CONTENT_P2]</p>
       </div>
     </section>
 
-    <!-- FINAL CTA SECTION -->
-    <section id="final-cta" style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 5rem 2.5rem; background: var(--navy); position: relative; z-index: 1; color: var(--white); text-align: center;">
-      <div class="container" style="max-width: 600px; margin: 0 auto;">
-        <h2 class="reveal" style="font-size: 2rem; margin-bottom: 1rem; font-family: 'Libre Baskerville'; color: var(--white);">Ready to Get Started?</h2>
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 1rem; color: var(--silver);">Our tax specialists are ready to help you navigate Thailand's unique tax environment. Schedule your consultation today.</p>
-        <button class="btn-primary magnetic-item" style="margin-bottom: 1rem;">
-          Book a Free Consultation
-          <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
-            <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+    <!-- FAQ Section -->
+    <section class="article-section">
+      <div class="container">
+        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: [FAQ_SECTION_TITLE]</h2>
+        <div class="article-faq-list">
+          <details>
+            <summary>[FAQ_QUESTION_1]</summary>
+            <p>[FAQ_ANSWER_1]</p>
+          </details>
+          <details>
+            <summary>[FAQ_QUESTION_2]</summary>
+            <p>[FAQ_ANSWER_2]</p>
+          </details>
+          <details>
+            <summary>[FAQ_QUESTION_3]</summary>
+            <p>[FAQ_ANSWER_3]</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY TOPICS SECTION -->
+    <section class="article-section dark">
+      <div class="container">
+        <h3 class="reveal">Key Topics for Americans in Thailand</h3>
+        <div class="article-key-topics">
+          <div class="reveal">
+            <h4><a href="/thailand/tax-residency-180-day-rule">Tax Residency &amp; 180-Day Rule</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">How to track your days and avoid unexpected tax residency status.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/thailand-remittance-revolution-2026">2026 Remittance Revolution</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Section 41 changes, pre-2024 shield, and 2026 planning strategies.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/foreign-sourced-income-remittance">Foreign Income &amp; Remittance</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Understanding what triggers Thai tax when you bring money into Thailand.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/digital-nomads-remote-workers-thailand">Digital Nomads &amp; Remote Workers</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">DTV visa tax implications and staying compliant while working online.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/retiring-in-thailand-us-tax-planning">Retiring in Thailand</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Social Security, pensions, 401(k) withdrawals, and tax treaty benefits.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/how-to-file-thai-tax-as-an-expat">Thai Tax Filing (PND 90/91)</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">Step-by-step guide to filing Thai personal income tax as an expat.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/filing-us-taxes-from-thailand">US Filing from Thailand</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">FEIE, FTC, FBAR reporting, and avoiding double taxation.</p>
+          </div>
+          <div class="reveal">
+            <h4><a href="/thailand/us-thailand-expat-tax-checklist-2026">2026 Expat Tax Checklist</a></h4>
+            <p style="margin-bottom: 0; font-size: 0.9rem;">A step-by-step rundown of every filing task and deadline for the year.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MID-PAGE CTA - SHARED TEMPLATE -->
+    <section class="article-section dark">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h3 class="reveal" style="font-size: 1.8rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">
+            [MID_CTA_HEADING]
+          </h3>
+          <p class="cta-sub reveal" style="margin-bottom: 2rem;">
+            [MID_CTA_BODY]
+          </p>
+          <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'">
+            Book a Free Consultation
+            <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
+              <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-    <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+66-94-681-9734">Call 094-681-9734</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OTHER THAILAND OFFICES</strong>
+            Pattaya: <a href="tel:+66-96-806-5445">096-806-5445</a> &middot; Chiang Mai: <a href="tel:+66-53-218-823">053-218-823</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/thailand/us-expat-taxes-thailand-2026">Thailand Tax Hub</a></li>
-              <li><a href="/thailand/filing-us-taxes-from-thailand">Filing US Taxes from Thailand</a></li>
-              <li><a href="/thailand/how-to-file-thai-tax-as-an-expat">How to File Thai Tax</a></li>
-              <li><a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a></li>
-              <li><a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs Foreign Tax Credit</a></li>
-              <li><a href="/pages/tax-treaty-optimization-2026">Tax Treaty Optimisation</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call (Thailand)</dt>
+            <dd><a href="tel:+66-94-681-9734">094-681-9734</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
+        <a href="/#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
 
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
-
-
-  
+  <script src="../js/site.js" defer></script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
