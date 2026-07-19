@@ -2,6 +2,15 @@
 
 Sliding session log. Newest entry first. Update at end of every session.
 
+**⚠ SIGN-OFF STATUS: neither `australia/*.html` nor `cambodia/*.html` has been
+signed off by the user yet.** Both are committed to `main` and pass every
+structural/grep check the playbook defines, but no browser has been
+available all session to actually render them. Australia was reviewed via
+user-supplied screenshots (which did surface real bugs, now fixed).
+Cambodia has not been checked at all yet — do not treat it as done, and
+do not start a new country until the user says Cambodia (and ideally
+Australia) are actually signed off.
+
 ## Current State (07/20/2026, session 13)
 - Applied the full, now-verified `.md/page-remediation-playbook.md` to all 10 `cambodia/*.html` pages in one clean pass, with zero rounds of user-flagged rework (unlike Australia, which took ~10+ correction rounds to discover the right patterns). Localized footer contact to Phnom Penh (+855 23 962 514). Same bug classes were checked proactively this time and one was caught before being pointed out: the `padding: 0.8rem 160px` mobile-squeeze bug on the 2026 checklist page (same as Australia's). One commit pushed to `main`.
 - **This confirms the playbook is now in good enough shape to drive future countries mechanically** — most of the work was scriptable (bulk find/replace across all 10 files for footer/CSS/Key Topics/FAQ conversion/hero style), with only the specialist-section content (unique checklist items + image per page) and body-image placement needing manual per-page authorship.
