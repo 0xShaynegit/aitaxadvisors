@@ -2,7 +2,7 @@
 #hero {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 5fr 60fr 30fr 5fr;
+  grid-template-columns: 5fr 50fr 40fr 5fr;
   align-items: center;
   padding-top: var(--nav-h);
   position: relative;
@@ -337,4 +337,125 @@
   .two-column {
     grid-template-columns: 1fr;
   }
+}
+
+/* ── HOMEPAGE-MATCHED CONTACT SECTION (footer) ──
+   Ported from css/site.css's .contact/.footer block (which is scoped to
+   .site-scope and not loaded on country pages) using thailand.css's own
+   navy/blue palette instead of the --site-* vars. Keep in sync if the
+   homepage's contact section design changes. */
+.contact {
+  background: var(--navy-deep);
+  color: var(--white);
+  border-radius: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 32px) 0 0;
+  padding: 3.5rem 2.5rem clamp(2rem, 4vw, 3rem);
+}
+
+.contact .display {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(2rem, 4.2vw, 2.9rem);
+  max-width: 14ch;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.contact .display .accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 480;
+  letter-spacing: -0.01em;
+  color: var(--blue-light);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.contact-left {
+  display: grid;
+  gap: 1.75rem;
+  justify-items: start;
+}
+
+.contact-left > p {
+  color: var(--silver);
+  max-width: 40ch;
+  font-size: 1.05rem;
+}
+
+.contact-cta-row, .contact-cta-col {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-hours {
+  font-size: 0.9rem;
+  color: var(--silver);
+}
+
+.contact-hours strong {
+  display: block;
+  color: var(--white);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-details {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--border-blue);
+}
+
+.contact-details > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.5fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding-block: 1.35rem;
+  border-bottom: 1px solid var(--border-blue);
+}
+
+.contact-details dt {
+  font-size: 0.85rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--silver);
+  padding-top: 0.2rem;
+}
+
+.contact-details dd {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.contact-details a {
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  transition: border-color 0.25s;
+}
+
+.contact-details a:hover {
+  border-color: #fff;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── BIGGER BODY IMAGES (per page-remediation-playbook.md 9b) ── */
+.article-body-img {
+  border-radius: 12px;
+  object-fit: cover;
 }
