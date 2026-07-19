@@ -99,6 +99,8 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -553,40 +555,57 @@
 
   </main>
 
-  <footer id="footer">
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <div class="container contact-grid">
         <div class="contact-left">
-          <h2 class="display reveal">Get your taxes <span class="accent">right, sooner.</span></h2>
-          <p class="reveal">One conversation changes everything. Free, confidential, no obligation.</p>
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
           <div class="contact-cta-row">
-            <div class="contact-cta-col">
-              <div class="hero-actions reveal">
-                <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'">Book a Free Consult</button>
-                <button class="btn-secondary magnetic-item" onclick="window.location.href='tel:+1-800-906-598'">Call (800) 906-598</button>
-              </div>
-              <div class="contact-hours">
-                <strong>OFFICE HOURS</strong>
-                Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
-              </div>
-            </div>
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+61-2-8007-4203">Call +61 2 8007 4203</a>
+          </div>
+          <div class="contact-hours">
+            <strong>OFFICE HOURS</strong>
+            Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
+          </div>
+          </div>
           </div>
         </div>
-        <dl class="contact-details reveal">
-          <div><dt>Head office</dt><dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd></div>
-          <div><dt>Call</dt><dd><a href="tel:+1-800-906-598">(800) 906-598</a></dd></div>
-          <div><dt>Email</dt><dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd></div>
-          <div><dt>Hours</dt><dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd></div>
-          <div><dt>Follow</dt><dd><a href="https://www.facebook.com/Americantax2018" target="_blank">Facebook</a> &middot; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank">YouTube</a></dd></div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call (Australia)</dt>
+            <dd><a href="tel:+61-2-8007-4203">+61 2 8007 4203</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
         </dl>
       </div>
     </section>
     <div class="container" style="text-align:center; padding-top:1.5rem;">
       <div class="footer-links" style="justify-content:center;">
-        <a href="/#services">Services</a>
-        <a href="/#why">About</a>
-        <a href="/#process">How It Works</a>
-        <a href="/#testimonial">Client Stories</a>
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
         <a href="/#contact">Contact</a>
         <a href="/countries">Countries</a>
         <a href="/pages/us-expats-retiring">Resources</a>
@@ -620,10 +639,12 @@
       </nav>
     </div>
   </footer>
+  </div>
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
