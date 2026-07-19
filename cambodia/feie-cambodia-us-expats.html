@@ -82,6 +82,20 @@
       font-style: italic;
       font-display: swap;
     }
+    .container::after { content: ""; display: table; clear: both; }
+    .article-checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .article-checklist li { display: grid; grid-template-columns: auto 1fr; column-gap: 0.9rem; row-gap: 0.15rem; align-items: start; }
+    .article-checklist svg { grid-row: 1 / 3; grid-column: 1; color: #8ecbf5; margin-top: 0.15rem; }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
+    .article-checklist li span { grid-column: 2; grid-row: 2; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    body .container { max-width: 1140px; }
+    .site-scope .container { max-width: 1400px; }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f4f6fa; border: 1px solid #e1e5ee; border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -93,6 +107,8 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -375,7 +391,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/tax-form-1040-currency-documents-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FEIE guide for Americans in Cambodia" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/trading-dashboard-stocks-market-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FEIE guide for Americans in Cambodia" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -403,7 +419,7 @@
       <div class="container">
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Why the FEIE Handles Nearly Everything Here</h2>
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Cambodia's top resident tax bracket (20%) applies at a modest income level, and the vast majority of American salaries in Cambodia, whether NGO, teaching, remote-work, or corporate, sit well under the FEIE's $132,900 cap for 2026. The exclusion typically shields the entire salary once you qualify, with little practical need to add the Foreign Tax Credit the way you might in a higher-tax posting.</p>
-        <img src="../images/hands-laptop-calculator-financial-planning-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FEIE calculation for Cambodia expats" loading="lazy" style="float: left; margin: 0 1.5rem 1rem 0; width: 270px; max-height: 300px; object-fit: cover; border-radius: 6px;">
+        <img loading="lazy" src="../images/hands-laptop-calculator-financial-planning-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FEIE calculation for Cambodia expats" class="article-body-img" style="float: left; margin: 0 2rem 1.5rem 0; width: 620px; max-height: 414px;">
 
         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">Qualifying for the FEIE: Two Tests</h3>
         <p style="margin-bottom: 1rem; font-size: 0.95rem;"><strong>Physical Presence Test:</strong> 330 full days outside the US in any 12-month period. Straightforward to track for most expats.</p>
@@ -412,10 +428,37 @@
         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">Visa Stability Affects Your Qualifying Test</h3>
         <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Given 2026's tightening enforcement on informal remote work and cash-in-hand teaching arrangements, someone genuinely working in Cambodia without a proper work permit faces both a real immigration risk and a weaker case for Bona Fide Residence. A stable, properly documented E-class visa with an appropriate extension gives a much cleaner foundation for either FEIE test.</p>
 
+      </div>
+    </section>
+
+    <!-- When to Consult a Specialist -->
+    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 3.5rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 3.5rem; align-items: start;">
+          <div>
+            <img loading="lazy" src="../images/man-shrug-uncertain-blazer-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Cambodia expat uncertain whether the FEIE covers their full salary" style="width: 100%; border-radius: 12px; filter: brightness(0.9) saturate(0.9);">
+          </div>
+          <div>
+            <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8ecbf5; margin-bottom: 0.9rem;">Expert Guidance</p>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; color: var(--white);">When to Consult a Specialist</h3>
+            <ul class="article-checklist">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Mid-year arrival</strong><span>Filing Form 2350 to delay your return until you actually qualify for a test.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Informal visa-run history</strong><span>Assessing whether past undocumented time weakens your Bona Fide Residence claim.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Salary near or above the FEIE cap</strong><span>Modeling the Foreign Tax Credit as a supplement for senior NGO/business roles.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Recently regularized work permit</strong><span>Confirming the transition doesn't create a gap in either qualifying test.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Multiple income sources</strong><span>Separating FEIE-eligible salary from investment or side income that isn't covered.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">The First-Year Timing Trap: Form 2350</h3>
         <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Arriving mid-year means you likely won't satisfy either FEIE test by the normal April 15 deadline. Form 2350 requests an extension specifically to wait until you qualify, avoiding a forced early filing that leaves your full salary exposed for that year.</p>
 
-        <img src="../images/financial-freedom-cash-coins-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FEIE cap covering typical Cambodia expat salaries" loading="lazy" style="float: right; margin: 0 0 1rem 1.5rem; width: 250px; max-height: 300px; object-fit: cover; border-radius: 6px;">
+        <img loading="lazy" src="../images/financial-freedom-cash-coins-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FEIE cap covering typical Cambodia expat salaries" class="article-body-img" style="float: right; margin: 0 0 1.5rem 2rem; width: 680px; max-height: 454px;">
         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Libre Baskerville';">When the FEIE Isn't Enough</h3>
         <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">Senior NGO directors, business owners, and other higher earners approaching or exceeding the cap should model the Foreign Tax Credit against actual Cambodian tax paid as a supplement, though this is a smaller population than in most other countries in our coverage given Cambodia's overall salary levels.</p>
 
@@ -429,57 +472,59 @@
     <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: FEIE for Cambodia Expats</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Does my visa type affect my FEIE eligibility?</strong> A: Not directly, the FEIE tests look at physical presence and residence facts, but a stable, properly documented visa makes Bona Fide Residence much easier to support than informal arrangements.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I need the Foreign Tax Credit too?</strong> A: Rarely, given how few salaries here exceed the FEIE cap, but higher earners should still check.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Does the lack of a tax treaty affect my FEIE claim?</strong> A: No, the FEIE is a domestic US law provision (IRC Section 911) and doesn't depend on a tax treaty existing.</p>
+        <div class="article-faq-list">
+<details><summary>Does my visa type affect my FEIE eligibility?</summary><p>Not directly, the FEIE tests look at physical presence and residence facts, but a stable, properly documented visa makes Bona Fide Residence much easier to support than informal arrangements.</p></details>
+<details><summary>Do I need the Foreign Tax Credit too?</summary><p>Rarely, given how few salaries here exceed the FEIE cap, but higher earners should still check.</p></details>
+<details><summary>Does the lack of a tax treaty affect my FEIE claim?</summary><p>No, the FEIE is a domestic US law provision (IRC Section 911) and doesn't depend on a tax treaty existing.</p></details>
+</div>
         <p class="reveal" style="margin-bottom: 1.5rem;">Continue with <a href="/cambodia/filing-us-taxes-from-cambodia" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Filing US Taxes from Cambodia</a> and <a href="/cambodia/digital-nomad-remote-worker-status-cambodia-us-tax" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Digital Nomad & Remote Worker Status</a>.</p>
       </div>
     </section>
 
     <!-- KEY TOPICS SECTION -->
-    <section style="padding: 3rem 0; background: var(--navy-dark);">
+    <section style="padding: 3rem 0; background: var(--navy-mid);">
       <div class="container">
         <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: 'Libre Baskerville';" class="reveal">Key Topics for Americans in Cambodia</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/us-expat-taxes-cambodia-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">US Expat Taxes in Cambodia 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The complete hub guide to living tax-compliant in Cambodia as an American.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/us-expat-taxes-cambodia-2026" style="color: #8ecbf5; text-decoration: none;">US Expat Taxes in Cambodia 2026</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">The complete hub guide to living tax-compliant in Cambodia as an American.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/filing-us-taxes-from-cambodia" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Filing US Taxes from Cambodia</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Form 1040, 2555, FBAR and FATCA mechanics and deadlines.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/filing-us-taxes-from-cambodia" style="color: #8ecbf5; text-decoration: none;">Filing US Taxes from Cambodia</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Form 1040, 2555, FBAR and FATCA mechanics and deadlines.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/feie-cambodia-us-expats" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE for Cambodia Expats</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Shielding up to $132,900 of earned income via Physical Presence or Bona Fide Residence.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/feie-cambodia-us-expats" style="color: #8ecbf5; text-decoration: none;">FEIE for Cambodia Expats</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Shielding up to $132,900 of earned income via Physical Presence or Bona Fide Residence.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/no-us-cambodia-tax-treaty-totalization" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">No US-Cambodia Tax Treaty</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Why there's no bilateral protection, and the 15.3% self-employment tax trap.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/no-us-cambodia-tax-treaty-totalization" style="color: #8ecbf5; text-decoration: none;">No US-Cambodia Tax Treaty</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Why there's no bilateral protection, and the 15.3% self-employment tax trap.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/digital-nomad-remote-worker-status-cambodia-us-tax" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Digital Nomad & Remote Worker Status</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Why the old visa-run model is riskier now, and how enforcement has tightened.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/digital-nomad-remote-worker-status-cambodia-us-tax" style="color: #8ecbf5; text-decoration: none;">Digital Nomad & Remote Worker Status</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Why the old visa-run model is riskier now, and how enforcement has tightened.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/retiring-in-cambodia-us-tax-planning" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Retiring in Cambodia (ER Visa)</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Social Security, IRAs, and the retirement visa extension for those 55 and older.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/retiring-in-cambodia-us-tax-planning" style="color: #8ecbf5; text-decoration: none;">Retiring in Cambodia (ER Visa)</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Social Security, IRAs, and the retirement visa extension for those 55 and older.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/us-cambodia-expat-tax-checklist-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">2026 Expat Checklist</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Every form, deadline, and document US expats in Cambodia need this year.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/us-cambodia-expat-tax-checklist-2026" style="color: #8ecbf5; text-decoration: none;">2026 Expat Checklist</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Every form, deadline, and document US expats in Cambodia need this year.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/us-expat-teachers-tax-cambodia" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Teachers in Cambodia</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Language center contracts, the cash-in-hand risk, and FEIE for educators.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/us-expat-teachers-tax-cambodia" style="color: #8ecbf5; text-decoration: none;">Teachers in Cambodia</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Language center contracts, the cash-in-hand risk, and FEIE for educators.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/property-ownership-cambodia-us-tax" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Property Ownership (Strata Title)</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The 70% foreign ownership cap, and the hard title versus soft title trap.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/property-ownership-cambodia-us-tax" style="color: #8ecbf5; text-decoration: none;">Property Ownership (Strata Title)</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">The 70% foreign ownership cap, and the hard title versus soft title trap.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/cambodia/ngo-aid-workers-cambodia-tax-guide" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">NGO & Aid Sector Workers</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Per diems, allowances, and visa exemptions for the large NGO population in Phnom Penh.</p>
+            <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><a href="/cambodia/ngo-aid-workers-cambodia-tax-guide" style="color: #8ecbf5; text-decoration: none;">NGO & Aid Sector Workers</a></h4>
+            <p style="margin-bottom: 0; color: rgba(255,255,255,0.85); font-size: 0.9rem;">Per diems, allowances, and visa exemptions for the large NGO population in Phnom Penh.</p>
           </div>
         </div>
       </div>
@@ -501,83 +546,80 @@
 
   </main>
 
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Trusted U.S. Tax Advisors for Expats Worldwide</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display reveal">Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p class="reveal">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas reveal">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+855-23-962-514">Call (855) 23-962-514</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OFFICE HOURS</strong>
+            Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Cambodia Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/cambodia/us-expat-taxes-cambodia-2026">Cambodia Tax Hub</a></li>
-              <li><a href="/cambodia/filing-us-taxes-from-cambodia">Filing US Taxes from Cambodia</a></li>
-              <li><a href="/cambodia/digital-nomad-remote-worker-status-cambodia-us-tax">Digital Nomad & Remote Worker Status</a></li>
-              <li><a href="/cambodia/ngo-aid-workers-cambodia-tax-guide">NGO & Aid Sector Workers</a></li>
-              <li><a href="/cambodia/us-cambodia-expat-tax-checklist-2026">2026 Expat Checklist</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details reveal">
+          <div><dt>Head office</dt><dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd></div>
+          <div><dt>Call (Cambodia)</dt><dd><a href="tel:+855-23-962-514">(855) 23-962-514</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd></div>
+          <div><dt>Hours</dt><dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd></div>
+          <div><dt>Follow</dt><dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd></div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
+        <a href="/#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
