@@ -162,6 +162,12 @@
     .article-section + .article-section {
       border-top: 1px solid var(--art-line);
     }
+    /* Contain floated content images so they never bleed into the next section */
+    .article-section .container::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
     .article-section.dark {
       background: var(--navy);
@@ -238,15 +244,19 @@
       gap: 1rem;
     }
     .article-checklist li {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
     }
     .article-checklist svg {
-      flex-shrink: 0;
+      grid-row: 1 / 3;
+      grid-column: 1;
       color: var(--art-accent);
       margin-top: 0.15rem;
     }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; }
+    .article-checklist li span { grid-column: 2; grid-row: 2; }
     .article-section.dark .article-checklist svg { color: #8ecbf5; }
     .article-checklist strong { display: block; margin-bottom: 0.15rem; }
 
@@ -546,22 +556,31 @@
   <main id="main">
 
     <!-- HERO SECTION -->
-    <section class="hero" style="padding: 8rem 2.5rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); position: relative; overflow: hidden;">
-      <div class="container" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;">
-        <div>
-          <h1 class="reveal" style="font-size: 3.2rem; line-height: 1.2; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; color: var(--white);">Thailand's 2026 Remittance Revolution</h1>
-          <p class="reveal" style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--blue-light); line-height: 1.6;">Is Your "Land of Smiles" Lifestyle Under Threat?</p>
-          <p class="reveal" style="margin-bottom: 2rem; font-size: 1rem; line-height: 1.8; color: var(--silver); max-width: 700px;">For decades, Thailand was a tax haven for expats. The rule was simple: wait until January 1st to bring your money into the country, and the IRS and Thai Revenue Department would stay out of your pockets. But in 2026, that loophole has been demolished. Under new interpretations of Section 41 (Instructions Por. 161 and 162), the timing of your transfer no longer protects you. If you live in Thailand for more than 180 days, your foreign income just got a lot more complicated.</p>
-          <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'" style="margin-bottom: 1rem;">
+    <section id="hero">
+      <div class="hero-bg-gradient"></div>
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          2026 Remittance Rules
+        </p>
+        <h1 class="hero-h1">
+          Thailand's 2026<br>
+          <em>Remittance Revolution</em>
+        </h1>
+        <p class="hero-sub">
+          Is your "Land of Smiles" lifestyle under threat? For decades, Thailand was a tax haven for expats: wait until January 1st to bring your money in, and the IRS and Thai Revenue Department stayed out of your pockets. In 2026, that loophole was demolished.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary magnetic-item" onclick="window.location.href='mailto:admin@aitaxadvisers.com'">
             Book a Free Consultation
             <svg class="btn-arrow" viewBox="0 0 13 13" fill="none">
               <path d="M1 6.5H12M12 6.5L7 1.5M12 6.5L7 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </div>
-        <div>
-          <img loading="lazy" src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US dollars representing foreign income subject to Thailand's 2026 remittance tax rules" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
-        </div>
+      </div>
+      <div class="hero-right">
+        <img loading="lazy" src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US dollars representing foreign income subject to Thailand's 2026 remittance tax rules" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -609,9 +628,9 @@
         <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; color: var(--white);">What Counts as Remittance?</h2>
         <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; color: var(--silver);">In 2026, the TRD isn't just looking at bank transfers. Their definition of bringing money into Thailand is broad, and enforcement has tightened significantly. If you think you're avoiding remittance by being clever, the Revenue Department likely sees it differently.</p>
 
-        <img loading="lazy" src="../images/currency-calculator-hands-notebook-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calculating currency conversions for a Thai remittance" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; filter: brightness(0.9) saturate(0.9);">
+                <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; color: var(--white);">Direct and Indirect Remittance Methods</h3>
 
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; color: var(--white);">Direct and Indirect Remittance Methods</h3>
+        <img loading="lazy" src="../images/currency-calculator-hands-notebook-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calculating currency conversions for a Thai remittance" style="float: left; margin: 0 1.75rem 1.25rem 0; width: 420px; max-height: 340px; object-fit: cover; border-radius: 12px;">
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
           <div class="reveal">
@@ -644,6 +663,36 @@
       </div>
     </section>
 
+    <!-- SECTION 3: HOW TO STAY LEGALLY COMPLIANT -->
+    <section class="article-section">
+      <div class="container">
+        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">How to Stay Legally Compliant (and Exempt)</h2>
+        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">While the rules are tighter, there are still legal pathways to protect your wealth. Strategy is now mandatory.</p>
+
+                <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">The Pre-2024 Shield</h3>
+
+        <img loading="lazy" src="../images/closeup-thailand-visa-sticker-background-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thailand visa documentation relevant to LTR and long-stay tax planning" style="float: right; margin: 0 0 1.25rem 1.75rem; width: 480px; max-height: 390px; object-fit: cover; border-radius: 12px;">
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Income earned before January 1, 2024, remains permanently exempt from Thai tax, even if remitted today. This is your strongest protection. However, you must have the documentation to prove the "vintage" of those funds. Keep bank statements from your US or foreign accounts showing:
+        </p>
+        <ul style="position: relative; z-index: 1; margin-bottom: 1.5rem; line-height: 1.8;">
+          <li style="margin-bottom: 0.8rem;">The dates when funds were deposited (showing they arrived before January 1, 2024)</li>
+          <li style="margin-bottom: 0.8rem;">Proof of the income source (pay stubs, invoices, dividend statements) dated before the cutoff</li>
+          <li style="margin-bottom: 0.8rem;">A clear audit trail showing the money remained outside Thailand from 2023 until now</li>
+        </ul>
+        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">If the Revenue Department audits you and you cannot prove that funds were earned before January 1, 2024, they will assume they fall under the new rules and are taxable. This documentation is your legal shield.</p>
+
+        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Double Taxation Agreements (DTAs)</h3>
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">If you already paid tax to the IRS on your foreign income, you can often claim a credit in Thailand to avoid paying twice. This requires a formal "Certificate of Tax Residency" from the US IRS and meticulous documentation proving:
+        </p>
+        <ul style="position: relative; z-index: 1; margin-bottom: 1.5rem; line-height: 1.8;">
+          <li style="margin-bottom: 0.8rem;">Your US tax residency status</li>
+          <li style="margin-bottom: 0.8rem;">The specific income and taxes paid to the US government</li>
+          <li style="margin-bottom: 0.8rem;">The remittance date in Thailand</li>
+        </ul>
+        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">Request your Certificate of Tax Residency from the IRS well in advance of filing your Thai return. The Thailand-US tax treaty provides for foreign tax credits, but they require proof of US taxation.</p>
+      </div>
+    </section>
+
     <!-- When to Consult a Specialist -->
     <section class="article-section dark">
       <div class="container">
@@ -666,34 +715,8 @@
       </div>
     </section>
 
-    <!-- SECTION 3: HOW TO STAY LEGALLY COMPLIANT -->
     <section class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">How to Stay Legally Compliant (and Exempt)</h2>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">While the rules are tighter, there are still legal pathways to protect your wealth. Strategy is now mandatory.</p>
-
-        <img loading="lazy" src="../images/closeup-thailand-visa-sticker-background-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thailand visa documentation relevant to LTR and long-stay tax planning" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; position: relative; z-index: 1;">
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">The Pre-2024 Shield</h3>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Income earned before January 1, 2024, remains permanently exempt from Thai tax, even if remitted today. This is your strongest protection. However, you must have the documentation to prove the "vintage" of those funds. Keep bank statements from your US or foreign accounts showing:
-        </p>
-        <ul style="position: relative; z-index: 1; margin-bottom: 1.5rem; line-height: 1.8;">
-          <li style="margin-bottom: 0.8rem;">The dates when funds were deposited (showing they arrived before January 1, 2024)</li>
-          <li style="margin-bottom: 0.8rem;">Proof of the income source (pay stubs, invoices, dividend statements) dated before the cutoff</li>
-          <li style="margin-bottom: 0.8rem;">A clear audit trail showing the money remained outside Thailand from 2023 until now</li>
-        </ul>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">If the Revenue Department audits you and you cannot prove that funds were earned before January 1, 2024, they will assume they fall under the new rules and are taxable. This documentation is your legal shield.</p>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Double Taxation Agreements (DTAs)</h3>
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">If you already paid tax to the IRS on your foreign income, you can often claim a credit in Thailand to avoid paying twice. This requires a formal "Certificate of Tax Residency" from the US IRS and meticulous documentation proving:
-        </p>
-        <ul style="position: relative; z-index: 1; margin-bottom: 1.5rem; line-height: 1.8;">
-          <li style="margin-bottom: 0.8rem;">Your US tax residency status</li>
-          <li style="margin-bottom: 0.8rem;">The specific income and taxes paid to the US government</li>
-          <li style="margin-bottom: 0.8rem;">The remittance date in Thailand</li>
-        </ul>
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">Request your Certificate of Tax Residency from the IRS well in advance of filing your Thai return. The Thailand-US tax treaty provides for foreign tax credits, but they require proof of US taxation.</p>
-
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1.5rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">The LTR Visa Advantage</h3>
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Holders of the Long-Term Resident (LTR) visa often enjoy specific exemptions on foreign-sourced income that standard retirement (O-A), marriage (O), or Non-Immigrant B visa holders do not. The LTR visa was designed to attract foreign talent and investors, and some income categories may receive preferential treatment. If you qualify for or are considering an LTR visa, consult with a specialist about the tax advantages before making the leap. The visa cost is significant, but the tax savings may justify the investment.</p>
 

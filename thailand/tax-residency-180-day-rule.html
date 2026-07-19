@@ -123,6 +123,12 @@
     .article-section + .article-section {
       border-top: 1px solid var(--art-line);
     }
+    /* Contain floated content images so they never bleed into the next section */
+    .article-section .container::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
     .article-section.dark {
       background: var(--navy);
@@ -199,15 +205,19 @@
       gap: 1rem;
     }
     .article-checklist li {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
     }
     .article-checklist svg {
-      flex-shrink: 0;
+      grid-row: 1 / 3;
+      grid-column: 1;
       color: var(--art-accent);
       margin-top: 0.15rem;
     }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; }
+    .article-checklist li span { grid-column: 2; grid-row: 2; }
     .article-section.dark .article-checklist svg { color: #8ecbf5; }
     .article-checklist strong { display: block; margin-bottom: 0.15rem; }
 
@@ -587,7 +597,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/day-reporting-temple-place-worship-tourist-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calendar and days counted for 180-day tax residency rule" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/day-reporting-temple-place-worship-tourist-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calendar and days counted for 180-day tax residency rule" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -616,19 +626,15 @@
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">Thailand's tax system determines your residency status based on a simple physical presence test: if you spend 180 or more days physically in Thailand during any calendar year (January to December), you are classified as a Thai tax resident and become liable for Thai tax on worldwide income remitted to Thailand. This is the single most important rule in Thai taxation for expats, yet many misunderstand it or underestimate its implications. The 180-day rule is not tied to immigration status, visa type, or citizenship. Whether you hold a tourist visa, student visa, retirement visa, or any other visa status, the tax residency determination is based purely on physical presence in Thailand. Understanding this rule is essential for tax planning, as crossing the 180-day threshold has dramatic tax consequences.</p>
 
-        <img loading="lazy" src="../images/closeup-thailand-visa-sticker-background-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thailand visa and entry stamps used to track the 180-day residency rule" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin: 1.5rem 0;">
-<img src="../images/closeup-thailand-visa-sticker-background-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thailand visa sticker showing entry dates relevant to 180-day tax residency rule" loading="lazy" style=" width: 260px; max-height: 300px; object-fit: cover; border-radius: 6px;">
+                <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">How Days are Counted</h3>
 
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">How Days are Counted</h3>
+        <img loading="lazy" src="../images/closeup-thailand-visa-sticker-background-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thailand visa and entry stamps used to track the 180-day residency rule" style="float: left; margin: 0 2rem 1.5rem 0; width: 420px; max-height: 340px; object-fit: cover; border-radius: 12px;">
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">The Thai Revenue Department counts any day you are physically present in Thailand as a day toward the 180-day threshold. Entering Thailand at any point during a calendar day counts as one day of presence. Leaving Thailand counts as one day in the country as well, unless you exit before midnight. This means even a partial day in Thailand counts toward your residency. Immigration checkpoints can verify your entry and exit dates by reviewing your passport stamps. If you entered Thailand on January 1 and departed on June 30, you would count all days between those dates (181 days in this example) as days of Thai presence. Days do not need to be consecutive; 180 days accumulated throughout a year counts just as much as 180 consecutive days. Visa runs (leaving Thailand briefly to neighbouring countries and re-entering) do not reset the counter. If you've been in Thailand for 100 days, leave for three days in Cambodia, and return, you resume counting at day 101; the entire year is one continuous measurement period.</p>
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Tax Residency vs. Immigration Status</h3>
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">A critical point of confusion: tax residency is separate from immigration residency or visa status. You can be a legal long-term resident (holding an elite card, retirement visa, or any other visa) and still be a non-resident for tax purposes if you spend fewer than 180 days in Thailand. Conversely, you can be a tourist visa holder visiting on tourist visas and become a tax resident after 180 days. Immigration status and tax status are determined by different rules. The Thai Revenue Department cares only about physical presence for tax classification. However, immigration authorities may care about your residency for visa purposes. The result is that many expats have mismatched statuses: they might be immigration-resident but tax-non-resident, or vice versa. This doesn't create legal problems as long as you comply with both systems (immigration rules separately, tax rules separately). However, once you cross the 180-day threshold, you become liable for Thai tax on worldwide income remitted, regardless of your visa status. Failing to file Thai tax returns once you're tax-resident creates legal exposure, even if your immigration status is in order.</p>
-<img src="../images/currency-calculator-hands-notebook-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calculator and notebook for tracking 180-day Thai tax residency threshold" loading="lazy" style=" width: 240px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Non-Resident Status and Partial-Year Residency</h3>
 
@@ -643,7 +649,30 @@
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--silver);">Crossing the 180-day threshold transforms your tax obligations fundamentally. As a non-resident, you owe Thai tax only on Thailand-sourced income. As a resident, you owe Thai tax on worldwide income remitted to Thailand. This distinction is enormous. An expat earning USD 100,000 from a US employer and keeping that income in the US owes zero Thai tax as a non-resident. The same expat, once a resident, owes Thai tax on any portion of that USD 100,000 remitted to Thailand. If they remit USD 60,000 to Thailand to cover living expenses, they owe Thai tax on that USD 60,000 at progressive rates, potentially resulting in USD 10,000-15,000 in tax liability. This is why many digital nomads and short-term expats deliberately manage their days to stay below 180. Once you're a resident, you must file a PND 90 form (annual personal income tax return) by March 31, and you must report all income sources, both foreign and domestic. Failure to file creates legal exposure, penalties, and potential immigration complications (visa extensions or renewals may be denied for tax non-compliance). The Thai Revenue Department increasingly shares information with immigration, creating pressure on tax compliance. Many expats discover only late that they've crossed the 180-day threshold and suddenly owe years of back taxes, penalties, and interest.</p>
 
+        <img src="../images/document-requirements-identity-passport-united-states-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Passport and travel documents relevant to tracking days in Thailand" loading="lazy" style="float: right; margin: 0 0 1.5rem 2rem; width: 480px; max-height: 390px; object-fit: cover; border-radius: 12px;">
+
         <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; color: var(--silver);">Additionally, residing in Thailand triggers obligations beyond income tax. You become liable for the remittance doctrine (foreign income is taxed only when remitted), Thailand's progressive tax brackets, and potentially the Net Personal Income Tax and surtax in certain circumstances. You must maintain Thai address registration (TM.30), which immigration tracks. Tax authorities use immigration records and bank deposits to verify your presence and detect unreported income. If the Revenue Department discovers you've been a tax resident but haven't filed, they can assess tax based on estimated income, levy substantial penalties and interest, and freeze your bank accounts. Coming into voluntary compliance is far cheaper than being discovered. If you suspect you've crossed the 180-day threshold, consult a tax specialist immediately to assess your obligations and formulate a compliance plan.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CALCULATING DAYS, BORDER RUNS, AND PLANNING (Crosshatch Pattern Section) -->
+    <section class="article-section">
+      <div class="container">
+        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">Calculating Days Accurately and Planning Your Presence</h2>
+
+        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Keeping Accurate Records of Your Presence</h3>
+
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">To know whether you've crossed the 180-day threshold, maintain a detailed record of your entry and exit dates in Thailand. Review your passport stamps, travel documents, and credit card statements to verify your Thailand entries and exits. The Thai Revenue Department can access immigration records showing your border crossings, so your personal records should match immigration data. If you've made border runs (brief exits to neighbouring countries), count each exit and re-entry as individual events. If you entered Thailand on January 1 and exited for a day-trip to Cambodia on July 1 (day 182), that day-trip doesn't reset your counter. You would count day 182 in Cambodia and resume counting day 183 upon re-entry. Spreadsheets or apps tracking your location help prevent mistakes. Many expats use simple charts marking entry and exit dates, then sum the days to determine their annual presence. If you're near the 180-day threshold (e.g., at 175 days), plan your movements carefully to either cross intentionally (and manage tax obligations) or deliberately exit Thailand before hitting 180 to maintain non-resident status.</p>
+
+                <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Strategic Use of Border Runs and Visa Runs</h3>
+
+        <img src="../images/currency-calculator-hands-notebook-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calculator and notebook for tracking 180-day Thai tax residency threshold" loading="lazy" style="float: left; margin: 0 2rem 1.5rem 0; width: 380px; max-height: 320px; object-fit: cover; border-radius: 12px;">
+
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Some expats use border runs strategically to manage tax residency. For example, an expat at 175 days in Thailand before December 31 might take a week-long trip to Cambodia (leaving December 25, returning January 1). This move achieves two goals: they end the calendar year below 180 days (non-resident status), and they reset their day counter on January 1. However, this strategy only works if you actually leave Thailand and don't just stay near the border. The Thai Revenue Department scrutinises repeated border runs as potential tax avoidance schemes. If you exit and re-enter on the same day repeatedly to avoid tax residency, tax authorities may disregard the border runs and count your presence continuously. Legal doctrines of substance over form mean even if your immigration stamps show exits and entries, the Revenue Department can argue you didn't genuinely leave Thailand. This is why relying solely on border runs as a tax strategy is risky. It's better to have a genuine reason for leaving (business trip, family visit, etc.) than to conduct multiple same-day border runs. Some countries (like the UK) have specific anti-avoidance rules for tax residency; Thailand's rules are less explicit, but the principle applies.</p>
+
+        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Planning Multi-Year Strategies</h3>
+
+        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">For expats staying in Thailand long-term, accepting tax residency is often simpler than managing day counts year after year. Once you're clearly going to be over 180 days, come into compliance, file taxes, and use the remittance doctrine and other planning strategies to minimise your tax liability. Trying to stay marginally below 180 days every year creates audit risk and potential liabilities if you miscalculate. Conversely, for those intending to stay fewer than 180 days annually, careful planning ensures you cross no year boundary at or above 180 days. If you arrive in Thailand in November and plan to stay through March, you'll accumulate approximately 60 days in the first year (non-resident) and 90 days in the second year (if you leave in late April). You remain non-resident in both years. However, if you stay into June, you'd cross 180 days in the second year and become resident that year, requiring tax filings from that point forward. Professional tax planning coordinated with your travel and residency plans ensures you remain in compliance and avoid unexpected tax complications.</p>
       </div>
     </section>
 
@@ -666,25 +695,6 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: CALCULATING DAYS, BORDER RUNS, AND PLANNING (Crosshatch Pattern Section) -->
-    <section class="article-section">
-      <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">Calculating Days Accurately and Planning Your Presence</h2>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Keeping Accurate Records of Your Presence</h3>
-
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">To know whether you've crossed the 180-day threshold, maintain a detailed record of your entry and exit dates in Thailand. Review your passport stamps, travel documents, and credit card statements to verify your Thailand entries and exits. The Thai Revenue Department can access immigration records showing your border crossings, so your personal records should match immigration data. If you've made border runs (brief exits to neighbouring countries), count each exit and re-entry as individual events. If you entered Thailand on January 1 and exited for a day-trip to Cambodia on July 1 (day 182), that day-trip doesn't reset your counter. You would count day 182 in Cambodia and resume counting day 183 upon re-entry. Spreadsheets or apps tracking your location help prevent mistakes. Many expats use simple charts marking entry and exit dates, then sum the days to determine their annual presence. If you're near the 180-day threshold (e.g., at 175 days), plan your movements carefully to either cross intentionally (and manage tax obligations) or deliberately exit Thailand before hitting 180 to maintain non-resident status.</p>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Strategic Use of Border Runs and Visa Runs</h3>
-
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Some expats use border runs strategically to manage tax residency. For example, an expat at 175 days in Thailand before December 31 might take a week-long trip to Cambodia (leaving December 25, returning January 1). This move achieves two goals: they end the calendar year below 180 days (non-resident status), and they reset their day counter on January 1. However, this strategy only works if you actually leave Thailand and don't just stay near the border. The Thai Revenue Department scrutinises repeated border runs as potential tax avoidance schemes. If you exit and re-enter on the same day repeatedly to avoid tax residency, tax authorities may disregard the border runs and count your presence continuously. Legal doctrines of substance over form mean even if your immigration stamps show exits and entries, the Revenue Department can argue you didn't genuinely leave Thailand. This is why relying solely on border runs as a tax strategy is risky. It's better to have a genuine reason for leaving (business trip, family visit, etc.) than to conduct multiple same-day border runs. Some countries (like the UK) have specific anti-avoidance rules for tax residency; Thailand's rules are less explicit, but the principle applies.</p>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Planning Multi-Year Strategies</h3>
-
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">For expats staying in Thailand long-term, accepting tax residency is often simpler than managing day counts year after year. Once you're clearly going to be over 180 days, come into compliance, file taxes, and use the remittance doctrine and other planning strategies to minimise your tax liability. Trying to stay marginally below 180 days every year creates audit risk and potential liabilities if you miscalculate. Conversely, for those intending to stay fewer than 180 days annually, careful planning ensures you cross no year boundary at or above 180 days. If you arrive in Thailand in November and plan to stay through March, you'll accumulate approximately 60 days in the first year (non-resident) and 90 days in the second year (if you leave in late April). You remain non-resident in both years. However, if you stay into June, you'd cross 180 days in the second year and become resident that year, requiring tax filings from that point forward. Professional tax planning coordinated with your travel and residency plans ensures you remain in compliance and avoid unexpected tax complications.</p>
       </div>
     </section>
 
@@ -763,8 +773,6 @@
         </div>
       </div>
     </section>
-
-  
 
   </main>
 
@@ -854,15 +862,11 @@
   </footer>
   </div>
 
-
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
   <script src="../js/site.js" defer></script>
-
-
-  
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>

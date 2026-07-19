@@ -51,7 +51,7 @@
       font-style: italic;
       font-display: swap;
     }
-    
+
   </style>
 
   <script src="../js/gsap.min.js"></script>
@@ -86,6 +86,12 @@
     }
     .article-section + .article-section {
       border-top: 1px solid var(--art-line);
+    }
+    /* Contain floated content images so they never bleed into the next section */
+    .article-section .container::after {
+      content: "";
+      display: table;
+      clear: both;
     }
     /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
     .article-section.dark {
@@ -163,15 +169,19 @@
       gap: 1rem;
     }
     .article-checklist li {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
     }
     .article-checklist svg {
-      flex-shrink: 0;
+      grid-row: 1 / 3;
+      grid-column: 1;
       color: var(--art-accent);
       margin-top: 0.15rem;
     }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; }
+    .article-checklist li span { grid-column: 2; grid-row: 2; }
     .article-section.dark .article-checklist svg { color: #8ecbf5; }
     .article-checklist strong { display: block; margin-bottom: 0.15rem; }
 
@@ -546,7 +556,45 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Property investment tax documents" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Property investment tax documents" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
+      </div>
+    </section>
+
+        <section class="article-section">
+      <div class="container">
+        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Building Wealth Through US Real Estate While Living Overseas</h2>
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Are you earning abroad but want to build wealth in the US real estate market? The challenge is clear: accessing mortgages, managing rental income across borders, and minimising tax liability across two jurisdictions. Without proper planning, property investing can trigger unexpected tax bills and compliance issues. But with strategic guidance, US real estate offers one of the most powerful wealth-building tools available to overseas earners.</p>
+
+        <img loading="lazy" src="../images/new-york-cityscape-expat-tax-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US property investment skyline relevant to overseas investor tax planning" style="float: left; margin: 0 2rem 1.5rem 0; width: 420px; max-height: 340px; object-fit: cover; border-radius: 12px;">
+
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Many overseas investors don't realise that they can secure competitive US mortgages without being a US resident. Lenders now specialise in working with overseas borrowers, foreign nationals, and expat investors. You can secure financing even without a US credit history or US employment. This fundamental shift in the lending market has opened unprecedented opportunities for overseas earners to access real estate financing at rates comparable to US-based investors.</p>
+
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">The tax landscape for property investing abroad is complex. Rental income from US property is subject to US federal income tax and state tax. Thailand may also tax certain US property income under specific circumstances, creating potential double taxation. However, the US-Thailand Tax Treaty and strategic entity structuring can minimise this exposure. With proper planning, depreciation deductions and expense optimisation can transform a rental property that generates positive cash flow into a tax-efficient wealth-building vehicle.</p>
+
+        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Overseas Investor Mortgage Advantage</h2>
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">US mortgage lenders now specialise in working with overseas borrowers. You can secure competitive rates even without a US credit history or US employment. Lenders focus on building quality, long-term relationships with partners such as private banks, family offices, realtors, and mortgage brokers located around the world. They offer a wide variety of mortgage loan programmes focused on specific markets with exceptional client experience.</p>
+
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Mortgage options available to overseas investors include conventional loans for primary residences and investment properties, investment property financing with rates comparable to US borrowers, refinancing for cash-out scenarios to unlock equity, and bridge loans for time-sensitive purchases. Documentation requirements are straightforward: tax returns from your country of residence, bank statements from abroad, and passport verification. No US credit is required.</p>
+
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Interest rates for overseas borrowers are competitive, typically ranging from 3.5% to 6.5% on a 30-year fixed mortgage, depending on your situation, down payment, and property type. This makes US real estate an attractive investment even from overseas. The mortgage lending landscape has evolved significantly. Experts with over 25 years of wholesale and retail mortgage lending experience have created solutions specifically designed for expat investors working abroad.</p>
+
+        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Tax Minimisation Strategies for Rental Properties</h2>
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Rental income deductions are substantial and often underutilised. Deductible expenses include mortgage interest (not principal), property taxes, insurance, repairs and maintenance, utilities, property management fees, and depreciation. A well-managed rental property can show a loss in Year 1 even while generating positive cash flow, reducing your overall US tax liability and creating what's often called "passive loss" opportunities.</p>
+
+        <img src="../images/business-financial-analysis-charts-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Financial analysis charts for US property investment tax strategy planning" loading="lazy" style="float: right; margin: 0 0 1.5rem 2rem; width: 480px; max-height: 390px; object-fit: cover; border-radius: 12px;">
+
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Depreciation is a powerful tax benefit. Buildings depreciate over 27.5 years for residential properties or 39 years for commercial properties. You claim depreciation as a deduction without spending cash. For a USD 300,000 residential property, that's approximately USD 11,000 annual depreciation deduction. Over 10 years, that's USD 110,000 in deductions, potentially reducing your taxable income by USD 110,000 and saving you USD 30,000-35,000 in federal taxes.</p>
+
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">1031 Exchange Opportunity allows you to sell one rental property and purchase another within strict 45-day and 180-day windows, deferring capital gains indefinitely. This strategy compounds wealth without triggering large tax bills during the exchange. This is particularly valuable for overseas investors managing multiple properties across different markets.</p>
+
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Entity structure optimisation matters. Consider an LLC or S-Corp to separate liability, optimise self-employment taxes, and maintain flexibility. We advise on structure based on your specific situation, property type, financing, and personal tax circumstances. Foreign Tax Credit considerations apply if Thailand taxes certain US rental income. You can claim a Foreign Tax Credit on Form 1116 for Thai taxes paid on that income, reducing your US tax dollar-for-dollar.</p>
+
+        <div class="reveal" style="margin-bottom: 2rem; padding: 1.5rem; border-left: 3px solid var(--blue); background: #f5f8ff;">
+          <h3 style="margin-bottom: 1rem; color: var(--navy);">Case Study: James, Engineer in Thailand</h3>
+          <p style="margin-bottom: 1rem;">James earned USD 150,000 as an engineer in Thailand and wanted to diversify away from Thai currency exposure. He purchased a rental property in Austin, Texas for USD 400,000, financing USD 300,000 at 4.2% interest. First-year rental income: USD 24,000 (monthly rent). First-year expenses: USD 18,000, including mortgage interest USD 12,000, property taxes USD 2,000, insurance USD 1,500, repairs USD 800, and depreciation USD 11,000 (non-cash).</p>
+          <p style="margin-bottom: 1rem;">Tax result: Adjusted Gross Income drops to USD 132,000 after Foreign Earned Income Exclusion. Depreciation reduces taxable rental income to near zero. James pays minimal federal tax while building equity in US real estate and diversifying his wealth away from single-country exposure. Over 10 years, he builds USD 100,000+ in equity through mortgage paydown while claiming substantial depreciation deductions. His property appreciates at 3% annually, growing to USD 537,000 in value by year 10.</p>
+        </div>
+
       </div>
     </section>
 
@@ -564,53 +612,19 @@
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>First US property purchase</strong><span>Structuring ownership correctly from day one avoids costly fixes later.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Rental income reporting</strong><span>US rental income is taxable regardless of where you live.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>FIRPTA withholding on sale</strong><span>Selling US property as a foreign owner triggers automatic withholding.</span></li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Entity structuring questions</strong><span>LLC, trust, or direct ownership each carry different tax consequences.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Entity structuring questions</strong><span>Limited Liability Company (LLC), trust, or direct ownership each carry different tax consequences.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Financing from overseas</strong><span>Securing US mortgages while living abroad has specific documentation needs.</span></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-
-        <section class="article-section">
+    <section class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Building Wealth Through US Real Estate While Living Overseas</h2>
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Are you earning abroad but want to build wealth in the US real estate market? The challenge is clear: accessing mortgages, managing rental income across borders, and minimising tax liability across two jurisdictions. Without proper planning, property investing can trigger unexpected tax bills and compliance issues. But with strategic guidance, US real estate offers one of the most powerful wealth-building tools available to overseas earners.</p>
-
-        <img loading="lazy" src="../images/new-york-cityscape-expat-tax-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US property investment skyline relevant to overseas investor tax planning" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin: 1.5rem 0;">
-<img src="../images/business-financial-analysis-charts-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Financial analysis charts for US property investment tax strategy planning" loading="lazy" style=" width: 260px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
-
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Many overseas investors don't realise that they can secure competitive US mortgages without being a US resident. Lenders now specialise in working with overseas borrowers, foreign nationals, and expat investors. You can secure financing even without a US credit history or US employment. This fundamental shift in the lending market has opened unprecedented opportunities for overseas earners to access real estate financing at rates comparable to US-based investors.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">The tax landscape for property investing abroad is complex. Rental income from US property is subject to US federal income tax and state tax. Thailand may also tax certain US property income under specific circumstances, creating potential double taxation. However, the US-Thailand Tax Treaty and strategic entity structuring can minimise this exposure. With proper planning, depreciation deductions and expense optimisation can transform a rental property that generates positive cash flow into a tax-efficient wealth-building vehicle.</p>
-<img src="../images/man-woman-business-laptop-office-discussion-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Business professionals discussing property investment tax strategies on laptop" loading="lazy" style=" width: 250px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
-
-        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Overseas Investor Mortgage Advantage</h2>
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">US mortgage lenders now specialise in working with overseas borrowers. You can secure competitive rates even without a US credit history or US employment. Lenders focus on building quality, long-term relationships with partners such as private banks, family offices, realtors, and mortgage brokers located around the world. They offer a wide variety of mortgage loan programmes focused on specific markets with exceptional client experience.</p>
-
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Mortgage options available to overseas investors include conventional loans for primary residences and investment properties, investment property financing with rates comparable to US borrowers, refinancing for cash-out scenarios to unlock equity, and bridge loans for time-sensitive purchases. Documentation requirements are straightforward: tax returns from your country of residence, bank statements from abroad, and passport verification. No US credit is required.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Interest rates for overseas borrowers are competitive, typically ranging from 3.5% to 6.5% on a 30-year fixed mortgage, depending on your situation, down payment, and property type. This makes US real estate an attractive investment even from overseas. The mortgage lending landscape has evolved significantly. Experts with over 25 years of wholesale and retail mortgage lending experience have created solutions specifically designed for expat investors working abroad.</p>
-
-        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Tax Minimisation Strategies for Rental Properties</h2>
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Rental income deductions are substantial and often underutilised. Deductible expenses include mortgage interest (not principal), property taxes, insurance, repairs and maintenance, utilities, property management fees, and depreciation. A well-managed rental property can show a loss in Year 1 even while generating positive cash flow, reducing your overall US tax liability and creating what's often called "passive loss" opportunities.</p>
-
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Depreciation is a powerful tax benefit. Buildings depreciate over 27.5 years for residential properties or 39 years for commercial properties. You claim depreciation as a deduction without spending cash. For a USD 300,000 residential property, that's approximately USD 11,000 annual depreciation deduction. Over 10 years, that's USD 110,000 in deductions, potentially reducing your taxable income by USD 110,000 and saving you USD 30,000-35,000 in federal taxes.</p>
-
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">1031 Exchange Opportunity allows you to sell one rental property and purchase another within strict 45-day and 180-day windows, deferring capital gains indefinitely. This strategy compounds wealth without triggering large tax bills during the exchange. This is particularly valuable for overseas investors managing multiple properties across different markets.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Entity structure optimisation matters. Consider an LLC or S-Corp to separate liability, optimise self-employment taxes, and maintain flexibility. We advise on structure based on your specific situation, property type, financing, and personal tax circumstances. Foreign Tax Credit considerations apply if Thailand taxes certain US rental income. You can claim a Foreign Tax Credit on Form 1116 for Thai taxes paid on that income, reducing your US tax dollar-for-dollar.</p>
-
-        <div class="reveal" style="margin-bottom: 2rem; padding: 1.5rem; border-left: 3px solid var(--blue); background: #f5f8ff;">
-          <h3 style="margin-bottom: 1rem; color: var(--navy);">Case Study: James, Engineer in Thailand</h3>
-          <p style="margin-bottom: 1rem;">James earned USD 150,000 as an engineer in Thailand and wanted to diversify away from Thai currency exposure. He purchased a rental property in Austin, Texas for USD 400,000, financing USD 300,000 at 4.2% interest. First-year rental income: USD 24,000 (monthly rent). First-year expenses: USD 18,000, including mortgage interest USD 12,000, property taxes USD 2,000, insurance USD 1,500, repairs USD 800, and depreciation USD 11,000 (non-cash).</p>
-          <p style="margin-bottom: 1rem;">Tax result: Adjusted Gross Income drops to USD 132,000 after Foreign Earned Income Exclusion. Depreciation reduces taxable rental income to near zero. James pays minimal federal tax while building equity in US real estate and diversifying his wealth away from single-country exposure. Over 10 years, he builds USD 100,000+ in equity through mortgage paydown while claiming substantial depreciation deductions. His property appreciates at 3% annually, growing to USD 537,000 in value by year 10.</p>
-        </div>
-
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Why Property Investing Matters for Expats</h2>
         <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Real estate appreciation plus rental income hedges currency fluctuations. As the Thai Baht fluctuates against the USD, US real estate anchors wealth in USD-denominated assets. Rental income provides regular cash flow that can be reinvested or distributed as needed. Property is a tangible asset that builds equity over time. Unlike currency trading or volatile investments, real estate produces cash flow through rent, builds equity through mortgage paydown, and typically appreciates over long periods.</p>
+
+        <img src="../images/man-woman-business-laptop-office-discussion-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Business professionals discussing property investment tax strategies on laptop" loading="lazy" style="float: left; margin: 0 2rem 1.5rem 0; width: 380px; max-height: 320px; object-fit: cover; border-radius: 12px;">
 
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">For expats earning abroad, US property provides portfolio diversification and wealth accumulation in home currency. Rather than converting all earnings to Thai currency subject to currency fluctuation risk, real estate financing allows you to leverage USD-denominated debt to build USD-denominated assets. This natural hedging strategy protects your wealth from currency devaluation and creates a long-term store of value.</p>
 
@@ -667,8 +681,6 @@
       </div>
     </section>
 
-    
-
     <!-- MID-PAGE CTA - SHARED TEMPLATE -->
     <section class="article-section dark">
       <div class="container">
@@ -689,7 +701,6 @@
       </div>
     </section>
 
-    
   </main>
 
   <div class="site-scope">
@@ -778,13 +789,10 @@
   </footer>
   </div>
 
-
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
   <script src="../js/site.js" defer></script>
-
-  
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>

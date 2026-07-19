@@ -123,6 +123,12 @@
     .article-section + .article-section {
       border-top: 1px solid var(--art-line);
     }
+    /* Contain floated content images so they never bleed into the next section */
+    .article-section .container::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
     .article-section.dark {
       background: var(--navy);
@@ -199,15 +205,19 @@
       gap: 1rem;
     }
     .article-checklist li {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
     }
     .article-checklist svg {
-      flex-shrink: 0;
+      grid-row: 1 / 3;
+      grid-column: 1;
       color: var(--art-accent);
       margin-top: 0.15rem;
     }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; }
+    .article-checklist li span { grid-column: 2; grid-row: 2; }
     .article-section.dark .article-checklist svg { color: #8ecbf5; }
     .article-checklist strong { display: block; margin-bottom: 0.15rem; }
 
@@ -598,7 +608,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/thai-tax-form-pit90-personal-income-return-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thai tax forms and documents for PND 90 filing" style="width: 65%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-52px) scale(1.4);">
+        <img loading="lazy" src="../images/thai-tax-form-pit90-personal-income-return-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thai tax forms and documents for PND 90 filing" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -627,19 +637,15 @@
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">Filing Thai income tax as an expat requires understanding three key concepts: tax residency status, the PND 90 annual return, and the filing deadline of March 31. If you are classified as a Thai tax resident (physically present in Thailand for 180 or more days in any calendar year), you must file an annual income tax return regardless of your citizenship or visa status. Non-residents are generally not required to file Thai income tax unless they earned Thailand-sourced income (e.g., salary from a Thai employer or rental income from Thai property). The primary tax form for individuals is the PND 90 (Phor Ngor Dor 90), which is the annual personal income tax return. Additionally, if your employer or income sources withhold tax throughout the year, you'll file PND 91 forms monthly to reconcile those withholdings. Understanding which forms you must file and by when is the foundation of Thai tax compliance.</p>
 
-        <img loading="lazy" src="../images/day-reporting-temple-place-worship-tourist-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Daily life in Thailand as an expat preparing to file a Thai tax return" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin: 1.5rem 0;">
-<img src="../images/tax-document-calculator-hands-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thai tax form PND 90 personal income tax return for US expats living in Thailand" loading="lazy" style=" width: 280px; max-height: 300px; object-fit: cover; border-radius: 6px;">
+                <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Who Must File and When</h3>
 
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Who Must File and When</h3>
+        <img loading="lazy" src="../images/day-reporting-temple-place-worship-tourist-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Daily life in Thailand as an expat preparing to file a Thai tax return" style="float: left; margin: 0 2rem 1.5rem 0; width: 420px; max-height: 340px; object-fit: cover; border-radius: 12px;">
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">Thai tax residency is determined by physical presence, not citizenship or visa type. If you spent 180 or more days physically in Thailand during any calendar year, you are a tax resident and must file the PND 90 by March 31 of the following year. For example, if you were in Thailand 180+ days during 2025, you must file by March 31, 2026. Days don't need to be consecutive. Immigration days count as Thai territory; border runs to Cambodia or Laos don't break your residence count. Non-residents who earned Thailand-sourced income must file only the portions of the form related to that income. Most expats are tax residents because they exceed the 180-day threshold. The filing deadline is strictly enforced. File electronically by March 31 or file in person at your local tax office (สำนักงานสรรพส์税จังหวัด) by the same date. Late filing incurs penalties starting at the due date.</p>
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">PND 90 and PND 91 Explained</h3>
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8;">The PND 90 is your annual personal income tax return. It consolidates all income sources (employment, self-employment, rental, investment income) and applies deductions and progressive tax rates to calculate your total Thai tax liability for the year. Filing PND 90 is mandatory for all tax residents. The PND 91 is a monthly withholding tax form filed when your employer or income sources withhold income tax. If you're employed by a Thai company or a foreign company with a Thai subsidiary, your employer typically withholds tax from your salary monthly and files PND 91 on your behalf. If you're self-employed or have no withholding, you don't file PND 91. As an expat with foreign employment, you may not have withholding, so you file only the annual PND 90. If withholding occurs, the employer files PND 91 monthly, and you reconcile by filing the annual PND 90. The employer's PND 91 filings are credited against your annual liability when you file PND 90.</p>
-<img src="../images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Organised Thai and US tax documents for expat annual filing process" loading="lazy" style=" width: 240px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
 
         <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville';">Required Documents and Information</h3>
 
@@ -654,7 +660,30 @@
 
         <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--silver);">Thai income tax is calculated on a progressive scale after subtracting allowable deductions. Everyone receives a standard personal exemption of THB 150,000 (approximately USD 4,200), meaning income up to this amount is completely tax-free. Above that, tax is applied at escalating rates: 5 percent on income from THB 150,001 to THB 300,000; 10 percent on income from THB 300,001 to THB 500,000; 15 percent on income from THB 500,001 to THB 1,000,000; 20 percent on income from THB 1,000,001 to THB 2,000,000; 25 percent on income from THB 2,000,001 to THB 5,000,000; 30 percent on income from THB 5,000,001 to THB 10,000,000; 35 percent on income from THB 10,000,001 to THB 20,000,000; and 37 percent on income above THB 20,000,000. For example, if your total income is THB 1,500,000 after deductions, you owe: THB 0 on the first THB 150,000, plus 5% on THB 150,000 (THB 7,500), plus 10% on THB 200,000 (THB 20,000), plus 15% on THB 1,000,000 (THB 150,000), totalling THB 177,500 in annual tax. Understanding these brackets allows you to strategically time remittances to stay in lower brackets.</p>
 
+        <img src="../images/tax-document-calculator-hands-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Thai tax form PND 90 personal income tax return for US expats living in Thailand" loading="lazy" style="float: right; margin: 0 0 1.5rem 2rem; width: 480px; max-height: 390px; object-fit: cover; border-radius: 12px;">
+
         <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; color: var(--silver);">Beyond the standard exemption, you can deduct life insurance premiums paid to registered Thai insurers (up to THB 100,000 annually), donations to registered charities and religious institutions (documented), contributions to Thai social security and provident funds, and certain professional expenses if self-employed. If you have dependent children under age 20, you receive an additional exemption of THB 60,000 per child. If married and filing jointly, both spouses' exemptions and deductions are considered. Self-employed individuals can deduct legitimate business expenses: office rent, utilities, supplies, professional fees, equipment depreciation, and business travel. Keep meticulous receipts. The Revenue Department increasingly audits expat returns and requires original documentation. Missing proper receipts results in denial of the deduction and recalculation of tax owed, plus penalties. Many expats claim deductions without documentation; this is a leading reason for audit findings and back taxes.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FILING METHODS AND STEP-BY-STEP PROCESS (Crosshatch Pattern Section) -->
+    <section class="article-section">
+      <div class="container">
+        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">Filing Methods: Electronic vs. In-Person and Step-by-Step Instructions</h2>
+
+        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Electronic Filing (e-Filling)</h3>
+
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Electronic filing through the Thai Revenue Department's e-Filling website (efile.rd.go.th) is the recommended method. You need a digital signature (obtained from the government) or a PIN assigned by the Revenue Department. Many expats use a Thai accountant to handle e-Filing because it requires Thai language proficiency and navigation of the online system. E-Filing provides immediate confirmation of submission and creates an audit trail. The steps are: obtain a tax ID from the Revenue Department (if first-time filer), gather all income and deduction documents, calculate your tax liability, register on the e-Filling website, complete the PND 90 form online, upload supporting documents, and submit before March 31. Electronic filing typically shows a confirmation message immediately, and you can pay any remaining balance directly online or at a bank. Using an accountant typically costs THB 3,000 to THB 8,000 and eliminates hassle.</p>
+
+                <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">In-Person Filing at the Tax Office</h3>
+
+        <img src="../images/currency-calculator-hands-notebook-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Calculating and paying Thai tax liability" loading="lazy" style="float: left; margin: 0 2rem 1.5rem 0; width: 380px; max-height: 320px; object-fit: cover; border-radius: 12px;">
+
+        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">If you prefer to file in person, visit your local tax office (found by searching online or asking local expats for your district). Bring your passport, Thai address registration (TM.30), tax ID number, completed PND 90 form (available in English at the office or online), and all supporting documents. The staff will assist with completion, though communication may be challenging if you don't speak Thai. Filing in person can be time-consuming; offices are crowded near the March 31 deadline. Bring the form in triplicate (original plus two copies). The office keeps one, you get one stamped as receipt, and one copy serves as your records. In-person filing takes 1-2 hours depending on crowding and document completeness. Many expats avoid this hassle by hiring a Thai accountant.</p>
+
+        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Payment of Tax Liability</h3>
+
+        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">After filing, calculate any remaining tax balance owed. If your employer withheld tax throughout the year (PND 91), those amounts are credited against your annual liability. If you file before payment is due (by March 31), you can request a payment plan. Pay at your local tax office, by bank transfer to the tax office account, or online through the e-Filling system. Late payment incurs interest at 0.5 percent per month. If you file the return on time but pay late, penalties are smaller than filing late. Filing on time even without payment is far better than filing late with full payment. If you cannot pay the full amount, request a payment deferment or plan; the Revenue Department sometimes approves. Don't ignore tax bills; unpaid taxes can result in bank account freezes or denial of visa extensions, which is a serious problem for expat residents.</p>
       </div>
     </section>
 
@@ -669,7 +698,7 @@
             <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8ecbf5; margin-bottom: 0.9rem;">Expert Guidance</p>
             <h3>When to Consult a Specialist</h3>
             <ul class="article-checklist">
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>First-time Thai filing</strong><span>Your first PND 90/91 return has no margin for costly mistakes.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>First-time Thai filing</strong><span>Your first Personal Income Tax (PND) 90/91 return has no margin for costly mistakes.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Multiple income sources</strong><span>Employment, freelance, and rental income all need separate reporting.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Missed prior filings</strong><span>You haven't filed in previous years and need a catch-up plan.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Language and documentation barriers</strong><span>Thai-language forms and receipts are hard to navigate alone.</span></li>
@@ -677,25 +706,6 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: FILING METHODS AND STEP-BY-STEP PROCESS (Crosshatch Pattern Section) -->
-    <section class="article-section">
-      <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; margin-top: 0; position: relative; z-index: 1;">Filing Methods: Electronic vs. In-Person and Step-by-Step Instructions</h2>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Electronic Filing (e-Filling)</h3>
-
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">Electronic filing through the Thai Revenue Department's e-Filling website (efile.rd.go.th) is the recommended method. You need a digital signature (obtained from the government) or a PIN assigned by the Revenue Department. Many expats use a Thai accountant to handle e-Filing because it requires Thai language proficiency and navigation of the online system. E-Filing provides immediate confirmation of submission and creates an audit trail. The steps are: obtain a tax ID from the Revenue Department (if first-time filer), gather all income and deduction documents, calculate your tax liability, register on the e-Filling website, complete the PND 90 form online, upload supporting documents, and submit before March 31. Electronic filing typically shows a confirmation message immediately, and you can pay any remaining balance directly online or at a bank. Using an accountant typically costs THB 3,000 to THB 8,000 and eliminates hassle.</p>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">In-Person Filing at the Tax Office</h3>
-
-        <p class="reveal" style="margin-bottom: 1.5rem; line-height: 1.8; position: relative; z-index: 1;">If you prefer to file in person, visit your local tax office (found by searching online or asking local expats for your district). Bring your passport, Thai address registration (TM.30), tax ID number, completed PND 90 form (available in English at the office or online), and all supporting documents. The staff will assist with completion, though communication may be challenging if you don't speak Thai. Filing in person can be time-consuming; offices are crowded near the March 31 deadline. Bring the form in triplicate (original plus two copies). The office keeps one, you get one stamped as receipt, and one copy serves as your records. In-person filing takes 1-2 hours depending on crowding and document completeness. Many expats avoid this hassle by hiring a Thai accountant.</p>
-
-        <h3 class="reveal" style="font-size: 1.3rem; margin-bottom: 1rem; margin-top: 2rem; font-family: 'Libre Baskerville'; position: relative; z-index: 1;">Payment of Tax Liability</h3>
-
-        <p class="reveal" style="margin-bottom: 2rem; line-height: 1.8; position: relative; z-index: 1;">After filing, calculate any remaining tax balance owed. If your employer withheld tax throughout the year (PND 91), those amounts are credited against your annual liability. If you file before payment is due (by March 31), you can request a payment plan. Pay at your local tax office, by bank transfer to the tax office account, or online through the e-Filling system. Late payment incurs interest at 0.5 percent per month. If you file the return on time but pay late, penalties are smaller than filing late. Filing on time even without payment is far better than filing late with full payment. If you cannot pay the full amount, request a payment deferment or plan; the Revenue Department sometimes approves. Don't ignore tax bills; unpaid taxes can result in bank account freezes or denial of visa extensions, which is a serious problem for expat residents.</p>
       </div>
     </section>
 
@@ -776,8 +786,6 @@
         </div>
       </div>
     </section>
-
-  
 
   </main>
 
@@ -867,15 +875,11 @@
   </footer>
   </div>
 
-
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
   <script src="../js/site.js" defer></script>
-
-
-  
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>

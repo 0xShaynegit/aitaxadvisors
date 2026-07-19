@@ -21,7 +21,7 @@ git push origin main
 4. Leave build command empty (static site)
 5. Deploy
 
-See `md/GIT-SETUP.md` for detailed instructions.
+See `.md/GIT-SETUP.md` for detailed instructions.
 
 ## What's New
 
@@ -36,14 +36,14 @@ See `md/GIT-SETUP.md` for detailed instructions.
 
 ## Documentation
 
-All documentation is in the `/md/` folder (not deployed):
+All documentation is in the `/.md/` folder (not deployed):
 
-- `md/GIT-SETUP.md` - Git and Cloudflare deployment guide
-- `md/SEO-SETUP-SUMMARY.md` - Complete SEO overview
-- `md/SEO-IMPROVEMENTS.md` - Detailed SEO guide
-- `md/IMPLEMENTATION-CHECKLIST.txt` - Step-by-step checklist
-- `md/META-TAGS-TO-ADD.html` - Reference HTML
-- `md/seo-schema.json` - Structured data reference
+- `.md/GIT-SETUP.md` - Git and Cloudflare deployment guide
+- `.md/SEO-SETUP-SUMMARY.md` - Complete SEO overview
+- `.md/SEO-IMPROVEMENTS.md` - Detailed SEO guide
+- `.md/IMPLEMENTATION-CHECKLIST.txt` - Step-by-step checklist
+- `.md/META-TAGS-TO-ADD.html` - Reference HTML
+- `.md/seo-schema.json` - Structured data reference
 
 ## File Structure
 
@@ -54,7 +54,7 @@ All documentation is in the `/md/` folder (not deployed):
 ├── wrangler.jsonc      # Cloudflare config
 ├── fonts/              # Local fonts (no CDN dependency)
 ├── images/             # All WebP optimised
-├── md/                 # Documentation (gitignored, not deployed)
+├── .md/                # Documentation (gitignored, not deployed)
 ├── .gitignore          # Git exclusions
 └── README.md           # This file
 ```
@@ -78,7 +78,7 @@ All documentation is in the `/md/` folder (not deployed):
 
 - **Cloudflare Docs**: https://developers.cloudflare.com/pages/
 - **Git Docs**: https://git-scm.com/doc
-- **SEO Guide**: See `md/SEO-IMPROVEMENTS.md`
+- **SEO Guide**: See `.md/SEO-IMPROVEMENTS.md`
 
 ---
 

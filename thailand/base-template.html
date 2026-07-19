@@ -117,6 +117,12 @@
     .article-section + .article-section {
       border-top: 1px solid var(--art-line);
     }
+    /* Contain floated content images so they never bleed into the next section */
+    .article-section .container::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     /* Dark accent section: use sparingly (1-2 per page) for visual rhythm */
     .article-section.dark {
       background: var(--navy);
@@ -176,15 +182,19 @@
       gap: 1rem;
     }
     .article-checklist li {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
     }
     .article-checklist svg {
-      flex-shrink: 0;
+      grid-row: 1 / 3;
+      grid-column: 1;
       color: var(--art-accent);
       margin-top: 0.15rem;
     }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; }
+    .article-checklist li span { grid-column: 2; grid-row: 2; }
     .article-section.dark .article-checklist svg { color: #8ecbf5; }
     .article-checklist strong { display: block; margin-bottom: 0.15rem; }
 

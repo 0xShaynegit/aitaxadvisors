@@ -21,17 +21,24 @@ window.addEventListener('load', () => {
     }
   }
 
-  // PRELOADER (only on the first page load of the session — every later page
-  // in this tab hides it instantly with no animation, via sessionStorage)
+  // Reveal the hero and kick off scroll-triggered reveals (loaded from
+  // js/homepage.js). Every page needs this, whether or not it has a preloader.
+  function revealPage() {
+    if (typeof animateHero === 'function') {
+      animateHero();
+    }
+  }
+
+  // PRELOADER (only exists on the homepage, and only on the first page load
+  // of the session — a later homepage load in the same tab skips the
+  // animation and reveals instantly, via sessionStorage)
   const preloader = document.getElementById('preloader');
   if (preloader) {
     const alreadyShown = sessionStorage.getItem('aitax_preloader_shown');
 
     if (alreadyShown) {
       preloader.style.display = 'none';
-      if (typeof animateHero === 'function') {
-        animateHero();
-      }
+      revealPage();
     } else {
       sessionStorage.setItem('aitax_preloader_shown', '1');
       gsap.to('#preloader', {
@@ -41,13 +48,12 @@ window.addEventListener('load', () => {
         ease: 'power2.inOut',
         onComplete: () => {
           preloader.style.display = 'none';
-          // Call homepage animations if function exists (loaded from js/homepage.js)
-          if (typeof animateHero === 'function') {
-            animateHero();
-          }
+          revealPage();
         }
       });
     }
+  } else {
+    revealPage();
   }
 });
 

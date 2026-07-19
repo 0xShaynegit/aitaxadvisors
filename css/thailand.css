@@ -96,6 +96,16 @@
   grid-column: 3;
 }
 
+/* Fixed height + object-fit:cover so any source photo (landscape or portrait)
+   fills the same generous box instead of needing a per-image transform hack. */
+.hero-right img {
+  width: 100%;
+  height: 560px;
+  max-height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
 /* CONTENT SECTION — light background (THE key visual change) */
 #content {
   padding: 4rem 0;

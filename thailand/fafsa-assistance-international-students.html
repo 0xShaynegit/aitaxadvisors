@@ -51,7 +51,7 @@
       font-style: italic;
       font-display: swap;
     }
-    
+
   </style>
 
   <script src="../js/gsap.min.js"></script>
@@ -86,6 +86,12 @@
     }
     .article-section + .article-section {
       border-top: 1px solid var(--art-line);
+    }
+    /* Contain floated content images so they never bleed into the next section */
+    .article-section .container::after {
+      content: "";
+      display: table;
+      clear: both;
     }
     /* Dark accent section: used sparingly (1-2 per page) for visual rhythm */
     .article-section.dark {
@@ -163,15 +169,19 @@
       gap: 1rem;
     }
     .article-checklist li {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.9rem;
+      row-gap: 0.15rem;
     }
     .article-checklist svg {
-      flex-shrink: 0;
+      grid-row: 1 / 3;
+      grid-column: 1;
       color: var(--art-accent);
       margin-top: 0.15rem;
     }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; }
+    .article-checklist li span { grid-column: 2; grid-row: 2; }
     .article-section.dark .article-checklist svg { color: #8ecbf5; }
     .article-checklist strong { display: block; margin-bottom: 0.15rem; }
 
@@ -546,7 +556,35 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/tax-documents-forms-organized-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="FAFSA financial aid forms" style="width: 100%; border-radius: 12px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/graduating-students-throwing-caps-celebration-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Graduating students celebrating college acceptance" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
+      </div>
+    </section>
+
+        <section class="article-section">
+      <div class="container">
+        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Navigate FAFSA Complexity for Expat Families</h2>
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">FAFSA (Free Application for Federal Student Aid) is the official US government form that determines eligibility for federal financial aid including grants, loans, and work-study programmes. However, the rules for international students and expat families are complex and often misunderstood. Many families living in Thailand wonder whether they need to complete FAFSA, whether it's worth the effort, and how it affects their situation. The answer depends on your citizenship status, your child's citizenship, and the universities they're applying to.</p>
+
+        <img loading="lazy" src="../images/family-three-generations-happy-laughing-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Expat family reviewing FAFSA financial aid paperwork together" style="float: left; margin: 0 2rem 1.5rem 0; width: 420px; max-height: 340px; object-fit: cover; border-radius: 12px;">
+
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">For American families living abroad in Thailand, FAFSA is typically still required if your child is a US citizen and plans to attend university in the United States. The fact that the family lives overseas doesn't change the FAFSA requirement, though it does create additional complexity in terms of documentation and currency conversion. Many expat families miss deadlines, misunderstand the form, or fail to claim deductions and exclusions available to their specific situation. The result is reduced financial aid eligibility and higher out-of-pocket education costs.</p>
+
+        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">What FAFSA Covers and Who's Eligible</h2>
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">FAFSA stands for the Free Application for Federal Student Aid. It's the application form that students in the United States use to determine their eligibility for federal financial aid from the US government. The form collects extensive financial information about the student and the student's family, including income, assets, household size, and living situation. Based on the information provided in the FAFSA, the government calculates an Expected Family Contribution (EFC) or Student Aid Index (SAI), which determines how much federal financial aid the student is eligible to receive. This includes federal Pell Grants, federal student loans, and federal work-study employment.</p>
+
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">The FAFSA form is complex and detailed. It's typically long, contains many confusing questions, and requires extensive financial documentation. For families living abroad, the form can be even more confusing because it's designed primarily for US-based families. FAFSA is intended for US citizens and eligible non-citizens (including permanent residents and certain other visa holders) who plan to attend college in the United States. The form is not available to international students who are not US citizens or permanent residents. However, this doesn't mean international students have no options.</p>
+
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Many universities in the United States have their own financial aid and scholarship programmes for international students, and some universities request that international students complete the FAFSA form or an equivalent to assess financial need for institutional aid. Thai nationals studying in the United States are not eligible for federal FAFSA-based aid, but they should check with each US university they're applying to regarding their financial aid requirements for international students. Some universities are need-blind for international admissions and offer substantial institutional aid. Others are need-aware and may require financial aid information. Many international students also qualify for scholarships from their home country's government, private organisations, or the universities themselves.</p>
+
+        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">FAFSA for American Expat Families in Thailand</h2>
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">For American families living in Thailand, the FAFSA requirement applies just as it does for US-based families. If your child is a US citizen and plans to attend university in the United States, you're required to complete the FAFSA form. The challenge for expat families is significant. The FAFSA form assumes that your income is reported in US dollars on US tax returns. If you're earning Thai Baht or filing Thai tax returns, you must convert your income to US dollars and explain your financial situation in US context.</p>
+
+        <img src="../images/financial-plan-diagram-hand-drawing-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Financial aid planning diagram for FAFSA applications abroad" loading="lazy" style="float: right; margin: 0 0 1.5rem 2rem; width: 480px; max-height: 390px; object-fit: cover; border-radius: 12px;">
+
+        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Additionally, the form asks for your Social Security Number (SSN), which many expat families don't have or may not remember if they've been abroad for extended periods. The form also asks detailed questions about assets and investments, which can be complicated if you hold Thai bank accounts or Thai investments. Currency conversion is critical. If you have THB 2,000,000 in Thai savings, you must convert at current exchange rates (roughly 1 USD = 33-35 THB) to report approximately USD 57,000-61,000 in assets. The conversion rate used affects the Student Aid Index and your financial aid eligibility.</p>
+
+        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">The FAFSA form is available starting October 1st each year for the upcoming academic year. For example, the 2026-2027 FAFSA became available on October 1, 2025. The federal deadline is typically June 30th of the award year, but individual universities and states have earlier deadlines. Some states have early filing deadlines as early as February or March. Missing the FAFSA deadline can result in reduced financial aid eligibility, though you can still complete FAFSA after your school's deadline and may still qualify for some aid.</p>
+
       </div>
     </section>
 
@@ -561,7 +599,7 @@
             <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8ecbf5; margin-bottom: 0.9rem;">Expert Guidance</p>
             <h3>When to Consult a Specialist</h3>
             <ul class="article-checklist">
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>No US Social Security Number</strong><span>You need guidance on the ITIN or SSN application process.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>No US Social Security Number (SSN)</strong><span>You need guidance on the Individual Taxpayer Identification Number (ITIN) or SSN application process.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Complex currency conversion</strong><span>Multiple income sources in Thai baht need consistent USD reporting.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Self-employment income</strong><span>Business or freelance income complicates the Student Aid Index calculation.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Coordinating FAFSA with Form 1040</strong><span>Your FAFSA figures need to match a US tax return you haven't filed yet.</span></li>
@@ -571,34 +609,8 @@
         </div>
       </div>
     </section>
-
-        <section class="article-section">
+    <section class="article-section">
       <div class="container">
-        <h2 class="reveal" style="font-size: 1.8rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Navigate FAFSA Complexity for Expat Families</h2>
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">FAFSA (Free Application for Federal Student Aid) is the official US government form that determines eligibility for federal financial aid including grants, loans, and work-study programmes. However, the rules for international students and expat families are complex and often misunderstood. Many families living in Thailand wonder whether they need to complete FAFSA, whether it's worth the effort, and how it affects their situation. The answer depends on your citizenship status, your child's citizenship, and the universities they're applying to.</p>
-
-        <img loading="lazy" src="../images/family-three-generations-happy-laughing-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Expat family reviewing FAFSA financial aid paperwork together" style="width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; margin: 1.5rem 0;">
-<img src="../images/family-three-generations-happy-laughing-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Three-generation family representing FAFSA assistance for international students abroad" loading="lazy" style=" width: 270px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
-
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">For American families living abroad in Thailand, FAFSA is typically still required if your child is a US citizen and plans to attend university in the United States. The fact that the family lives overseas doesn't change the FAFSA requirement, though it does create additional complexity in terms of documentation and currency conversion. Many expat families miss deadlines, misunderstand the form, or fail to claim deductions and exclusions available to their specific situation. The result is reduced financial aid eligibility and higher out-of-pocket education costs.</p>
-
-        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">What FAFSA Covers and Who's Eligible</h2>
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">FAFSA stands for the Free Application for Federal Student Aid. It's the application form that students in the United States use to determine their eligibility for federal financial aid from the US government. The form collects extensive financial information about the student and the student's family, including income, assets, household size, and living situation. Based on the information provided in the FAFSA, the government calculates an Expected Family Contribution (EFC) or Student Aid Index (SAI), which determines how much federal financial aid the student is eligible to receive. This includes federal Pell Grants, federal student loans, and federal work-study employment.</p>
-<img src="../images/diverse-team-hands-raised-free-tax-consultations-ait-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Diverse group raising hands for FAFSA financial aid assistance for international students" loading="lazy" style=" width: 250px; max-height: 300px; object-fit: cover; border-radius: 6px;">
-
-
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">The FAFSA form is complex and detailed. It's typically long, contains many confusing questions, and requires extensive financial documentation. For families living abroad, the form can be even more confusing because it's designed primarily for US-based families. FAFSA is intended for US citizens and eligible non-citizens (including permanent residents and certain other visa holders) who plan to attend college in the United States. The form is not available to international students who are not US citizens or permanent residents. However, this doesn't mean international students have no options.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Many universities in the United States have their own financial aid and scholarship programmes for international students, and some universities request that international students complete the FAFSA form or an equivalent to assess financial need for institutional aid. Thai nationals studying in the United States are not eligible for federal FAFSA-based aid, but they should check with each US university they're applying to regarding their financial aid requirements for international students. Some universities are need-blind for international admissions and offer substantial institutional aid. Others are need-aware and may require financial aid information. Many international students also qualify for scholarships from their home country's government, private organisations, or the universities themselves.</p>
-
-        <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">FAFSA for American Expat Families in Thailand</h2>
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">For American families living in Thailand, the FAFSA requirement applies just as it does for US-based families. If your child is a US citizen and plans to attend university in the United States, you're required to complete the FAFSA form. The challenge for expat families is significant. The FAFSA form assumes that your income is reported in US dollars on US tax returns. If you're earning Thai Baht or filing Thai tax returns, you must convert your income to US dollars and explain your financial situation in US context.</p>
-
-        <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Additionally, the form asks for your Social Security Number (SSN), which many expat families don't have or may not remember if they've been abroad for extended periods. The form also asks detailed questions about assets and investments, which can be complicated if you hold Thai bank accounts or Thai investments. Currency conversion is critical. If you have THB 2,000,000 in Thai savings, you must convert at current exchange rates (roughly 1 USD = 33-35 THB) to report approximately USD 57,000-61,000 in assets. The conversion rate used affects the Student Aid Index and your financial aid eligibility.</p>
-
-        <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">The FAFSA form is available starting October 1st each year for the upcoming academic year. For example, the 2026-2027 FAFSA became available on October 1, 2025. The federal deadline is typically June 30th of the award year, but individual universities and states have earlier deadlines. Some states have early filing deadlines as early as February or March. Missing the FAFSA deadline can result in reduced financial aid eligibility, though you can still complete FAFSA after your school's deadline and may still qualify for some aid.</p>
-
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">FAFSA Timeline and Deadlines for 2026-2027</h2>
         <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">The FAFSA form becomes available on October 1st each year. For the 2026-2027 academic year, key dates are: October 1, 2025 (FAFSA application opens), December 15, 2025 (Early state filing deadline for some states), February 1, 2026 (Federal priority deadline, though federal aid is available until June 30), March 1, 2026 (Early university deadlines), and June 30, 2026 (Final federal deadline).</p>
 
@@ -606,6 +618,8 @@
 
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville';">Why FAFSA Completion Matters for Expat Families</h2>
         <p class="reveal" style="margin-bottom: 1rem; font-size: 0.95rem;">Even though expat families living abroad face additional complexity in completing FAFSA, completing the form is essential for US-based university attendance. The form determines federal aid eligibility including Pell Grants (grants that don't need to be repaid), Federal Direct Loans (government loans with favourable terms), Federal work-study (employment opportunity at the university), and Access to institutional aid from the university itself.</p>
+
+        <img src="../images/diverse-team-hands-raised-free-tax-consultations-ait-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Diverse group raising hands for FAFSA financial aid assistance for international students" loading="lazy" style="float: left; margin: 0 2rem 1.5rem 0; width: 380px; max-height: 320px; object-fit: cover; border-radius: 12px;">
 
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">By completing FAFSA, you establish your student's federal aid eligibility, provide universities with financial information for institutional aid decisions, access the most favourable loan programmes available to students, and create a record of financial need that qualifies the student for additional scholarships. Completing FAFSA as an expat family living in Thailand requires careful coordination of income conversion from Thai Baht to US dollars, explanation of international tax situation, asset documentation across multiple countries, currency and foreign account reporting, Social Security Number verification, and university-specific requirements.</p>
 
@@ -669,8 +683,6 @@
       </div>
     </section>
 
-    
-
     <!-- MID-PAGE CTA - SHARED TEMPLATE -->
     <section class="article-section dark">
       <div class="container">
@@ -691,7 +703,6 @@
       </div>
     </section>
 
-    
   </main>
 
   <div class="site-scope">
@@ -780,13 +791,10 @@
   </footer>
   </div>
 
-
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
   <script src="../js/site.js" defer></script>
-
-  
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
