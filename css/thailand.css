@@ -355,9 +355,9 @@
   font-family: var(--font-sans);
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 1.05;
-  font-size: clamp(2rem, 4.2vw, 2.9rem);
-  max-width: 14ch;
+  line-height: 1.02;
+  font-size: clamp(2.75rem, 6.5vw, 5.5rem);
+  max-width: 13ch;
   color: var(--white);
   margin-bottom: 0.75rem;
 }
