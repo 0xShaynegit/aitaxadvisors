@@ -82,6 +82,12 @@
       font-style: italic;
       font-display: swap;
     }
+    .container::after { content: ""; display: table; clear: both; }
+    .article-checklist { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .article-checklist li { display: grid; grid-template-columns: auto 1fr; column-gap: 0.9rem; row-gap: 0.15rem; align-items: start; }
+    .article-checklist svg { grid-row: 1 / 3; grid-column: 1; color: #8ecbf5; margin-top: 0.15rem; }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
+    .article-checklist li span { grid-column: 2; grid-row: 2; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -375,7 +381,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/tax-form-1040-currency-documents-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="2026 tax checklist for US expats in Australia" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/tax-form-1040-currency-documents-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="2026 tax checklist for US expats in Australia" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -405,57 +411,83 @@
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Every form, threshold, and deadline a US expat in Australia needs to track this year. Bookmark this page and review it each January, and again each June 30 when your Australian financial year closes.</p>
         <img src="../images/tax-planning-schedule-calendar-organizing-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="2026 tax checklist for US expats in Australia" loading="lazy" style="float: left; margin: 0 1.5rem 1rem 0; width: 270px; max-height: 300px; object-fit: cover; border-radius: 6px;">
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">1. Confirm Your Filing Requirement</h4>
           <p style="margin-bottom: 0;">File Form 1040 if worldwide gross income exceeds roughly $14,600 ($400 if self-employed), regardless of Australian tax already paid.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">2. Decide FEIE or FTC, and Don't Default</h4>
           <p style="margin-bottom: 0;">Model both. For most salaried Australian residents, the Foreign Tax Credit (Form 1116) beats the FEIE once your effective Australian rate exceeds US rates on the same income.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">3. File FBAR If You Cross $10,000 (FinCEN Form 114)</h4>
           <p style="margin-bottom: 0;">Aggregate all foreign accounts, checking, savings, and superannuation. Your super balance almost certainly counts. File by April 15 (automatic extension to October 15).</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">4. Check FATCA Reporting (Form 8938)</h4>
           <p style="margin-bottom: 0;">Applies at higher thresholds than FBAR, generally $200,000+ in specified foreign assets for single filers abroad ($400,000+ married filing jointly). Super and Australian property investment count.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">5. Classify Your Superannuation Fund</h4>
           <p style="margin-bottom: 0;">Determine industry/retail fund versus SMSF. This decides whether you need Forms 3520, 3520-A, and 8621 for any PFICs held inside the fund.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">6. Audit for PFIC Exposure</h4>
           <p style="margin-bottom: 0;">Review any Australian managed funds, whether held personally or inside super, for PFIC classification. Consult a specialist if found, the reporting burden compounds annually.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+    <!-- When to Consult a Specialist -->
+    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 3.5rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 3.5rem; align-items: start;">
+          <div>
+            <img loading="lazy" src="../images/businessman-overwhelmed-question-marks-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American expat overwhelmed by the length of the Australia compliance checklist" style="width: 100%; border-radius: 12px; filter: brightness(0.9) saturate(0.9);">
+          </div>
+          <div>
+            <p style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.9rem;">Expert Guidance</p>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; font-family: 'Libre Baskerville'; color: var(--white);">When to Consult a Specialist</h3>
+            <ul class="article-checklist">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>More than three items apply to you</strong><span>Once several of these items overlap, a coordinated plan beats handling each in isolation.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>First year working through this list</strong><span>Getting your baseline classification right now avoids years of compounding corrections.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Anything already missed</strong><span>Late FBARs or unclassified super are best addressed proactively, not after an IRS notice.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Life changes mid-year</strong><span>A new job, property purchase, or move between states can shift several items on this list at once.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><strong>Unsure which items even apply</strong><span>A short consult can confirm your actual filing obligations before you spend hours on the wrong ones.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">7. Confirm Totalization Agreement Coverage</h4>
           <p style="margin-bottom: 0;">If US-employer-sponsored, confirm your employer holds a Certificate of Coverage. If locally hired, confirm you're correctly exempt from US Social Security tax but still liable for Medicare tax if self-employed.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">8. Review State Domicile Status</h4>
           <p style="margin-bottom: 0;">Confirm whether your prior US state still considers you a resident for state tax purposes, particularly if you're from California, Virginia, New Mexico, or South Carolina.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">9. Check FIRB Status Before Any Property Purchase</h4>
           <p style="margin-bottom: 0;">Confirm whether you need Foreign Investment Review Board approval and budget for the foreign buyer stamp duty surcharge before signing any contract.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">10. Reconcile Australian and US Tax Years</h4>
           <p style="margin-bottom: 0;">Australia's financial year runs July 1 to June 30; the US uses the calendar year. Keep a running log so you're not reconstructing figures from memory at filing time.</p>
         </div>
 
-        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
+        <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 1.5rem; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">11. Verify Beneficiary Designations on US Accounts</h4>
           <p style="margin-bottom: 0;">Confirm 401(k), IRA, and life insurance beneficiary designations are current. Cross-border estate planning gets materially more complex the longer you're abroad, don't let this lapse.</p>
         </div>
