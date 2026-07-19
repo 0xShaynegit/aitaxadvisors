@@ -459,3 +459,60 @@
   border-radius: 12px;
   object-fit: cover;
 }
+
+/* ── HOMEPAGE-MATCHED FOOTER (rest of it, beyond .contact above) ──
+   Ported from css/site.css's .footer/.footer-inner/.footer-legal/
+   .footer-areas* rules (scoped to .site-scope, not loaded on country
+   pages) using thailand.css's own vars. .footer-inner's box-model
+   properties (flex/align/justify/gap) already come from global.css;
+   this only adds the border-top/padding/font-size site.css layers on. */
+.footer-inner {
+  border-top: 1px solid var(--border-blue);
+  padding-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.footer-areas {
+  padding-top: 0.5rem;
+  padding-bottom: 1.75rem;
+}
+
+.footer-areas-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--silver);
+  margin-bottom: 1rem;
+}
+
+.footer-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem 1.25rem;
+}
+
+.footer-areas-grid a {
+  font-size: 0.85rem;
+  color: var(--silver);
+}
+
+.footer-areas-grid a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .footer-areas-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .footer-areas-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
