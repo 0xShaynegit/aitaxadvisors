@@ -88,6 +88,18 @@
     .article-checklist svg { grid-row: 1 / 3; grid-column: 1; color: #8ecbf5; margin-top: 0.15rem; }
     .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
     .article-checklist li span { grid-column: 2; grid-row: 2; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    /* css/site.css (loaded for the footer) redeclares the unscoped .container
+       at max-width: 1400px, which otherwise silently widens the whole page,
+       not just the footer. Restore the page body to 1140px and let only the
+       .site-scope-wrapped footer use the wider homepage width. */
+    body .container { max-width: 1140px; }
+    .site-scope .container { max-width: 1400px; }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f5f8ff; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -524,8 +536,10 @@
     <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: 2026 Australia Expat Checklist</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I need to redo this checklist every year?</strong> A: Yes, thresholds are indexed annually and your FEIE/FTC optimal choice can shift with income changes.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What's the single most commonly missed item on this list?</strong> A: Superannuation classification (item 5). Many Americans never realize their super triggers foreign trust reporting until years have passed.</p>
+        <div class="article-faq-list">
+<details><summary>Do I need to redo this checklist every year?</summary><p>Yes, thresholds are indexed annually and your FEIE/FTC optimal choice can shift with income changes.</p></details>
+<details><summary>What's the single most commonly missed item on this list?</summary><p>Superannuation classification (item 5). Many Americans never realize their super triggers foreign trust reporting until years have passed.</p></details>
+</div>
         <p class="reveal" style="margin-bottom: 1.5rem;">See also <a href="/australia/filing-us-taxes-from-australia" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Filing US Taxes from Australia</a> and <a href="/australia/superannuation-us-tax-guide-australia" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Superannuation & US Tax</a>.</p>
       </div>
     </section>

@@ -88,6 +88,18 @@
     .article-checklist svg { grid-row: 1 / 3; grid-column: 1; color: #8ecbf5; margin-top: 0.15rem; }
     .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
     .article-checklist li span { grid-column: 2; grid-row: 2; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    /* css/site.css (loaded for the footer) redeclares the unscoped .container
+       at max-width: 1400px, which otherwise silently widens the whole page,
+       not just the footer. Restore the page body to 1140px and let only the
+       .site-scope-wrapped footer use the wider homepage width. */
+    body .container { max-width: 1140px; }
+    .site-scope .container { max-width: 1400px; }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f5f8ff; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -489,10 +501,12 @@
     <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: Filing US Taxes from Australia</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I need to file if my income is under the Australian tax-free threshold?</strong> A: The US filing threshold is separate from Australia's, roughly $14,600 (2025 single filer) or just $400 in self-employment income, regardless of what Australia taxes.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I use TurboTax or a US-only preparer?</strong> A: Generic US software rarely handles Form 1116, superannuation trust reporting, or PFIC classification correctly. Use a preparer with specific Australia expat experience.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What happens if I never filed and I've been here for years?</strong> A: The Streamlined Foreign Offshore Procedures exist for exactly this. Address it proactively, penalties escalate the longer non-filing continues.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I file an Australian tax return too?</strong> A: Yes, as an Australian tax resident you file with the ATO by October 31 following the June 30 year-end (later if using a registered tax agent), entirely separate from your US obligations.</p>
+        <div class="article-faq-list">
+<details><summary>Do I need to file if my income is under the Australian tax-free threshold?</summary><p>The US filing threshold is separate from Australia's, roughly $14,600 (2025 single filer) or just $400 in self-employment income, regardless of what Australia taxes.</p></details>
+<details><summary>Can I use TurboTax or a US-only preparer?</summary><p>Generic US software rarely handles Form 1116, superannuation trust reporting, or PFIC classification correctly. Use a preparer with specific Australia expat experience.</p></details>
+<details><summary>What happens if I never filed and I've been here for years?</summary><p>The Streamlined Foreign Offshore Procedures exist for exactly this. Address it proactively, penalties escalate the longer non-filing continues.</p></details>
+<details><summary>Do I file an Australian tax return too?</summary><p>Yes, as an Australian tax resident you file with the ATO by October 31 following the June 30 year-end (later if using a registered tax agent), entirely separate from your US obligations.</p></details>
+</div>
         <p class="reveal" style="margin-bottom: 1.5rem;">See also <a href="/australia/feie-vs-ftc-australia" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE vs FTC in Australia</a> and <a href="/australia/us-australia-expat-tax-checklist-2026" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">the 2026 Expat Checklist</a> for the full compliance picture.</p>
       </div>
     </section>

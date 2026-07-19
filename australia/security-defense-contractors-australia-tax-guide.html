@@ -88,6 +88,18 @@
     .article-checklist svg { grid-row: 1 / 3; grid-column: 1; color: #8ecbf5; margin-top: 0.15rem; }
     .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
     .article-checklist li span { grid-column: 2; grid-row: 2; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+    /* css/site.css (loaded for the footer) redeclares the unscoped .container
+       at max-width: 1400px, which otherwise silently widens the whole page,
+       not just the footer. Restore the page body to 1140px and let only the
+       .site-scope-wrapped footer use the wider homepage width. */
+    body .container { max-width: 1140px; }
+    .site-scope .container { max-width: 1400px; }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f5f8ff; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -483,9 +495,11 @@
     <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: Security & Defense Contractors in Australia</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can I claim the Combat Zone Tax Exclusion for work at Pine Gap?</strong> A: No, Australia is not a designated combat zone. Standard FEIE/FTC rules apply instead.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Does the FEIE apply to my US government civilian salary?</strong> A: Generally no, wages paid by the US government are typically excluded from FEIE eligibility regardless of foreign posting. Confirm your specific employment classification.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: I rotate in and out every few months for clearance renewals, can I still qualify for FEIE?</strong> A: Possibly via the Physical Presence Test if your cumulative US days stay under the limit, model your actual rotation schedule with a specialist rather than assuming either test applies.</p>
+        <div class="article-faq-list">
+<details><summary>Can I claim the Combat Zone Tax Exclusion for work at Pine Gap?</summary><p>No, Australia is not a designated combat zone. Standard FEIE/FTC rules apply instead.</p></details>
+<details><summary>Does the FEIE apply to my US government civilian salary?</summary><p>Generally no, wages paid by the US government are typically excluded from FEIE eligibility regardless of foreign posting. Confirm your specific employment classification.</p></details>
+<details><summary>I rotate in and out every few months for clearance renewals, can I still qualify for FEIE?</summary><p>Possibly via the Physical Presence Test if your cumulative US days stay under the limit, model your actual rotation schedule with a specialist rather than assuming either test applies.</p></details>
+</div>
         <p class="reveal" style="margin-bottom: 1.5rem;">See also <a href="/australia/feie-vs-ftc-australia" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE vs FTC in Australia</a> and <a href="/australia/superannuation-us-tax-guide-australia" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Superannuation & US Tax</a>.</p>
       </div>
     </section>
