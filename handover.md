@@ -2,14 +2,25 @@
 
 Sliding session log. Newest entry first. Update at end of every session.
 
-**⚠ SIGN-OFF STATUS: neither `australia/*.html` nor `cambodia/*.html` has been
-signed off by the user yet.** Both are committed to `main` and pass every
-structural/grep check the playbook defines, but no browser has been
-available all session to actually render them. Australia was reviewed via
-user-supplied screenshots (which did surface real bugs, now fixed).
-Cambodia has not been checked at all yet — do not treat it as done, and
-do not start a new country until the user says Cambodia (and ideally
-Australia) are actually signed off.
+**⚠ SIGN-OFF STATUS: none of `australia/*.html`, `cambodia/*.html`, or
+`indonesia/*.html` have been signed off by the user yet.** All three are
+committed to `main` and pass every structural/grep check the playbook
+defines, but no browser has been available all session to actually render
+them. Australia was reviewed via user-supplied screenshots (which did
+surface real bugs, now fixed). Cambodia and Indonesia have not been
+visually checked at all yet — do not treat either as done, and do not
+start the next country (`japan/`) until the user has actually signed off
+on the ones already done.
+
+Cambodia's body-content images were also flagged mid-session as ~20% too
+big (CTA/specialist-section images were correct and left alone) — fixed by
+scaling every `article-body-img` width/max-height down 20% across all 10
+pages. Worth a visual check specifically on Cambodia body images too, this
+was a user-reported fix, not something the playbook's own checks caught.
+
+## Current State (07/20/2026, session 14)
+- Full `.md/page-remediation-playbook.md` sweep on all 10 `indonesia/*.html` pages, started at the user's explicit request despite the sign-off gate above not being cleared yet (flagged to the user first, proceeded on confirmation). Fixed: hero images (removed the `translateX(-80px) scale(1.4)` hack, gave each page a unique topic-matched hero, all 10 previously shared one generic tax-form image); footer (real `thailand/*.html` pattern: `css/site.css` + `.site-scope` + `js/site.js`, localized to Jakarta's number `0800-1503-252` from the phone reference doc); FAQ (converted every static Q/A paragraph to `<details>` accordions); Key Topics contrast (the same undefined-`var(--navy-dark)` bug found on Australia was present here too, fixed to `var(--navy-mid)` + `#8ecbf5` links + `rgba(255,255,255,0.85)` description text, matching the confirmed Thailand/Australia convention); added the "When to Consult a Specialist" section (unique image, CSS Grid checklist, positioned past halfway without landing flush against another dark section) to the 9 pages that were missing it entirely, and upgraded the hub's pre-existing flex-based version to the same grid pattern; resized undersized body-content images (250-270px) up to the 560-720px range using each image's real pixel ratio via PIL, so `object-fit: cover` doesn't crop real content. Also mid-session: fixed Cambodia's body-content images being ~20% oversized (see banner above). Two commits pushed to `main`.
+- **Still no browser tool available**: verified via tag-balance checks, a full self-check script (preloader/hero/footer/FAQ/checklist/key-topics/no-leftover-hacks) across all 10 files, and manual read-throughs of each specialist-section insertion point, not a live render. Same standing caveat as every prior country pass.
 
 ## Current State (07/20/2026, session 13)
 - Applied the full, now-verified `.md/page-remediation-playbook.md` to all 10 `cambodia/*.html` pages in one clean pass, with zero rounds of user-flagged rework (unlike Australia, which took ~10+ correction rounds to discover the right patterns). Localized footer contact to Phnom Penh (+855 23 962 514). Same bug classes were checked proactively this time and one was caught before being pointed out: the `padding: 0.8rem 160px` mobile-squeeze bug on the 2026 checklist page (same as Australia's). One commit pushed to `main`.
