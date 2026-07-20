@@ -3,25 +3,27 @@
 Sliding session log. Newest entry first. Update at end of every session.
 
 **⚠ SIGN-OFF STATUS: none of `australia/*.html`, `cambodia/*.html`,
-`indonesia/*.html`, or `japan/*.html` have been signed off by the user
-yet.** All four are committed to `main` and pass every structural/grep
-check the playbook defines. Starting session 15, a local Playwright
-install was found (`C:\Program Files\Python311\python.exe -m playwright`,
-NOT the default `python3` on PATH, which lacks the package) and used to
-screenshot-verify every Japan page section-by-section before committing,
+`indonesia/*.html`, `japan/*.html`, or `taiwan/*.html` have been signed
+off by the user yet.** All five are committed to `main` and pass every
+structural/grep check the playbook defines. A local Playwright install
+(`C:\Program Files\Python311\python.exe -m playwright`, NOT the default
+`python3` on PATH, which lacks the package) has been used since session
+15 to screenshot-verify every page section-by-section before committing,
 a real step up from prior sessions' "no browser available" caveat. Still,
-none of these four countries have been looked at by the user in a real
-browser. Do not start the next country (`taiwan/`) until the user has
-actually signed off on the ones already done.
+none of these five countries have been looked at by the user in a real
+browser. Do not start the next country (`uae/`, per nav order, or
+whichever the user names) until the user has actually signed off on the
+ones already done.
 
 **Standing reminder for any future session:** the site's stock image
-library is NOT all generic — several "generic skyline"/"generic team
-photo"-named files are real, recognizable Bangkok landmarks (MahaNakhon
-tower, Grand Palace riverfront) or an actual AITA staff photo. Always
-open an unfamiliar image file with Read before using it as a hero/body
-image on a non-Thailand page or as generic decoration; two Bangkok photos
-had already slipped onto Indonesia pages mislabeled as Jakarta before
-this was caught (session 15, since fixed).
+library is NOT all generic — several plausibly-generic-named files are
+actually something else: recognizable Bangkok landmarks (MahaNakhon
+tower, Grand Palace riverfront), an actual AITA staff photo, and (found
+in session 16) at least one file whose name doesn't match its content at
+all ("man-business-discussion-office" is a generic city night skyline,
+not a business discussion). Always open an unfamiliar image file with
+Read before using it as a hero/body image on a non-Thailand page or as
+generic decoration, even ones already in use elsewhere on the site.
 
 Cambodia's body-content images were also flagged as ~20% too big
 (CTA/specialist-section images were correct and left alone) — fixed by
