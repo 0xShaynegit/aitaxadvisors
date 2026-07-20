@@ -2,21 +2,44 @@
 
 Sliding session log. Newest entry first. Update at end of every session.
 
-**⚠ SIGN-OFF STATUS: none of `australia/*.html`, `cambodia/*.html`, or
-`indonesia/*.html` have been signed off by the user yet.** All three are
-committed to `main` and pass every structural/grep check the playbook
-defines, but no browser has been available all session to actually render
-them. Australia was reviewed via user-supplied screenshots (which did
-surface real bugs, now fixed). Cambodia and Indonesia have not been
-visually checked at all yet — do not treat either as done, and do not
-start the next country (`japan/`) until the user has actually signed off
-on the ones already done.
+**⚠ SIGN-OFF STATUS: none of `australia/*.html`, `cambodia/*.html`,
+`indonesia/*.html`, or `japan/*.html` have been signed off by the user
+yet.** All four are committed to `main` and pass every structural/grep
+check the playbook defines. Starting session 15, a local Playwright
+install was found (`C:\Program Files\Python311\python.exe -m playwright`,
+NOT the default `python3` on PATH, which lacks the package) and used to
+screenshot-verify every Japan page section-by-section before committing,
+a real step up from prior sessions' "no browser available" caveat. Still,
+none of these four countries have been looked at by the user in a real
+browser. Do not start the next country (`taiwan/`) until the user has
+actually signed off on the ones already done.
 
-Cambodia's body-content images were also flagged mid-session as ~20% too
-big (CTA/specialist-section images were correct and left alone) — fixed by
+**Standing reminder for any future session:** the site's stock image
+library is NOT all generic — several "generic skyline"/"generic team
+photo"-named files are real, recognizable Bangkok landmarks (MahaNakhon
+tower, Grand Palace riverfront) or an actual AITA staff photo. Always
+open an unfamiliar image file with Read before using it as a hero/body
+image on a non-Thailand page or as generic decoration; two Bangkok photos
+had already slipped onto Indonesia pages mislabeled as Jakarta before
+this was caught (session 15, since fixed).
+
+Cambodia's body-content images were also flagged as ~20% too big
+(CTA/specialist-section images were correct and left alone) — fixed by
 scaling every `article-body-img` width/max-height down 20% across all 10
-pages. Worth a visual check specifically on Cambodia body images too, this
-was a user-reported fix, not something the playbook's own checks caught.
+pages (session 14). Worth a visual check specifically on Cambodia body
+images too, this was a user-reported fix, not something the playbook's
+own checks caught.
+
+## Current State (07/20/2026, session 15)
+- Full `.md/page-remediation-playbook.md` sweep on all 10 `japan/*.html` pages, done one page at a time per explicit user instruction ("do all countries one by one not bulk edits or ai slop") rather than the scripted bulk-edit approach used for Indonesia in session 14. Same fix set as before per page: hero image hack removed and replaced with a unique topic-matched image, footer replaced with the real thailand pattern (no dedicated Japan number in the contact registry, so the generic Head Office toll-free line was used, labeled "Call (Global)"), FAQ converted to `<details>` accordions, Key Topics `var(--navy-dark)` (undefined, silently transparent) fixed to `var(--navy-mid)` + `#8ecbf5` links + `rgba(255,255,255,0.85)` description text, and a new "When to Consult a Specialist" section added to the 9 pages missing one (split at a sensible content boundary each time, checked against any pre-existing dark section on that page to avoid two dark blocks landing back-to-back). Ten separate commits, one per page.
+- **Found a local Playwright install** (`C:\Program Files\Python311\python.exe -m playwright`) after the default `python3`/`pip` environment turned out not to have it, and used it to screenshot-verify every page section by section (hero, mid-content, specialist section, footer) before committing each one. This is the first session with real visual verification instead of structural-checks-only.
+- **Caught and fixed three real image-quality bugs during this pass, all found only by actually opening the image files with Read before use, not by inspecting markup:**
+  1. `city-skyline-twilight-modern` and `harbor-city-waterfront-lights`, used on Indonesia's hub and property-ownership pages (session 14) captioned as "Jakarta skyline" and generic Indonesia property art, are actually real, recognizable Bangkok photos (the MahaNakhon tower and the Grand Palace/Chao Phraya riverfront). Both swapped for verified country-neutral images.
+  2. Picked `team-photo-three-professionals-updated` as a candidate Japan treaty-page hero, but it's a real photo of actual AITA staff (three men in business dress, outdoor office setting), not stock. Recognized before use and swapped for a genuine stock photo — never shipped.
+  3. This page's own body content had the same "getting-around-facial-expression-gesture-happiness" confused/shrug stock photo misuse the user flagged and had fixed across cambodia/malaysia/philippines/saudi-arabia/vietnam earlier this session — found and fixed it here too (swapped for a poolside remote-work photo fitting the Digital Nomad Visa section) without being asked, since it's the same page class.
+- **Also completed mid-session, per explicit user follow-up, the confused-photo cleanup queued at the end of session 14**: cambodia/digital-nomad, malaysia/de-rantau, philippines/digital-nomad-visa, saudi-arabia/teachers, and vietnam/digital-nomad-visa-status all had the same misused shrug/confused photo in body content, one at a time, each screenshot-verified. One swap (philippines) initially picked an image that turned out to show Thai baht banknotes, wrong-country mismatch caught on screenshot review and corrected before committing.
+- **Also fixed a real, previously-unknown structural CSS bug found while debugging the Cambodia checklist image report**: `.callout-box` had no `overflow` property, so on any page floating a body image directly before a run of callout-box items, the callout-box's opaque white background painted at full container width *under* the float instead of shrinking to wrap beside it (a classic float/BFC interaction), reading as if the photo were corrupted/cropped into stripes. Fixed once in `css/thailand.css` with `overflow: hidden` (establishes a BFC), which resolves the same latent bug on every page using this pattern sitewide, not just the one reported. Verified via Playwright screenshot on both Cambodia and Indonesia.
+- **Repeated footer-replace bug worth flagging for next time**: several `Edit` calls that intended to replace the whole `<footer id="footer">...</footer>` block left the original closing `</footer>` (or an extra `</div>`) in place because the `old_string` match ended one line short. Caught every time by the tag-balance check in Section 0 of the playbook, never shipped broken, but slows things down — when replacing a footer, include the literal closing tag in the match, don't assume the boundary.
 
 ## Current State (07/20/2026, session 14)
 - Full `.md/page-remediation-playbook.md` sweep on all 10 `indonesia/*.html` pages, started at the user's explicit request despite the sign-off gate above not being cleared yet (flagged to the user first, proceeded on confirmation). Fixed: hero images (removed the `translateX(-80px) scale(1.4)` hack, gave each page a unique topic-matched hero, all 10 previously shared one generic tax-form image); footer (real `thailand/*.html` pattern: `css/site.css` + `.site-scope` + `js/site.js`, localized to Jakarta's number `0800-1503-252` from the phone reference doc); FAQ (converted every static Q/A paragraph to `<details>` accordions); Key Topics contrast (the same undefined-`var(--navy-dark)` bug found on Australia was present here too, fixed to `var(--navy-mid)` + `#8ecbf5` links + `rgba(255,255,255,0.85)` description text, matching the confirmed Thailand/Australia convention); added the "When to Consult a Specialist" section (unique image, CSS Grid checklist, positioned past halfway without landing flush against another dark section) to the 9 pages that were missing it entirely, and upgraded the hub's pre-existing flex-based version to the same grid pattern; resized undersized body-content images (250-270px) up to the 560-720px range using each image's real pixel ratio via PIL, so `object-fit: cover` doesn't crop real content. Also mid-session: fixed Cambodia's body-content images being ~20% oversized (see banner above). Two commits pushed to `main`.
