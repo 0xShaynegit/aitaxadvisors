@@ -93,6 +93,8 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -134,6 +136,22 @@
     ]
   }
   </script>
+  <style>
+    body .container { max-width: 1140px; }
+    .site-scope .container { max-width: 1400px; }
+    section .container::after { content: ""; display: table; clear: both; }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f5f8ff; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
+    .article-checklist { list-style: none; display: flex; flex-direction: column; gap: 1rem; padding: 0; }
+    .article-checklist li { display: grid; grid-template-columns: auto 1fr; column-gap: 0.9rem; row-gap: 0.15rem; align-items: start; }
+    .article-checklist svg { grid-row: 1 / 3; grid-column: 1; margin-top: 0.2rem; }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
+    .article-checklist li span { grid-column: 2; grid-row: 2; color: var(--white); }
+  </style>
 </head>
 <body>
 
@@ -374,7 +392,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/tax-form-1040-currency-documents-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="Tax documents and forms for US expats in Taiwan" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/businessmen-double-exposure-skyline-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US professionals navigating tax obligations in Taiwan" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -535,12 +553,12 @@
           <div>
             <p style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.9rem;">Expert Guidance</p>
             <h3 style="font-size: 2rem; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; line-height: 1.2; color: var(--white);">When to Consult a Specialist</h3>
-            <ul style="list-style: none; gap: 1rem; display: flex; flex-direction: column;">
-              <li style="display: flex; gap: 1rem; align-items: flex-start;"><span style="color: var(--blue); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">&bull;</span><span style="color: var(--white);"><strong>Income Near or Above Taiwan's 40% Bracket:</strong> Modeling FEIE vs FTC given the real credit available.</span></li>
-              <li style="display: flex; gap: 1rem; align-items: flex-start;"><span style="color: var(--blue); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">&bull;</span><span style="color: var(--white);"><strong>Gold Card Applicants:</strong> Understanding the 50% local deduction's interaction with US filing.</span></li>
-              <li style="display: flex; gap: 1rem; align-items: flex-start;"><span style="color: var(--blue); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">&bull;</span><span style="color: var(--white);"><strong>Self-Employment or Contracting:</strong> Structuring around the 15.3% SE tax with no Totalization Agreement to offset it.</span></li>
-              <li style="display: flex; gap: 1rem; align-items: flex-start;"><span style="color: var(--blue); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">&bull;</span><span style="color: var(--white);"><strong>Buying Property:</strong> Confirming reciprocity eligibility, size caps, and LVIT exposure before signing.</span></li>
-              <li style="display: flex; gap: 1rem; align-items: flex-start;"><span style="color: var(--blue); font-weight: 600; flex-shrink: 0; margin-top: 0.2rem;">&bull;</span><span style="color: var(--white);"><strong>Late or Never Filed:</strong> Streamlined Foreign Offshore Procedures to catch up without full penalties.</span></li>
+            <ul class="article-checklist">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Income Near or Above Taiwan's 40% Bracket:</strong><span>Modeling FEIE vs FTC given the real credit available.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Gold Card Applicants:</strong><span>Understanding the 50% local deduction's interaction with US filing.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Self-Employment or Contracting:</strong><span>Structuring around the 15.3% self-employment (SE) tax with no Totalization Agreement to offset it.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Buying Property:</strong><span>Confirming reciprocity eligibility, size caps, and Land Value Increment Tax (LVIT) exposure before signing.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Late or Never Filed:</strong><span>Streamlined Foreign Offshore Procedures to catch up without full penalties.</span></li>
             </ul>
           </div>
         </div>
@@ -551,59 +569,61 @@
     <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: US Expat Taxes in Taiwan 2026</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Is there a US-Taiwan tax treaty?</strong> A: Not yet. Real legislative and diplomatic momentum exists toward one, but nothing is signed or in effect as of this writing.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Should I use the FEIE or the Foreign Tax Credit?</strong> A: Depends on your income level, most moderate earners do fine with the FEIE alone, but higher earners approaching Taiwan's 40% bracket should model the FTC as a genuine alternative.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Can Americans really own property outright in Taiwan?</strong> A: Yes, via a reciprocity agreement, genuine freehold, unlike most Asian countries in our coverage, though size caps and taxes apply.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What's the Gold Card's tax benefit?</strong> A: A 50% deduction on Taiwan tax for the first three years for qualifying holders, a real local incentive worth understanding alongside your US obligations.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What's the FBAR threshold?</strong> A: $10,000 aggregate across all foreign financial accounts at any point in the year, standard across every country in our coverage.</p>
+        <div class="article-faq-list">
+        <details><summary>Is there a US-Taiwan tax treaty?</summary><p>Not yet. Real legislative and diplomatic momentum exists toward one, but nothing is signed or in effect as of this writing.</p></details>
+        <details><summary>Should I use the FEIE or the Foreign Tax Credit?</summary><p>Depends on your income level, most moderate earners do fine with the FEIE alone, but higher earners approaching Taiwan's 40% bracket should model the FTC as a genuine alternative.</p></details>
+        <details><summary>Can Americans really own property outright in Taiwan?</summary><p>Yes, via a reciprocity agreement, genuine freehold, unlike most Asian countries in our coverage, though size caps and taxes apply.</p></details>
+        <details><summary>What's the Gold Card's tax benefit?</summary><p>A 50% deduction on Taiwan tax for the first three years for qualifying holders, a real local incentive worth understanding alongside your US obligations.</p></details>
+        <details><summary>What's the FBAR threshold?</summary><p>$10,000 aggregate across all foreign financial accounts at any point in the year, standard across every country in our coverage.</p></details>
+        </div>
         <p class="reveal" style="margin-bottom: 1.5rem;">For more detail, see our guides on <a href="/taiwan/feie-vs-ftc-taiwan" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE vs FTC in Taiwan</a>, <a href="/taiwan/taiwan-gold-card-us-tax-implications" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">the Gold Card</a>, and <a href="/taiwan/us-taiwan-expat-tax-checklist-2026" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">the 2026 Expat Checklist</a>.</p>
       </div>
     </section>
 
     <!-- KEY TOPICS SECTION -->
-    <section style="padding: 3rem 0; background: var(--navy-dark);">
+    <section style="padding: 3rem 0; background: var(--navy-mid);">
       <div class="container">
         <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: 'Libre Baskerville';" class="reveal">Key Topics for Americans in Taiwan</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-expat-taxes-taiwan-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">US Expat Taxes in Taiwan 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The complete hub guide to living tax-compliant in Taiwan as an American.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-expat-taxes-taiwan-2026" style="color: #8ecbf5; text-decoration: none;">US Expat Taxes in Taiwan 2026</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">The complete hub guide to living tax-compliant in Taiwan as an American.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/filing-us-taxes-from-taiwan" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Filing US Taxes from Taiwan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Form 1040, 2555, FBAR and FATCA mechanics and deadlines.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/filing-us-taxes-from-taiwan" style="color: #8ecbf5; text-decoration: none;">Filing US Taxes from Taiwan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Form 1040, 2555, FBAR and FATCA mechanics and deadlines.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/feie-vs-ftc-taiwan" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE vs FTC in Taiwan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Why Taiwan's 40% top bracket makes the Foreign Tax Credit matter for higher earners.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/feie-vs-ftc-taiwan" style="color: #8ecbf5; text-decoration: none;">FEIE vs FTC in Taiwan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Why Taiwan's 40% top bracket makes the Foreign Tax Credit matter for higher earners.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-taiwan-tax-agreement-pending-totalization" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Pending Tax Agreement & No Totalization</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Why Taiwan has never had a US tax treaty, and the real 2025-2026 push to finally get one.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-taiwan-tax-agreement-pending-totalization" style="color: #8ecbf5; text-decoration: none;">Pending Tax Agreement & No Totalization</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Why Taiwan has never had a US tax treaty, and the real 2025-2026 push to finally get one.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/taiwan-gold-card-us-tax-implications" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Gold Card</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The 4-in-1 visa, its 50% local tax deduction, and what it does and doesn't change for US tax.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/taiwan-gold-card-us-tax-implications" style="color: #8ecbf5; text-decoration: none;">Gold Card</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">The 4-in-1 visa, its 50% local tax deduction, and what it does and doesn't change for US tax.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/retiring-in-taiwan-us-tax-planning" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Retiring in Taiwan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Social Security, IRAs, and world-class but locally-billed healthcare.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/retiring-in-taiwan-us-tax-planning" style="color: #8ecbf5; text-decoration: none;">Retiring in Taiwan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Social Security, IRAs, and world-class but locally-billed healthcare.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-taiwan-expat-tax-checklist-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">2026 Expat Checklist</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Every form, deadline, and document US expats in Taiwan need this year.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-taiwan-expat-tax-checklist-2026" style="color: #8ecbf5; text-decoration: none;">2026 Expat Checklist</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Every form, deadline, and document US expats in Taiwan need this year.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-expat-teachers-tax-taiwan" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Teachers in Taiwan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The Bilingual 2030 recruitment drive, contracts, and FEIE for educators.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/us-expat-teachers-tax-taiwan" style="color: #8ecbf5; text-decoration: none;">Teachers in Taiwan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">The Bilingual 2030 recruitment drive, contracts, and FEIE for educators.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/property-ownership-taiwan-us-tax" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Property Ownership (Reciprocity)</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Why Americans get genuine freehold rights, and the size caps and taxes that come with it.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/property-ownership-taiwan-us-tax" style="color: #8ecbf5; text-decoration: none;">Property Ownership (Reciprocity)</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Why Americans get genuine freehold rights, and the size caps and taxes that come with it.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/semiconductor-tech-workers-taiwan-tax-guide" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Semiconductor & Tech Workers</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Tax planning for American engineers and professionals in Taiwan's chip industry.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/taiwan/semiconductor-tech-workers-taiwan-tax-guide" style="color: #8ecbf5; text-decoration: none;">Semiconductor & Tech Workers</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Tax planning for American engineers and professionals in Taiwan's chip industry.</p>
           </div>
         </div>
       </div>
@@ -625,83 +645,96 @@
 
   </main>
 
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Trusted U.S. Tax Advisors for Expats Worldwide</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+1-800-906-598">Call (800) 906-598</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OFFICE HOURS</strong>
+            Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Taiwan Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/taiwan/us-expat-taxes-taiwan-2026">Taiwan Tax Hub</a></li>
-              <li><a href="/taiwan/filing-us-taxes-from-taiwan">Filing US Taxes from Taiwan</a></li>
-              <li><a href="/taiwan/taiwan-gold-card-us-tax-implications">Gold Card</a></li>
-              <li><a href="/taiwan/semiconductor-tech-workers-taiwan-tax-guide">Semiconductor & Tech Workers</a></li>
-              <li><a href="/taiwan/us-taiwan-expat-tax-checklist-2026">2026 Expat Checklist</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call (Global)</dt>
+            <dd><a href="tel:+1-800-906-598">(800) 906-598</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
+        <a href="/#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
