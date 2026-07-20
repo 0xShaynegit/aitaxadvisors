@@ -93,6 +93,8 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/thailand.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
   {
@@ -135,6 +137,22 @@
     ]
   }
   </script>
+  <style>
+    body .container { max-width: 1140px; }
+    .site-scope .container { max-width: 1400px; }
+    section .container::after { content: ""; display: table; clear: both; }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f5f8ff; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
+    .article-checklist { list-style: none; display: flex; flex-direction: column; gap: 1rem; padding: 0; }
+    .article-checklist li { display: grid; grid-template-columns: auto 1fr; column-gap: 0.9rem; row-gap: 0.15rem; align-items: start; }
+    .article-checklist svg { grid-row: 1 / 3; grid-column: 1; margin-top: 0.2rem; }
+    .article-checklist li strong { grid-column: 2; grid-row: 1; color: var(--white); }
+    .article-checklist li span { grid-column: 2; grid-row: 2; color: var(--white); }
+  </style>
 </head>
 <body>
 
@@ -375,7 +393,7 @@
         </div>
       </div>
       <div class="hero-right">
-        <img loading="lazy" src="../images/tax-form-1040-currency-documents-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="2026 tax checklist for US expats in Japan" style="width: 100%; border-radius: 4px; display: block; box-shadow: 0 24px 80px rgba(0,0,0,0.5); transform: translateX(-80px) scale(1.4);">
+        <img loading="lazy" src="../images/tax-document-calculator-hands-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="2026 tax checklist for US expats in Japan" style="border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.5);">
       </div>
     </section>
 
@@ -434,7 +452,33 @@
           <h4 style="margin-bottom: 1rem;">6. Confirm Totalization Agreement Coverage</h4>
           <p style="margin-bottom: 0;">If US-employer-sponsored, confirm your employer holds a Certificate of Coverage under the 5-year detached-worker rule.</p>
         </div>
+      </div>
+    </section>
 
+    <!-- DARK: When to Consult -->
+    <section style="width: 100vw; margin-left: calc(-50vw + 50%); padding: 4rem 2.5rem; background: var(--navy-mid); border-top: 1px solid var(--border); color: var(--white);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 0.4fr 0.6fr; gap: 3.5rem; align-items: start;">
+          <div>
+            <img loading="lazy" src="../images/man-shrug-uncertain-white-shirt-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="US expat uncertain about their 2026 Japan tax checklist" style="width: 100%; border-radius: 12px; filter: brightness(0.9) saturate(0.9);">
+          </div>
+          <div>
+            <p style="font-size: 0.68rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.9rem;">Expert Guidance</p>
+            <h3 style="font-size: 2rem; font-family: 'Libre Baskerville'; margin-bottom: 1.5rem; line-height: 1.2; color: var(--white);">When to Consult a Specialist</h3>
+            <ul class="article-checklist">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Multiple Items Overlap:</strong><span>Confirming which checklist items actually apply to your specific residency and income situation.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Buying Property in 2026:</strong><span>Confirming Form 22 disclosure compliance before closing.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>State Domicile Questions:</strong><span>Determining whether you still owe a US state return while abroad.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>Reconciling Two Tax Years:</strong><span>Planning document gathering around Japan's mid-March deadline ahead of the US deadline.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color: var(--blue);"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><strong>First Year Filing from Japan:</strong><span>Walking through the full checklist once with a specialist before going it alone in future years.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
+      <div class="container">
         <div class="reveal callout-box" style="margin-bottom: 1.2rem; padding: 0.8rem 160px; border-left: none; background: #ffffff;">
           <h4 style="margin-bottom: 1rem;">7. Review State Domicile Status</h4>
           <p style="margin-bottom: 0;">Confirm whether your prior US state still considers you a resident for state tax purposes, particularly if you're from California, Virginia, New Mexico, or South Carolina.</p>
@@ -490,56 +534,58 @@
     <section id="content" style="padding: 3rem 0; background: #ffffff; position: relative; z-index: 1; color: var(--navy);">
       <div class="container">
         <h2 class="reveal" style="font-size: 1.5rem; margin-bottom: 2rem; font-family: 'Libre Baskerville'; margin-top: 0;">FAQ: 2026 Japan Expat Checklist</h2>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Do I need to redo this checklist every year?</strong> A: Yes, thresholds are indexed annually and your Non-Permanent Resident year count changes every year.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: What's the single most commonly missed item on this list?</strong> A: Item 2, defaulting to the FEIE alone without checking whether the Foreign Tax Credit adds value given Japan's genuinely high rates.</p>
+        <div class="article-faq-list">
+        <details><summary>Do I need to redo this checklist every year?</summary><p>Yes, thresholds are indexed annually and your Non-Permanent Resident year count changes every year.</p></details>
+        <details><summary>What's the single most commonly missed item on this list?</summary><p>Item 2, defaulting to the FEIE alone without checking whether the Foreign Tax Credit adds value given Japan's genuinely high rates.</p></details>
+        </div>
         <p class="reveal" style="margin-bottom: 1.5rem;">See also <a href="/japan/filing-us-taxes-from-japan" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Filing US Taxes from Japan</a> and <a href="/japan/feie-vs-ftc-japan" style="color: var(--blue-light); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE vs FTC in Japan</a>.</p>
       </div>
     </section>
 
     <!-- KEY TOPICS SECTION -->
-    <section style="padding: 3rem 0; background: var(--navy-dark);">
+    <section style="padding: 3rem 0; background: var(--navy-mid);">
       <div class="container">
         <h3 style="font-size: 1.4rem; margin-bottom: 2rem; font-family: 'Libre Baskerville';" class="reveal">Key Topics for Americans in Japan</h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-expat-taxes-japan-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">US Expat Taxes in Japan 2026</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The complete hub guide to living tax-compliant in Japan as an American.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-expat-taxes-japan-2026" style="color: #8ecbf5; text-decoration: none;">US Expat Taxes in Japan 2026</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">The complete hub guide to living tax-compliant in Japan as an American.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/filing-us-taxes-from-japan" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Filing US Taxes from Japan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Form 1040, 2555, 1116, FBAR and FATCA mechanics and deadlines.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/filing-us-taxes-from-japan" style="color: #8ecbf5; text-decoration: none;">Filing US Taxes from Japan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Form 1040, 2555, 1116, FBAR and FATCA mechanics and deadlines.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/feie-vs-ftc-japan" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">FEIE vs FTC in Japan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Why Japan's ~55% top combined rate, the highest in our coverage, usually makes the Foreign Tax Credit win.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/feie-vs-ftc-japan" style="color: #8ecbf5; text-decoration: none;">FEIE vs FTC in Japan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Why Japan's ~55% top combined rate, the highest in our coverage, usually makes the Foreign Tax Credit win.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-japan-tax-treaty-totalization" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Tax Treaty & Totalization</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Japan has both a real tax treaty and a real Totalization Agreement, a rare combination in our coverage.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-japan-tax-treaty-totalization" style="color: #8ecbf5; text-decoration: none;">Tax Treaty & Totalization</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Japan has both a real tax treaty and a real Totalization Agreement, a rare combination in our coverage.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/japan-non-permanent-resident-5-year-rule" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Non-Permanent Resident 5-Year Rule</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">How Japan's 3-tier residency system shields unremitted foreign income for your first 5 years.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/japan-non-permanent-resident-5-year-rule" style="color: #8ecbf5; text-decoration: none;">Non-Permanent Resident 5-Year Rule</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">How Japan's 3-tier residency system shields unremitted foreign income for your first 5 years.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/retiring-in-japan-us-tax-planning" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Retiring in Japan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Social Security, IRAs, and why Japan has no dedicated retirement visa.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/retiring-in-japan-us-tax-planning" style="color: #8ecbf5; text-decoration: none;">Retiring in Japan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Social Security, IRAs, and why Japan has no dedicated retirement visa.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-japan-expat-tax-checklist-2026" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">2026 Expat Checklist</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Every form, deadline, and document US expats in Japan need this year.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-japan-expat-tax-checklist-2026" style="color: #8ecbf5; text-decoration: none;">2026 Expat Checklist</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Every form, deadline, and document US expats in Japan need this year.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-expat-teachers-tax-japan" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Teachers in Japan</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">JET Programme, ALT dispatch companies, eikaiwa, and FEIE for educators.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/us-expat-teachers-tax-japan" style="color: #8ecbf5; text-decoration: none;">Teachers in Japan</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">JET Programme, ALT dispatch companies, eikaiwa, and FEIE for educators.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/property-ownership-japan-us-tax" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">Property Ownership</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">Zero restrictions on foreign ownership, genuine freehold, and the new 2026 Form 22 disclosure rule.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/property-ownership-japan-us-tax" style="color: #8ecbf5; text-decoration: none;">Property Ownership</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">Zero restrictions on foreign ownership, genuine freehold, and the new 2026 Form 22 disclosure rule.</p>
           </div>
           <div class="reveal">
-            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/japan-hsp-digital-nomad-visa-us-tax" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--blue-light);">HSP & Digital Nomad Visa</a></h4>
-            <p style="color: var(--muted); font-size: 0.9rem;">The points-based Highly Skilled Professional visa and Japan's non-renewable 6-month nomad visa.</p>
+            <h4 style="margin-bottom: 0.5rem;"><a href="/japan/japan-hsp-digital-nomad-visa-us-tax" style="color: #8ecbf5; text-decoration: none;">HSP & Digital Nomad Visa</a></h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem;">The points-based Highly Skilled Professional visa and Japan's non-renewable 6-month nomad visa.</p>
           </div>
         </div>
       </div>
@@ -561,83 +607,96 @@
 
   </main>
 
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Trusted U.S. Tax Advisors for Expats Worldwide</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
-            </div>
+  <div class="site-scope">
+  <footer class="footer">
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+          <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+          <div class="contact-cta-row">
+          <div class="contact-cta-col">
+          <div class="hero-ctas" data-reveal style="--i:2">
+            <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+            <a class="btn btn-outline-dark" href="tel:+1-800-906-598">Call (800) 906-598</a>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
+          <div class="contact-hours">
+            <strong>OFFICE HOURS</strong>
+            Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
-            </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Japan Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/japan/us-expat-taxes-japan-2026">Japan Tax Hub</a></li>
-              <li><a href="/japan/filing-us-taxes-from-japan">Filing US Taxes from Japan</a></li>
-              <li><a href="/japan/japan-non-permanent-resident-5-year-rule">Non-Permanent Resident 5-Year Rule</a></li>
-              <li><a href="/japan/japan-hsp-digital-nomad-visa-us-tax">HSP & Digital Nomad Visa</a></li>
-              <li><a href="/japan/us-japan-expat-tax-checklist-2026">2026 Expat Checklist</a></li>
-            </ul>
           </div>
         </div>
+        <dl class="contact-details" data-reveal style="--i:1">
+          <div>
+            <dt>Head office</dt>
+            <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
+          </div>
+          <div>
+            <dt>Call (Global)</dt>
+            <dd><a href="tel:+1-800-906-598">(800) 906-598</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+          </div>
+          <div>
+            <dt>Follow</dt>
+            <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <div class="container" style="text-align:center; padding-top:1.5rem;">
+      <div class="footer-links" style="justify-content:center;">
+        <a href="/#site-services">Services</a>
+        <a href="/#site-why">About</a>
+        <a href="/#site-process">How It Works</a>
+        <a href="/#site-testimonial">Client Stories</a>
+        <a href="/#contact">Contact</a>
+        <a href="/countries">Countries</a>
+        <a href="/pages/us-expats-retiring">Resources</a>
+        <a href="/pages/fbar-crackdown-2026">Blogs</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
-      </div>
+    <div class="container footer-areas">
+      <p class="footer-areas-label">Offices we serve from</p>
+      <nav class="footer-areas-grid" aria-label="Offices">
+        <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+        <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+        <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+        <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+        <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+        <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+        <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+        <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+        <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+        <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+        <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+        <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+        <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+      </nav>
+    </div>
+    <div class="container footer-inner">
+      <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </nav>
     </div>
   </footer>
+  </div>
   <!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
