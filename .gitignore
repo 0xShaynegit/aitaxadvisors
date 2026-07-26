@@ -34,3 +34,8 @@ yarn-debug.log*
 # OS
 Thumbs.db
 .DS_Store
+
+# Chatbot build artifacts (regenerate with chatbot/build-chunks.js + upload-vectors.js)
+chatbot/content-chunks.json
+chatbot/vectors.ndjson
+.wrangler/
