@@ -1,2 +1,17 @@
 /thailand/fafsa-student-financial-aid/  /thailand/fafsa-assistance-international-students  301
 /thailand/fafsa-student-financial-aid.html  /thailand/fafsa-assistance-international-students  301
+
+# Canonicalize trailing-slash duplicates to the sitemap's slash-less URLs
+/pages/:slug/ /pages/:slug 301
+/thailand/:slug/ /thailand/:slug 301
+/oman/:slug/ /oman/:slug 301
+/saudi-arabia/:slug/ /saudi-arabia/:slug 301
+/australia/:slug/ /australia/:slug 301
+/philippines/:slug/ /philippines/:slug 301
+/vietnam/:slug/ /vietnam/:slug 301
+/uae/:slug/ /uae/:slug 301
+/malaysia/:slug/ /malaysia/:slug 301
+/indonesia/:slug/ /indonesia/:slug 301
+/taiwan/:slug/ /taiwan/:slug 301
+/cambodia/:slug/ /cambodia/:slug 301
+/japan/:slug/ /japan/:slug 301
