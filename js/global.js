@@ -65,6 +65,11 @@ const MOBILE_NAV_BREAKPOINT = 1024;
 const burger = document.getElementById('nav-burger');
 const mobileMenu = document.querySelector('.nav-links');
 
+// Lenis calls preventDefault() on wheel/touch events site-wide while stopped
+// (which happens whenever the mobile menu opens, below) unless the event
+// target carries this attribute — without it, the menu itself can't scroll.
+if (mobileMenu) mobileMenu.setAttribute('data-lenis-prevent', '');
+
 if (burger && mobileMenu) {
   burger.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('mobile-open');
