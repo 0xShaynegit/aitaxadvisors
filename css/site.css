@@ -180,7 +180,10 @@ html, body {
 .container {
   max-width: 1400px;
   margin-inline: auto;
-  padding-inline: var(--site-gutter);
+  /* Fallback matches --site-gutter's own value: most content pages use
+     .container outside .site-scope, where the variable is undefined and
+     this rule (loaded last) would otherwise zero out the side padding. */
+  padding-inline: var(--site-gutter, clamp(1.25rem, 4vw, 3rem));
 }
 
 :where(.site-scope) > section {
