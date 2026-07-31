@@ -101,6 +101,12 @@
       display: table;
       clear: both;
     }
+    .article-faq-list { display: grid; gap: 0.75rem; margin-top: 1.5rem; }
+    .article-faq-list details { background: #f4f6fa; border: 1px solid #e1e5ee; border-radius: 12px; padding: 1.1rem 1.5rem; }
+    .article-faq-list summary { font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; }
+    .article-faq-list summary::-webkit-details-marker { display: none; }
+    .article-faq-list details[open] summary { margin-bottom: 0.75rem; }
+    .article-faq-list details p { margin-bottom: 0; color: var(--navy-mid); }
   </style>
 
   <!-- Libraries (GSAP required for preloader) -->
@@ -467,7 +473,7 @@
         <h2 class="reveal" style='font-size: 1.8rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville";'>A Committee Vote, Not a New Law</h2>
         <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">On July 30, 2026, the Senate Finance Committee voted 26-1 to advance the Taxpayer Assistance and Service Act, known as the TAS Act (S. 3931). Chairman Mike Crapo (R-ID) and Ranking Member Ron Wyden (D-OR) built the bill largely around recommendations from the National Taxpayer Advocate's annual Purple Book. That bipartisan margin is genuinely rare for a tax bill, and it is the reason the TAS Act is getting attention from KPMG, BDO, Grant Thornton, and tax-controversy firms this week.</p>
         <p class="reveal" style="margin-bottom: 2rem; font-size: 0.95rem;">Here is the part that gets glossed over in the headlines: a committee vote is one step, not the finish line. The bill still needs a floor vote in the full Senate, then a companion process in the House, before it reaches the President's desk. A 26-1 committee margin makes floor passage likely, but "likely" is not "law." Anyone telling clients or readers the TAS Act is now in effect is describing a bill that, as of this writing, has not been signed by anyone.</p>
-<img src="../images/american-flag-dollar-bills-currency-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American flag with currency, representing federal legislation moving through Congress" loading="lazy" style="float: left; margin: 0.5rem 2.25rem 2rem 0; width: 448px; max-height: 480px; object-fit: cover; border-radius: 8px;">
+<img src="../images/crossed-american-flags-star-fabric-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="American flag with currency, representing federal legislation moving through Congress" loading="lazy" style="float: left; margin: 0.5rem 2.25rem 2rem 0; width: 448px; max-height: 480px; object-fit: cover; border-radius: 8px;">
 
         <h2 class="reveal" style='font-size: 1.5rem; margin-bottom: 1.5rem; font-family: "Libre Baskerville";'>What the Bill Actually Changes for Customer Service</h2>
         <p class="reveal" style="margin-bottom: 1.5rem; font-size: 0.95rem;">Title I of the TAS Act is aimed squarely at the parts of dealing with the IRS that expats already know are broken: the phone lines, the paper backlogs, and the black hole that swallows correspondence sent from overseas.</p>
@@ -552,11 +558,13 @@
           <p class="reveal" style="margin-bottom: 0.5rem; font-weight: 600;"><strong>[ ] Effective Date:</strong> None yet. The callback-technology mandate, if enacted as written, wouldn't apply until 2028.</p>
           <p class="reveal" style="margin-bottom: 0px; font-weight: 600;"><strong>[ ] What It Doesn't Change:</strong> FEIE caps, FBAR thresholds, FATCA reporting, and Streamlined Filing amnesty are all untouched by this bill.</p>
         </div>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Is the TAS Act law?</strong> A: No. As of this writing it has cleared the Senate Finance Committee with a 26-1 vote. It still needs to pass the full Senate and the House, and be signed by the President, before any provision takes effect.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Who sponsored it?</strong> A: Senate Finance Chairman Mike Crapo (R-ID), with Ranking Member Ron Wyden (D-OR) as the lead Democratic voice behind the markup. It has bipartisan cosponsorship, which is unusual for a standalone tax administration bill.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Does this reduce what I owe the IRS?</strong> A: No. It's a service and process bill: customer service standards, transparency requirements, and collection procedure changes. It does not touch tax rates, exclusions, or reporting thresholds.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Will this fix IRS phone wait times for people calling from abroad?</strong> A: It's aimed at that problem generally, the five-minute callback mandate and the public wait-time dashboard both address it, but the bill doesn't call out an international-specific phone line, and the callback requirement isn't due until 2028 even if enacted this year.</p>
-        <p class="reveal" style="margin-bottom: 1.5rem;"><strong>Q: Should I wait for this bill before dealing with an existing IRS problem?</strong> A: No. Unfiled FBARs, IRS notices, and installment agreement trouble need to be addressed under the rules that exist today. Streamlined Filing amnesty in particular closes the moment the IRS contacts you, regardless of what Congress does next.</p>
+        <div class="article-faq-list">
+<details><summary>Is the TAS Act law?</summary><p>No. As of this writing it has cleared the Senate Finance Committee with a 26-1 vote. It still needs to pass the full Senate and the House, and be signed by the President, before any provision takes effect.</p></details>
+<details><summary>Who sponsored it?</summary><p>Senate Finance Chairman Mike Crapo (R-ID), with Ranking Member Ron Wyden (D-OR) as the lead Democratic voice behind the markup. It has bipartisan cosponsorship, which is unusual for a standalone tax administration bill.</p></details>
+<details><summary>Does this reduce what I owe the IRS?</summary><p>No. It's a service and process bill: customer service standards, transparency requirements, and collection procedure changes. It does not touch tax rates, exclusions, or reporting thresholds.</p></details>
+<details><summary>Will this fix IRS phone wait times for people calling from abroad?</summary><p>It's aimed at that problem generally, the five-minute callback mandate and the public wait-time dashboard both address it, but the bill doesn't call out an international-specific phone line, and the callback requirement isn't due until 2028 even if enacted this year.</p></details>
+<details><summary>Should I wait for this bill before dealing with an existing IRS problem?</summary><p>No. Unfiled FBARs, IRS notices, and installment agreement trouble need to be addressed under the rules that exist today. Streamlined Filing amnesty in particular closes the moment the IRS contacts you, regardless of what Congress does next.</p></details>
+</div>
       </div>
     </section>
 

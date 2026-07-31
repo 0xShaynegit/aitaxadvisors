@@ -2,6 +2,9 @@
 /.md/
 /docs/
 
+# Knowledge graph tooling
+/.ua/
+
 # Environment & Config
 .env
 .env.local
