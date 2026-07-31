@@ -105,6 +105,23 @@
   <link rel="stylesheet" href="../css/global.css?v=8">
   <link rel="stylesheet" href="../css/homepage.css?v=3">
   <link rel="stylesheet" href="../css/pages.css?v=2">
+  <link rel="stylesheet" href="../css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    /* site.css's .container isn't scoped to the footer; loading it widens
+       the whole page to 1400px. Keep the rest of the page at its original
+       1140px and only let the footer (inside .site-scope) use 1400px. */
+    .container { max-width: var(--max-w); padding-inline: 2.5rem; }
+    .site-scope .container { max-width: 1400px; padding-inline: clamp(1.25rem, 4vw, 3rem); }
+    /* This page's footer stays purple (matches the rest of /pages/ and
+       most country pages) instead of site.css's default homepage navy.
+       Full-bleed, not the homepage's inset rounded card. */
+    .footer, .contact {
+      background: var(--purple);
+      border-radius: 0;
+      margin-inline: 0;
+    }
+  </style>
 
   <!-- Structured Data (JSON-LD) for SEO -->
   <script type="application/ld+json">
@@ -360,19 +377,11 @@
           <a href="javascript:void(0)" role="button" tabindex="0">Resources</a>
           <div class="nav-dropdown-menu" id="resources-menu">
             <a href="/pages/us-expats-retiring">Expat Tax Guide</a>
-            <a href="/pages/fbar-crackdown-2026">FBAR Crackdown</a>
-            <a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs FTC</a>
-            <a href="/pages/tax-treaty-optimization-2026">Tax Treaties</a>
-            <a href="/pages/us-llc-vs-hong-kong-vs-uae-2026">US LLC vs Hong Kong vs UAE</a>
-          </div>
-        </li>
-        <li class="nav-dropdown">
-          <a href="javascript:void(0)" role="button" tabindex="0">Blogs</a>
-          <div class="nav-dropdown-menu" id="blogs-menu">
             <a href="/pages/taxpayer-assistance-service-act-2026">TAS Act 2026</a>
             <a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a>
             <a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs Foreign Tax Credit</a>
             <a href="/pages/tax-treaty-optimization-2026">Tax Treaty Optimisation</a>
+            <a href="/pages/us-llc-vs-hong-kong-vs-uae-2026">US LLC vs Hong Kong vs UAE</a>
             <a href="/pages/ai-tax-audit-algorithm-2026">AI Tax Audit 2026</a>
             <a href="/pages/corporate-gilti-tax-trap-2026">Corporate GILTI Tax Trap</a>
             <a href="/pages/esg-ethical-taxpayer-2026">ESG & the Ethical Taxpayer</a>
@@ -588,82 +597,90 @@
     </section>
   </main>
 
-    <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-top-inner">
-          <div class="footer-col">
-            <img class="footer-logo-img" width="36" height="36" src="../images/aitaxadvisors-company-logo-aitaxadvisors-American-International-Tax-Advisers-aitaxadvisers.webp" alt="AI Tax Advisers">
-            <p style="font-size: 1rem; font-weight: 600; color: var(--silver); margin-bottom: 0.5rem; letter-spacing: 0.05em;">American International Tax Advisers</p>
-            <p class="footer-tagline">Asia's Best U.S. Tax Firm</p>
-            <div class="footer-irs-badge">
-              <div class="footer-irs-dot"></div>
-              <span>Authorized IRS e-File Provider</span>
+    <div class="site-scope">
+    <footer class="footer">
+      <section class="contact" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-left">
+            <h2 class="display" data-reveal>Get your taxes <span class="accent">right, sooner.</span></h2>
+            <p data-reveal style="--i:1">One conversation changes everything. Free, confidential, no obligation.</p>
+            <div class="contact-cta-row">
+            <div class="contact-cta-col">
+            <div class="hero-ctas" data-reveal style="--i:2">
+              <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
+              <a class="btn btn-outline-dark" href="tel:+1-800-906-598">Call (800) 906-598</a>
+            </div>
+            <div class="contact-hours">
+              <strong>OFFICE HOURS</strong>
+              Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT
+            </div>
+            </div>
             </div>
           </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Head Office</div>
-            <p class="footer-address">
-              15/F Skyway Centre<br>
-              23 Queen's Road West<br>
-              Sheung Wan<br>
-              Hong Kong
-            </p>
-            <p class="footer-contact">
-              <a href="tel:+1-800-906-598">(800) 906-598</a><br>
-              <a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a>
-            </p>
-            <p class="footer-hours">Mon-Fri, 9:00am-6:00pm HKT</p>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Additional Offices</div>
-            <div class="footer-offices-grid">
-              <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a><a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
-              <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a><a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
-              <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a><a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
-              <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a><a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
-              <a href="/australia/us-expat-taxes-australia-2026">Sydney</a><a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
-              <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a><a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
-              <a href="/oman/us-expat-taxes-oman-2026">Muscat</a><span>Florida</span>
+          <dl class="contact-details" data-reveal style="--i:1">
+            <div>
+              <dt>Head office</dt>
+              <dd>15/F Skyway Centre<br>23 Queen's Road West<br>Sheung Wan, Hong Kong</dd>
             </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Navigate</div>
-            <ul class="footer-nav">
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#why">About Us</a></li>
-              <li><a href="/#process">How It Works</a></li>
-              <li><a href="/#testimonial">Client Stories</a></li>
-            </ul>
-            <div class="footer-social">
-              <a href="https://www.facebook.com/Americantax2018" target="_blank" class="footer-social-link">Facebook</a>
-              <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" class="footer-social-link">YouTube</a>
+            <div>
+              <dt>Call</dt>
+              <dd><a href="tel:+1-800-906-598">(800) 906-598</a></dd>
             </div>
-          </div>
-          <div class="footer-col">
-            <div class="footer-col-title">Blogs</div>
-            <ul class="footer-nav">
-              <li><a href="/thailand/us-expat-taxes-thailand-2026">Thailand Tax Hub</a></li>
-              <li><a href="/thailand/filing-us-taxes-from-thailand">Filing US Taxes from Thailand</a></li>
-              <li><a href="/thailand/how-to-file-thai-tax-as-an-expat">How to File Thai Tax</a></li>
-              <li><a href="/pages/fbar-crackdown-2026">FBAR Crackdown 2026</a></li>
-              <li><a href="/pages/feie-ftc-120k-threshold-2026">FEIE vs Foreign Tax Credit</a></li>
-              <li><a href="/pages/tax-treaty-optimization-2026">Tax Treaty Optimisation</a></li>
-            </ul>
-          </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:Admin@aitaxadvisers.com">Admin@aitaxadvisers.com</a></dd>
+            </div>
+            <div>
+              <dt>Hours</dt>
+              <dd>Mon&ndash;Fri, 9:00am&ndash;6:00pm HKT</dd>
+            </div>
+            <div>
+              <dt>Follow</dt>
+              <dd><a href="https://www.facebook.com/Americantax2018" target="_blank" rel="noopener">Facebook</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@americaninternationaltaxad102" target="_blank" rel="noopener">YouTube</a></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <div class="container" style="text-align:center; padding-top:1.5rem;">
+        <div class="footer-links" style="justify-content:center;">
+          <a href="/#site-services">Services</a>
+          <a href="/#site-why">About</a>
+          <a href="/#site-process">How It Works</a>
+          <a href="/#site-testimonial">Client Stories</a>
+          <a href="/#contact">Contact</a>
+          <a href="/countries">Countries</a>
+          <a href="/pages/us-expats-retiring">Resources</a>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <span>Copyright &copy; 2026 All Rights Reserved American International Tax Advisers</span>
-        <span class="footer-legal-links"><a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
-        <span>U.S. Embassy Listed Tax Consultants, Hong Kong</span>
+      <div class="container footer-areas">
+        <p class="footer-areas-label">Offices we serve from</p>
+        <nav class="footer-areas-grid" aria-label="Offices">
+          <a href="/thailand/us-expat-taxes-thailand-2026">Bangkok</a>
+          <a href="/thailand/us-expat-taxes-thailand-2026">Chiang Mai</a>
+          <a href="/philippines/us-expat-taxes-philippines-2026">Manila</a>
+          <a href="/cambodia/us-expat-taxes-cambodia-2026">Phnom Penh</a>
+          <a href="/vietnam/us-expat-taxes-vietnam-2026">Ho Chi Minh City</a>
+          <a href="/malaysia/us-expat-taxes-malaysia-2026">Kuala Lumpur</a>
+          <a href="/indonesia/us-expat-taxes-indonesia-2026">Jakarta</a>
+          <a href="/taiwan/us-expat-taxes-taiwan-2026">Taipei</a>
+          <a href="/australia/us-expat-taxes-australia-2026">Sydney</a>
+          <a href="/uae/us-expat-taxes-uae-2026">Abu Dhabi</a>
+          <a href="/saudi-arabia/us-expat-taxes-saudi-arabia-2026">Riyadh</a>
+          <a href="/japan/us-expat-taxes-japan-2026">Tokyo</a>
+          <a href="/oman/us-expat-taxes-oman-2026">Muscat</a>
+        </nav>
       </div>
+      <div class="container footer-inner">
+        <p>&copy; 2026 American International Tax Advisers. U.S. Embassy Listed Tax Consultants, Hong Kong.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+          <a href="/disclaimer">Disclaimer</a>
+        </nav>
+      </div>
+    </footer>
     </div>
-  </footer>
-
-  <!-- External JavaScript files loaded below -->
+<!-- External JavaScript files loaded below -->
   <script src="../js/global.js?v=4"></script>
   <script src="../js/homepage.js"></script>
   <script src="../js/chaty-widget.js" defer></script>
@@ -690,5 +707,6 @@
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7e6e2c5f5d814a9ba7c1c3f0e8d4b2a6"}'></script>
 <!-- End Cloudflare Web Analytics -->  <script src="/shared/chat-widget.js" defer></script>
+  <script src="../js/site.js" defer></script>
 </body>
 </html>

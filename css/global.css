@@ -187,15 +187,15 @@ body.menu-open #nav.scrolled {
 }
 
 .nav-links a {
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--silver);
+  color: var(--white);
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--white); }
+.nav-links a:hover { color: var(--blue-light); }
 
 .nav-cta {
   font-family: var(--font-sans);
