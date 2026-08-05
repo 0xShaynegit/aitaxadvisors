@@ -428,6 +428,13 @@ body.menu-open #nav.scrolled {
 
   .nav-dropdown.open .nav-dropdown-menu {
     max-height: 3000px;
+  }
+
+  /* Only drop the clip once the open transition has finished (see
+     global.js) - clipping mid-transition is what stops the accordion
+     panel overlapping the items below it as it grows; keeping it clipped
+     forever is what trapped iOS touch-scroll inside the panel. */
+  .nav-dropdown-menu.settled {
     overflow: visible;
   }
 
@@ -462,6 +469,9 @@ body.menu-open #nav.scrolled {
 
   .nav-dropdown-sub.open .nav-dropdown-submenu {
     max-height: 2000px;
+  }
+
+  .nav-dropdown-submenu.settled {
     overflow: visible;
   }
 

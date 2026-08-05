@@ -84,6 +84,7 @@ function closeMobileMenu() {
   if (mobileMenu) {
     mobileMenu.classList.remove('mobile-open');
     mobileMenu.querySelectorAll('.nav-dropdown.open, .nav-dropdown-sub.open').forEach(el => el.classList.remove('open'));
+    mobileMenu.querySelectorAll('.settled').forEach(el => el.classList.remove('settled'));
   }
   document.body.classList.remove('menu-open');
   if (lenis) lenis.start();
@@ -123,6 +124,25 @@ document.querySelectorAll('.magnetic-item').forEach(el => {
 // Refresh ScrollTrigger on window resize
 window.addEventListener('resize', () => ScrollTrigger.refresh());
 
+// Mobile accordion panels (.nav-dropdown-menu / .nav-dropdown-submenu) clip
+// with overflow:hidden while their max-height transitions, so the growing
+// panel pushes the items below it down instead of overlapping them. Once
+// open, drop the clip (via .settled) so iOS Safari's touch scroll can pass
+// through the panel into the scrollable .nav-links list. Closing snaps the
+// clip back on immediately - no need to wait, it's a delay we don't want.
+function settleAccordion(panel) {
+  if (!panel) return;
+  panel.addEventListener('transitionend', function handler(e) {
+    if (e.target === panel && e.propertyName === 'max-height') {
+      panel.classList.add('settled');
+      panel.removeEventListener('transitionend', handler);
+    }
+  });
+}
+function unsettleAccordion(panel) {
+  if (panel) panel.classList.remove('settled');
+}
+
 // ── NAV DROPDOWNS: desktop hover-to-open, small delay before closing.
 // Gated to > MOBILE_NAV_BREAKPOINT so it never fights the mobile accordion
 // click handlers below (touch doesn't fire mouseenter anyway, but hybrid
@@ -151,8 +171,14 @@ document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
       if (window.innerWidth > MOBILE_NAV_BREAKPOINT) return;
       e.preventDefault();
       const isOpen = dropdown.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
-      if (!isOpen) dropdown.classList.add('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(el => {
+        el.classList.remove('open');
+        unsettleAccordion(el.querySelector('.nav-dropdown-menu'));
+      });
+      if (!isOpen) {
+        dropdown.classList.add('open');
+        settleAccordion(dropdown.querySelector('.nav-dropdown-menu'));
+      }
     });
   }
 });
@@ -184,8 +210,14 @@ document.querySelectorAll('.nav-dropdown-sub').forEach(sub => {
       if (window.innerWidth > MOBILE_NAV_BREAKPOINT) return;
       e.preventDefault();
       const isOpen = sub.classList.contains('open');
-      document.querySelectorAll('.nav-dropdown-sub.open').forEach(el => el.classList.remove('open'));
-      if (!isOpen) sub.classList.add('open');
+      document.querySelectorAll('.nav-dropdown-sub.open').forEach(el => {
+        el.classList.remove('open');
+        unsettleAccordion(el.querySelector('.nav-dropdown-submenu'));
+      });
+      if (!isOpen) {
+        sub.classList.add('open');
+        settleAccordion(sub.querySelector('.nav-dropdown-submenu'));
+      }
     });
   }
 });
