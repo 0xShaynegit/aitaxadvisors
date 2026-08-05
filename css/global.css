@@ -428,6 +428,7 @@ body.menu-open #nav.scrolled {
 
   .nav-dropdown.open .nav-dropdown-menu {
     max-height: 3000px;
+    overflow: visible;
   }
 
   .nav-dropdown-menu a {
@@ -461,6 +462,7 @@ body.menu-open #nav.scrolled {
 
   .nav-dropdown-sub.open .nav-dropdown-submenu {
     max-height: 2000px;
+    overflow: visible;
   }
 
   .nav-dropdown-submenu a {
