@@ -285,7 +285,7 @@
   }
   </script>
 
-<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+<script async preferred-sources-control="manual" src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
 
@@ -953,6 +953,7 @@
           <div class="hero-ctas" data-reveal style="--i:2">
             <a class="btn btn-light" href="mailto:admin@aitaxadvisers.com">Book a free consult</a>
             <a class="btn btn-outline-dark" href="tel:+1-800-906-598">Call (800) 906-598</a>
+            <button type="button" class="btn btn-outline-dark" id="preferred-source-btn">Add us on Google</button>
           </div>
           <div class="contact-hours">
             <strong>OFFICE HOURS</strong>
@@ -1021,9 +1022,6 @@
         <a href="/terms-of-service">Terms of Service</a>
         <a href="/disclaimer">Disclaimer</a>
       </nav>
-      <div style="text-align:center; margin-top:1rem;">
-        <div google-add-preferred-source-btn data-theme="dark"></div>
-      </div>
     </div>
   </footer>
   </div>
@@ -1031,6 +1029,17 @@
   </main>
 
   <!-- External Scripts -->
+  <script>
+  (self.PREFERRED_SOURCE = self.PREFERRED_SOURCE || []).push(function(preferredSource) {
+    preferredSource.init({ theme: 'dark', lang: 'en' });
+    var btn = document.getElementById('preferred-source-btn');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        preferredSource.addPreferredSource();
+      });
+    }
+  });
+  </script>
   <script src="js/global.js?v=4"></script>
   <script src="js/homepage.js"></script>
   <script src="js/chaty-widget.js" defer></script>
