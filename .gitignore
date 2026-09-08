@@ -42,3 +42,4 @@ Thumbs.db
 chatbot/content-chunks.json
 chatbot/vectors.ndjson
 .wrangler/
+manifest.json
