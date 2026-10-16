@@ -4,7 +4,7 @@
 
 ## What We Do
 
-American International Tax Advisers (AI Tax Advisers) provides U.S. tax services for American expats, retirees, digital nomads, and cross-border businesses operating in Thailand, Vietnam, Cambodia, Malaysia, Philippines, Singapore, Indonesia, Taiwan, Australia, and the UAE.
+American International Tax Advisers (AI Tax Advisers) provides U.S. tax services for American expats, retirees, digital nomads, and cross-border businesses operating in Thailand, Vietnam, Cambodia, Malaysia, the Philippines, Indonesia, Taiwan, Japan, Australia, the UAE, Saudi Arabia, and Oman.
 
 Services include:
 - U.S. expat tax filing (Form 1040, FEIE, Foreign Tax Credit)
@@ -19,29 +19,73 @@ Services include:
 - Authorized IRS e-File Provider
 - Listed on the U.S. Embassy Bangkok recommended tax consultant list
 - Head office: 15/F Skyway Centre, 23 Queen's Road West, Sheung Wan, Hong Kong
-- Additional offices: Bangkok, Chiang Mai, Manila, Phnom Penh, Ho Chi Minh City, Kuala Lumpur, Jakarta, Taipei, Sydney, Abu Dhabi, Riyadh, Florida
+- Additional offices: Bangkok, Pattaya, Chiang Mai, Manila, Phnom Penh, Ho Chi Minh City, Kuala Lumpur, Jakarta, Taipei, Sydney, Abu Dhabi, Riyadh, Florida
 - Contact: admin@aitaxadvisers.com
 - Hours: Monday to Friday, 9:00am to 6:00pm HKT
+- Tax figures on these pages are for the 2026 tax year (for example, the Foreign Earned Income Exclusion is USD 132,900). Each page states the figures it relies on.
 
-## Key Content
+## Country Guides
 
-### Thailand Tax Guides
-- [U.S. Expat Taxes in Thailand 2026](https://aitaxadvisors.com/thailand/us-expat-taxes-thailand-2026/)
-- [Filing US Taxes from Thailand](https://aitaxadvisors.com/thailand/filing-us-taxes-from-thailand/)
-- [Thailand 180-Day Rule](https://aitaxadvisors.com/thailand/tax-residency-180-day-rule/)
-- [Thailand 2026 Remittance Revolution](https://aitaxadvisors.com/thailand/thailand-remittance-revolution-2026/)
-- [Foreign Income and Remittance Doctrine](https://aitaxadvisors.com/thailand/foreign-sourced-income-remittance/)
-- [Digital Nomad Visa Tax Guide](https://aitaxadvisors.com/thailand/digital-nomads-remote-workers-thailand/)
-- [Retiring in Thailand: US Tax Planning](https://aitaxadvisors.com/thailand/retiring-in-thailand-us-tax-planning/)
-- [How to File Thai Tax as an Expat](https://aitaxadvisors.com/thailand/how-to-file-thai-tax-as-an-expat/)
-- [US Expat Tax Checklist 2026](https://aitaxadvisors.com/thailand/us-thailand-expat-tax-checklist-2026/)
+One complete guide per country. Each covers local tax rules, the US-side obligations (Form 1040, FEIE or Foreign Tax Credit, FBAR, FATCA), treaty status, and local traps.
 
-### U.S. Tax Guides
-- [FEIE vs Foreign Tax Credit: The $132,900 Decision](https://aitaxadvisors.com/pages/feie-ftc-120k-threshold-2026/)
-- [FBAR Crackdown 2026](https://aitaxadvisors.com/pages/fbar-crackdown-2026/)
-- [IRS AI Audit Algorithm 2026](https://aitaxadvisors.com/pages/ai-tax-audit-algorithm-2026/)
-- [GILTI and CFC Tax Planning](https://aitaxadvisors.com/pages/corporate-gilti-tax-trap-2026/)
-- [Tax Treaty Optimisation 2026](https://aitaxadvisors.com/pages/tax-treaty-optimization-2026/)
+- [Thailand](https://aitaxadvisors.com/thailand/us-expat-taxes-thailand-2026): The 180-day residency rule, the remittance rule for foreign income, and coordinating Thai and US filings.
+- [Vietnam](https://aitaxadvisors.com/vietnam/us-expat-taxes-vietnam-2026): The unratified tax treaty, no Totalization Agreement, nomad status, and property rules.
+- [Cambodia](https://aitaxadvisors.com/cambodia/us-expat-taxes-cambodia-2026): No US-Cambodia tax treaty, tightening work-permit enforcement, and strata-title property.
+- [Malaysia](https://aitaxadvisors.com/malaysia/us-expat-taxes-malaysia-2026): The territorial tax and received-income rule, MM2H, and Labuan structures with GILTI.
+- [Philippines](https://aitaxadvisors.com/philippines/us-expat-taxes-philippines-2026): The tax treaty, no Totalization Agreement, dual citizens, the SRRV retirement visa, and condo rules.
+- [Indonesia](https://aitaxadvisors.com/indonesia/us-expat-taxes-indonesia-2026): The 1988 tax treaty, no Totalization Agreement, property rules, and the skilled-worker exemption.
+- [Taiwan](https://aitaxadvisors.com/taiwan/us-expat-taxes-taiwan-2026): FEIE versus Foreign Tax Credit, the pending US-Taiwan tax agreement, and the Gold Card.
+- [Japan](https://aitaxadvisors.com/japan/us-expat-taxes-japan-2026): The three-tier residency system, the US-Japan treaty and Totalization Agreement, and the 5-year non-permanent resident rule.
+- [Australia](https://aitaxadvisors.com/australia/us-expat-taxes-australia-2026): Superannuation under US tax law, the US-Australia treaty, FEIE versus Foreign Tax Credit, and FIRB property rules.
+- [UAE](https://aitaxadvisors.com/uae/us-expat-taxes-uae-2026): Zero personal income tax, the 9% corporate tax and GILTI exposure for business owners, and no tax treaty.
+- [Saudi Arabia](https://aitaxadvisors.com/saudi-arabia/us-expat-taxes-saudi-arabia-2026): Zero personal income tax, no tax treaty, end-of-service benefits, and the 2026 real estate law.
+- [Oman](https://aitaxadvisors.com/oman/us-expat-taxes-oman-2026): Zero personal income tax, no tax treaty, end-of-service gratuity, and Oman's upcoming 2028 income tax.
+- [All countries](https://aitaxadvisors.com/countries): Index of every country we serve with links to each country's guides.
+
+## Filing US Taxes From Your Country
+
+How to file in practice: forms, local deadlines, and late-filer options such as Streamlined compliance.
+
+- [Filing US taxes from Thailand](https://aitaxadvisors.com/thailand/filing-us-taxes-from-thailand): FEIE versus Foreign Tax Credit, FBAR, FATCA, and avoiding double tax between the US and Thailand.
+- [Filing US taxes from Vietnam](https://aitaxadvisors.com/vietnam/filing-us-taxes-from-vietnam): Form 1040, Form 2555, FBAR, FATCA, and Vietnamese PIT deadlines.
+- [Filing US taxes from Cambodia](https://aitaxadvisors.com/cambodia/filing-us-taxes-from-cambodia): Form 1040, Form 2555, FBAR, FATCA, and General Department of Taxation deadlines.
+- [Filing US taxes from Malaysia](https://aitaxadvisors.com/malaysia/filing-us-taxes-from-malaysia): Form 1040, Form 2555, FBAR, FATCA, and LHDN deadlines.
+- [Filing US taxes from the Philippines](https://aitaxadvisors.com/philippines/filing-us-taxes-from-philippines): Form 1040, Form 2555, FBAR, FATCA, and BIR deadlines.
+- [Filing US taxes from Indonesia](https://aitaxadvisors.com/indonesia/filing-us-taxes-from-indonesia): Form 1040, Form 2555, FBAR, FATCA, and DJP deadlines.
+- [Filing US taxes from Taiwan](https://aitaxadvisors.com/taiwan/filing-us-taxes-from-taiwan): Form 1040, Forms 2555 and 1116, FBAR, and FATCA.
+- [Filing US taxes from Japan](https://aitaxadvisors.com/japan/filing-us-taxes-from-japan): Form 1040, Forms 2555 and 1116, FBAR, FATCA, and National Tax Agency deadlines.
+- [Filing US taxes from Australia](https://aitaxadvisors.com/australia/filing-us-taxes-from-australia): Form 1040, Form 1116, FBAR, and FATCA.
+- [Filing US taxes from the UAE](https://aitaxadvisors.com/uae/filing-us-taxes-from-uae): Form 1040, Form 2555, FBAR, and FATCA under zero local income tax.
+- [Filing US taxes from Saudi Arabia](https://aitaxadvisors.com/saudi-arabia/filing-us-taxes-from-saudi-arabia): Form 1040, the FEIE via Form 2555, FBAR, and FATCA.
+- [Filing US taxes from Oman](https://aitaxadvisors.com/oman/filing-us-taxes-from-oman): Form 1040, the FEIE via Form 2555, FBAR, and FATCA.
+
+## Thailand Deep Dives
+
+- [Thailand 180-day rule](https://aitaxadvisors.com/thailand/tax-residency-180-day-rule): How physical presence triggers Thai tax residency and what that means for worldwide income.
+- [Thailand remittance rules 2026](https://aitaxadvisors.com/thailand/thailand-remittance-revolution-2026): Por. 161 and 162 in force since 2024, the January 2024 cutoff, and the pending relief draft.
+- [Foreign income and remittance](https://aitaxadvisors.com/thailand/foreign-sourced-income-remittance): When foreign-sourced income becomes taxable in Thailand and how to plan remittances.
+- [Digital nomad visa tax guide](https://aitaxadvisors.com/thailand/digital-nomads-remote-workers-thailand): Tax planning for DTV holders, covering the 180-day rule, remittance, and dual filing.
+- [Retiring in Thailand](https://aitaxadvisors.com/thailand/retiring-in-thailand-us-tax-planning): Social Security, pensions, 401k withdrawals, and retirement visa tax implications.
+- [How to file Thai tax as an expat](https://aitaxadvisors.com/thailand/how-to-file-thai-tax-as-an-expat): PND 90 step by step, with forms, deadlines, documents, and penalties.
+- [US expat tax checklist for Thailand](https://aitaxadvisors.com/thailand/us-thailand-expat-tax-checklist-2026): Deadlines, deductions, and forms to file each year.
+
+## US Tax Topics
+
+- [FEIE vs Foreign Tax Credit](https://aitaxadvisors.com/pages/feie-ftc-120k-threshold-2026): When to exclude income (USD 132,900 for 2026) and when to claim the credit, with worked examples and the five-year election lock.
+- [FBAR 2026](https://aitaxadvisors.com/pages/fbar-crackdown-2026): FBAR and FATCA obligations, penalties, and Streamlined Filing for non-wilful filers.
+- [Tax treaty optimisation](https://aitaxadvisors.com/pages/tax-treaty-optimization-2026): The saving clause, pension and Social Security rules, residence tie-breakers, and when Form 8833 is required.
+- [GILTI and CFC planning](https://aitaxadvisors.com/pages/corporate-gilti-tax-trap-2026): Section 962 elections, Form 5471 compliance, and structuring foreign companies.
+- [US LLC vs Hong Kong vs UAE](https://aitaxadvisors.com/pages/us-llc-vs-hong-kong-vs-uae-2026): Comparing entity choices for tax efficiency and compliance traps.
+- [US expats retiring](https://aitaxadvisors.com/pages/us-expats-retiring): Tax residency, foreign income, FEIE, FTC, and FBAR for Americans living abroad.
+- [IRS AI audit triggers](https://aitaxadvisors.com/pages/ai-tax-audit-algorithm-2026): What algorithmic flags look like in 2026 and how professionals prevent audits.
+- [Taxpayer Assistance and Service Act](https://aitaxadvisors.com/pages/taxpayer-assistance-service-act-2026): The IRS reform bill, what is pending, and the impact on expats.
+- [ESG and ethical taxation](https://aitaxadvisors.com/pages/esg-ethical-taxpayer-2026): Green tax credits and governance-compliant accounting.
+
+## Optional
+
+- [Disclaimer](https://aitaxadvisors.com/disclaimer): General information only, not tax advice.
+- [Privacy policy](https://aitaxadvisors.com/privacy-policy): How personal data and analytics are handled.
+- [Terms of service](https://aitaxadvisors.com/terms-of-service): Terms for using the site.
 
 ## Sitemap
 
