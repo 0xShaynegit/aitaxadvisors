@@ -2,7 +2,7 @@ name: Update chatbot content index
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - "**/*.html"
       - "chatbot/build-chunks.js"
